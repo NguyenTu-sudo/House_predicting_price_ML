@@ -106,7 +106,7 @@ def predict_price(model, features, district, area, entrance_width, width, floors
 def main():
     # Header
     st.markdown('<p class="main-header">🏠 Dự đoán Giá Nhà Hà Nội</p>', unsafe_allow_html=True)
-    st.markdown('<p class="sub-header">Ứng dụng Machine Learning dự báo giá bất động sản năm 2024</p>', unsafe_allow_html=True)
+    st.markdown('<p class="sub-header">Ứng dụng Machine Learning dự báo giá bất động sản tại Hà Nội</p>', unsafe_allow_html=True)
     
     # Load model
     model, features = load_model()
@@ -221,7 +221,6 @@ def main():
     st.markdown("""
     <div style="text-align: center; color: #888; font-size: 0.9rem;">
         🎓 Dự án môn Nhập môn Học máy (IT3190) | Random Forest Regressor (R² = 0.86)<br>
-        Developed by Giang Hoàng Trường
     </div>
     """, unsafe_allow_html=True)
 
