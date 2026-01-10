@@ -120,14 +120,37 @@ def main():
     results_df = pd.DataFrame(results)
     print(results_df.to_string(index=False))
     
-    # Sắp xếp theo MAE để xem model nào tốt nhất
-    print("\n📈 XẾP HẠNG THEO MAE (Thấp hơn = Tốt hơn):")
-    results_sorted = results_df.sort_values('MAE (Tỷ VNĐ)')
-    for i, row in enumerate(results_sorted.itertuples(), 1):
-        print(f"   {i}. {row.Model}: MAE = {row._2:.2f} tỷ VNĐ, R² = {row._4:.4f}")
+    # Xếp hạng theo MAE
+    print("\n" + "-"*70)
+    print("📈 XẾP HẠNG THEO MAE (Mean Absolute Error - Thấp hơn = Tốt hơn):")
+    print("-"*70)
+    results_sorted_mae = results_df.sort_values('MAE (Tỷ VNĐ)')
+    for i, row in enumerate(results_sorted_mae.itertuples(), 1):
+        medal = "🥇" if i == 1 else "🥈" if i == 2 else "🥉" if i == 3 else "  "
+        print(f"   {medal} {i}. {row.Model}: MAE = {row._2:.2f} tỷ VNĐ")
+    
+    # Xếp hạng theo RMSE
+    print("\n" + "-"*70)
+    print("📈 XẾP HẠNG THEO RMSE (Root Mean Squared Error - Thấp hơn = Tốt hơn):")
+    print("-"*70)
+    results_sorted_rmse = results_df.sort_values('RMSE (Tỷ VNĐ)')
+    for i, row in enumerate(results_sorted_rmse.itertuples(), 1):
+        medal = "🥇" if i == 1 else "🥈" if i == 2 else "🥉" if i == 3 else "  "
+        print(f"   {medal} {i}. {row.Model}: RMSE = {row._3:.2f} tỷ VNĐ")
+    
+    # Xếp hạng theo R²
+    print("\n" + "-"*70)
+    print("📈 XẾP HẠNG THEO R² Score (Cao hơn = Tốt hơn):")
+    print("-"*70)
+    results_sorted_r2 = results_df.sort_values('R2 Score', ascending=False)
+    for i, row in enumerate(results_sorted_r2.itertuples(), 1):
+        medal = "🥇" if i == 1 else "🥈" if i == 2 else "🥉" if i == 3 else "  "
+        print(f"   {medal} {i}. {row.Model}: R² = {row._4:.4f}")
     
     best_model = results_df.loc[results_df['MAE (Tỷ VNĐ)'].idxmin(), 'Model']
-    print(f"\n🏆 Mô hình hiệu quả nhất: {best_model}")
+    print("\n" + "="*70)
+    print(f"🏆 MÔ HÌNH HIỆU QUẢ NHẤT: {best_model}")
+    print("="*70)
     
     results_df.to_csv('model_comparison.csv', index=False)
     print("\n✅ Đã lưu kết quả so sánh vào file 'model_comparison.csv'")
@@ -176,8 +199,26 @@ def main():
     plt.savefig('model_comparison_r2.png', dpi=150, bbox_inches='tight')
     plt.close()
     
-    # --- Biểu đồ 3: So sánh tổng hợp (cả MAE và R²) ---
-    fig3, axes = plt.subplots(1, 2, figsize=(14, 5))
+    # --- Biểu đồ 3: So sánh RMSE ---
+    results_sorted_rmse = results_df.sort_values('RMSE (Tỷ VNĐ)')
+    
+    fig3, ax3 = plt.subplots(figsize=(10, 6))
+    bars3 = ax3.barh(results_sorted_rmse['Model'], results_sorted_rmse['RMSE (Tỷ VNĐ)'], color=colors)
+    ax3.set_xlabel('RMSE (Ty VND)', fontsize=12)
+    ax3.set_title('So sanh RMSE cua 5 Mo hinh Machine Learning\n(Thap hon = Tot hon)', fontsize=14, fontweight='bold')
+    ax3.invert_yaxis()
+    
+    # Thêm giá trị lên bar
+    for bar, value in zip(bars3, results_sorted_rmse['RMSE (Tỷ VNĐ)']):
+        ax3.text(value + 0.5, bar.get_y() + bar.get_height()/2, f'{value:.2f}', 
+                va='center', fontsize=11, fontweight='bold')
+    
+    plt.tight_layout()
+    plt.savefig('model_comparison_rmse.png', dpi=150, bbox_inches='tight')
+    plt.close()
+    
+    # --- Biểu đồ 4: So sánh tổng hợp (cả 3 metrics: MAE, RMSE, R²) ---
+    fig4, axes = plt.subplots(1, 3, figsize=(18, 5))
     
     # MAE subplot
     axes[0].barh(results_sorted['Model'], results_sorted['MAE (Tỷ VNĐ)'], color=colors)
@@ -187,24 +228,33 @@ def main():
     for i, v in enumerate(results_sorted['MAE (Tỷ VNĐ)']):
         axes[0].text(v + 0.2, i, f'{v:.2f}', va='center', fontweight='bold')
     
-    # R² subplot
-    axes[1].barh(results_sorted_r2['Model'], results_sorted_r2['R2 Score'], color=colors)
-    axes[1].set_xlabel('R² Score')
-    axes[1].set_title('R² Score (Cao hon = Tot hon)')
-    axes[1].set_xlim(0, 1)
+    # RMSE subplot
+    axes[1].barh(results_sorted_rmse['Model'], results_sorted_rmse['RMSE (Tỷ VNĐ)'], color=colors)
+    axes[1].set_xlabel('RMSE (Ty VND)')
+    axes[1].set_title('RMSE (Thap hon = Tot hon)')
     axes[1].invert_yaxis()
-    for i, v in enumerate(results_sorted_r2['R2 Score']):
-        axes[1].text(v + 0.02, i, f'{v:.3f}', va='center', fontweight='bold')
+    for i, v in enumerate(results_sorted_rmse['RMSE (Tỷ VNĐ)']):
+        axes[1].text(v + 0.5, i, f'{v:.2f}', va='center', fontweight='bold')
     
-    fig3.suptitle('TONG HOP SO SANH 5 MO HINH MACHINE LEARNING', fontsize=14, fontweight='bold')
+    # R² subplot
+    axes[2].barh(results_sorted_r2['Model'], results_sorted_r2['R2 Score'], color=colors)
+    axes[2].set_xlabel('R² Score')
+    axes[2].set_title('R² Score (Cao hon = Tot hon)')
+    axes[2].set_xlim(0, 1)
+    axes[2].invert_yaxis()
+    for i, v in enumerate(results_sorted_r2['R2 Score']):
+        axes[2].text(v + 0.02, i, f'{v:.3f}', va='center', fontweight='bold')
+    
+    fig4.suptitle('TONG HOP SO SANH 5 MO HINH MACHINE LEARNING (3 METRICS)', fontsize=14, fontweight='bold')
     plt.tight_layout()
     plt.savefig('model_comparison_combined.png', dpi=150, bbox_inches='tight')
     plt.close()
     
     print("✅ Đã lưu biểu đồ:")
-    print("   - model_comparison_mae.png")
-    print("   - model_comparison_r2.png")
-    print("   - model_comparison_combined.png")
+    print("   - model_comparison_mae.png (MAE)")
+    print("   - model_comparison_rmse.png (RMSE)")
+    print("   - model_comparison_r2.png (R² Score)")
+    print("   - model_comparison_combined.png (Tổng hợp 3 metrics)")
 
 if __name__ == "__main__":
     main()
