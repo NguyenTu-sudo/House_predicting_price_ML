@@ -1,0 +1,2171 @@
+{
+  "target": "Gia_ban_ty",
+  "center_district": "Hai Bà Trưng",
+  "row_count": 15000,
+  "districts_in_data": [
+    "Ba Đình",
+    "Bắc Từ Liêm",
+    "Cầu Giấy",
+    "Hai Bà Trưng",
+    "Hoàn Kiếm",
+    "Hoàng Mai",
+    "Hà Đông",
+    "Long Biên",
+    "Nam Từ Liêm",
+    "Thanh Xuân",
+    "Tây Hồ",
+    "Đống Đa"
+  ],
+  "all_hanoi_units": [
+    "Ba Đình",
+    "Bắc Từ Liêm",
+    "Cầu Giấy",
+    "Đống Đa",
+    "Hà Đông",
+    "Hai Bà Trưng",
+    "Hoàn Kiếm",
+    "Hoàng Mai",
+    "Long Biên",
+    "Nam Từ Liêm",
+    "Thanh Xuân",
+    "Tây Hồ",
+    "Sơn Tây",
+    "Ba Vì",
+    "Chương Mỹ",
+    "Đan Phượng",
+    "Đông Anh",
+    "Gia Lâm",
+    "Hoài Đức",
+    "Mê Linh",
+    "Mỹ Đức",
+    "Phú Xuyên",
+    "Phúc Thọ",
+    "Quốc Oai",
+    "Sóc Sơn",
+    "Thạch Thất",
+    "Thanh Oai",
+    "Thanh Trì",
+    "Thường Tín",
+    "Ứng Hòa"
+  ],
+  "categorical": {
+    "Quan": [
+      "Ba Đình",
+      "Bắc Từ Liêm",
+      "Cầu Giấy",
+      "Hai Bà Trưng",
+      "Hoàn Kiếm",
+      "Hoàng Mai",
+      "Hà Đông",
+      "Long Biên",
+      "Nam Từ Liêm",
+      "Thanh Xuân",
+      "Tây Hồ",
+      "Đống Đa"
+    ],
+    "Loai_duong": [
+      "Đường bê tông",
+      "Đường nhựa",
+      "Đường đất"
+    ],
+    "Mat_do_dan_cu": [
+      "Cao",
+      "Thấp",
+      "Trung bình"
+    ],
+    "An_ninh": [
+      "Bình thường",
+      "Kém (Hay mất trộm)",
+      "Rất tốt (VIP)",
+      "Tốt"
+    ],
+    "Tinh_trang_ngap": [
+      "Không ngập",
+      "Ngập nhẹ",
+      "Ngập sâu"
+    ],
+    "Noi_that": [
+      "Cơ bản",
+      "Full cao cấp",
+      "Nhà trống",
+      "Đồ gỗ xịn"
+    ],
+    "Tinh_trang_Dien_Nuoc": [
+      "Hay hỏng",
+      "Tốt"
+    ]
+  },
+  "binary": [
+    "O_to_vao",
+    "Co_Gara",
+    "Co_San_thuong",
+    "Gan_Metro_Bus",
+    "Gan_nghia_trang_bai_rac"
+  ],
+  "numeric": {
+    "Khoang_cach_TT_km": {
+      "min": 0.0,
+      "max": 15.86,
+      "q05": 0.0,
+      "q95": 14.590499999999993,
+      "median": 6.76
+    },
+    "Dien_tich_m2": {
+      "min": 25.0,
+      "max": 111.0,
+      "q05": 25.0,
+      "q95": 101.0,
+      "median": 62.0
+    },
+    "Mat_tien_m": {
+      "min": 3.4,
+      "max": 9.6,
+      "q05": 3.7,
+      "q95": 9.4,
+      "median": 6.5
+    },
+    "So_tang": {
+      "min": 1.0,
+      "max": 8.0,
+      "q05": 1.0,
+      "q95": 8.0,
+      "median": 4.0
+    },
+    "So_phong_ngu": {
+      "min": 1.0,
+      "max": 12.0,
+      "q05": 1.0,
+      "q95": 10.0,
+      "median": 4.0
+    },
+    "So_phong_tam": {
+      "min": 1.0,
+      "max": 9.0,
+      "q05": 1.0,
+      "q95": 7.0,
+      "median": 2.0
+    },
+    "Do_rong_duong_m": {
+      "min": 2.1,
+      "max": 11.4,
+      "q05": 2.5,
+      "q95": 11.0,
+      "median": 6.8
+    },
+    "Tuoi_nha_nam": {
+      "min": 1.0,
+      "max": 29.0,
+      "q05": 2.0,
+      "q95": 28.0,
+      "median": 15.0
+    },
+    "Gia_ban_ty": {
+      "min": 4.25,
+      "max": 38.14,
+      "q05": 5.31,
+      "q95": 31.18049999999999,
+      "median": 13.49
+    }
+  },
+  "per_district": {
+    "Ba Đình": {
+      "n_rows": 1359,
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 2.01,
+          "max": 5.0,
+          "q05": 2.17,
+          "q95": 4.87,
+          "median": 3.6
+        },
+        "Dien_tich_m2": {
+          "min": 25.0,
+          "max": 111.0,
+          "q05": 25.0,
+          "q95": 99.0,
+          "median": 61.0
+        },
+        "Mat_tien_m": {
+          "min": 3.4,
+          "max": 9.6,
+          "q05": 3.6,
+          "q95": 9.4,
+          "median": 6.4
+        },
+        "So_tang": {
+          "min": 1.0,
+          "max": 8.0,
+          "q05": 1.0,
+          "q95": 8.0,
+          "median": 4.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 12.0,
+          "q05": 1.0,
+          "q95": 10.0,
+          "median": 4.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 9.0,
+          "q05": 1.0,
+          "q95": 7.0,
+          "median": 2.0
+        },
+        "Do_rong_duong_m": {
+          "min": 2.1,
+          "max": 11.4,
+          "q05": 2.4,
+          "q95": 10.9,
+          "median": 6.6
+        },
+        "Tuoi_nha_nam": {
+          "min": 1.0,
+          "max": 29.0,
+          "q05": 2.0,
+          "q95": 28.0,
+          "median": 15.0
+        }
+      },
+      "categorical": {
+        "Quan": [
+          "Ba Đình"
+        ],
+        "Loai_duong": [
+          "Đường bê tông",
+          "Đường nhựa",
+          "Đường đất"
+        ],
+        "Mat_do_dan_cu": [
+          "Cao",
+          "Thấp",
+          "Trung bình"
+        ],
+        "An_ninh": [
+          "Bình thường",
+          "Kém (Hay mất trộm)",
+          "Rất tốt (VIP)",
+          "Tốt"
+        ],
+        "Tinh_trang_ngap": [
+          "Không ngập",
+          "Ngập nhẹ",
+          "Ngập sâu"
+        ],
+        "Noi_that": [
+          "Cơ bản",
+          "Full cao cấp",
+          "Nhà trống",
+          "Đồ gỗ xịn"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "Hay hỏng",
+          "Tốt"
+        ]
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          0,
+          1
+        ],
+        "Gan_Metro_Bus": [
+          0,
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ]
+      }
+    },
+    "Bắc Từ Liêm": {
+      "n_rows": 1003,
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 10.01,
+          "max": 15.86,
+          "q05": 10.35,
+          "q95": 15.539,
+          "median": 12.99
+        },
+        "Dien_tich_m2": {
+          "min": 25.0,
+          "max": 111.0,
+          "q05": 40.0,
+          "q95": 104.0,
+          "median": 69.0
+        },
+        "Mat_tien_m": {
+          "min": 3.4,
+          "max": 9.6,
+          "q05": 3.6,
+          "q95": 9.3,
+          "median": 6.5
+        },
+        "So_tang": {
+          "min": 1.0,
+          "max": 8.0,
+          "q05": 1.0,
+          "q95": 8.0,
+          "median": 4.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 12.0,
+          "q05": 1.0,
+          "q95": 10.0,
+          "median": 4.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 9.0,
+          "q05": 1.0,
+          "q95": 8.0,
+          "median": 2.0
+        },
+        "Do_rong_duong_m": {
+          "min": 2.1,
+          "max": 11.4,
+          "q05": 2.5,
+          "q95": 11.0,
+          "median": 6.7
+        },
+        "Tuoi_nha_nam": {
+          "min": 1.0,
+          "max": 29.0,
+          "q05": 2.0,
+          "q95": 28.0,
+          "median": 15.0
+        }
+      },
+      "categorical": {
+        "Quan": [
+          "Bắc Từ Liêm"
+        ],
+        "Loai_duong": [
+          "Đường bê tông",
+          "Đường nhựa",
+          "Đường đất"
+        ],
+        "Mat_do_dan_cu": [
+          "Cao",
+          "Thấp",
+          "Trung bình"
+        ],
+        "An_ninh": [
+          "Bình thường",
+          "Kém (Hay mất trộm)",
+          "Rất tốt (VIP)",
+          "Tốt"
+        ],
+        "Tinh_trang_ngap": [
+          "Không ngập",
+          "Ngập nhẹ",
+          "Ngập sâu"
+        ],
+        "Noi_that": [
+          "Cơ bản",
+          "Full cao cấp",
+          "Nhà trống",
+          "Đồ gỗ xịn"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "Hay hỏng",
+          "Tốt"
+        ]
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          0,
+          1
+        ],
+        "Gan_Metro_Bus": [
+          0,
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ]
+      }
+    },
+    "Cầu Giấy": {
+      "n_rows": 1508,
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 6.0,
+          "max": 8.99,
+          "q05": 6.1335,
+          "q95": 8.846499999999999,
+          "median": 7.46
+        },
+        "Dien_tich_m2": {
+          "min": 25.0,
+          "max": 111.0,
+          "q05": 25.0,
+          "q95": 100.64999999999986,
+          "median": 62.0
+        },
+        "Mat_tien_m": {
+          "min": 3.4,
+          "max": 9.6,
+          "q05": 3.6,
+          "q95": 9.4,
+          "median": 6.4
+        },
+        "So_tang": {
+          "min": 1.0,
+          "max": 8.0,
+          "q05": 1.0,
+          "q95": 8.0,
+          "median": 4.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 12.0,
+          "q05": 1.0,
+          "q95": 11.0,
+          "median": 4.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 9.0,
+          "q05": 1.0,
+          "q95": 7.0,
+          "median": 2.0
+        },
+        "Do_rong_duong_m": {
+          "min": 2.1,
+          "max": 11.4,
+          "q05": 2.5,
+          "q95": 11.0,
+          "median": 6.6
+        },
+        "Tuoi_nha_nam": {
+          "min": 1.0,
+          "max": 29.0,
+          "q05": 2.0,
+          "q95": 28.0,
+          "median": 15.0
+        }
+      },
+      "categorical": {
+        "Quan": [
+          "Cầu Giấy"
+        ],
+        "Loai_duong": [
+          "Đường bê tông",
+          "Đường nhựa",
+          "Đường đất"
+        ],
+        "Mat_do_dan_cu": [
+          "Cao",
+          "Thấp",
+          "Trung bình"
+        ],
+        "An_ninh": [
+          "Bình thường",
+          "Kém (Hay mất trộm)",
+          "Rất tốt (VIP)",
+          "Tốt"
+        ],
+        "Tinh_trang_ngap": [
+          "Không ngập",
+          "Ngập nhẹ",
+          "Ngập sâu"
+        ],
+        "Noi_that": [
+          "Cơ bản",
+          "Full cao cấp",
+          "Nhà trống",
+          "Đồ gỗ xịn"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "Hay hỏng",
+          "Tốt"
+        ]
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          0,
+          1
+        ],
+        "Gan_Metro_Bus": [
+          0,
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ]
+      }
+    },
+    "Đống Đa": {
+      "n_rows": 1447,
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 3.0,
+          "max": 6.0,
+          "q05": 3.13,
+          "q95": 5.817,
+          "median": 4.42
+        },
+        "Dien_tich_m2": {
+          "min": 25.0,
+          "max": 111.0,
+          "q05": 25.0,
+          "q95": 102.0,
+          "median": 62.0
+        },
+        "Mat_tien_m": {
+          "min": 3.4,
+          "max": 9.6,
+          "q05": 3.7,
+          "q95": 9.4,
+          "median": 6.5
+        },
+        "So_tang": {
+          "min": 1.0,
+          "max": 8.0,
+          "q05": 1.0,
+          "q95": 8.0,
+          "median": 4.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 12.0,
+          "q05": 1.0,
+          "q95": 10.0,
+          "median": 4.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 9.0,
+          "q05": 1.0,
+          "q95": 8.0,
+          "median": 2.0
+        },
+        "Do_rong_duong_m": {
+          "min": 2.1,
+          "max": 11.4,
+          "q05": 2.5,
+          "q95": 11.0,
+          "median": 6.8
+        },
+        "Tuoi_nha_nam": {
+          "min": 1.0,
+          "max": 29.0,
+          "q05": 2.0,
+          "q95": 28.0,
+          "median": 15.0
+        }
+      },
+      "categorical": {
+        "Quan": [
+          "Đống Đa"
+        ],
+        "Loai_duong": [
+          "Đường bê tông",
+          "Đường nhựa",
+          "Đường đất"
+        ],
+        "Mat_do_dan_cu": [
+          "Cao",
+          "Thấp",
+          "Trung bình"
+        ],
+        "An_ninh": [
+          "Bình thường",
+          "Kém (Hay mất trộm)",
+          "Rất tốt (VIP)",
+          "Tốt"
+        ],
+        "Tinh_trang_ngap": [
+          "Không ngập",
+          "Ngập nhẹ",
+          "Ngập sâu"
+        ],
+        "Noi_that": [
+          "Cơ bản",
+          "Full cao cấp",
+          "Nhà trống",
+          "Đồ gỗ xịn"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "Hay hỏng",
+          "Tốt"
+        ]
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          0,
+          1
+        ],
+        "Gan_Metro_Bus": [
+          0,
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ]
+      }
+    },
+    "Hà Đông": {
+      "n_rows": 580,
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 12.02,
+          "max": 15.86,
+          "q05": 12.25,
+          "q95": 15.6405,
+          "median": 13.96
+        },
+        "Dien_tich_m2": {
+          "min": 25.0,
+          "max": 111.0,
+          "q05": 38.0,
+          "q95": 104.0,
+          "median": 68.0
+        },
+        "Mat_tien_m": {
+          "min": 3.4,
+          "max": 9.6,
+          "q05": 3.7,
+          "q95": 9.5,
+          "median": 6.7
+        },
+        "So_tang": {
+          "min": 1.0,
+          "max": 8.0,
+          "q05": 1.0,
+          "q95": 8.0,
+          "median": 4.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 12.0,
+          "q05": 1.0,
+          "q95": 10.049999999999955,
+          "median": 3.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 9.0,
+          "q05": 1.0,
+          "q95": 7.0,
+          "median": 2.0
+        },
+        "Do_rong_duong_m": {
+          "min": 2.1,
+          "max": 11.4,
+          "q05": 2.6,
+          "q95": 11.0,
+          "median": 6.9
+        },
+        "Tuoi_nha_nam": {
+          "min": 1.0,
+          "max": 29.0,
+          "q05": 1.0,
+          "q95": 27.0,
+          "median": 15.0
+        }
+      },
+      "categorical": {
+        "Quan": [
+          "Hà Đông"
+        ],
+        "Loai_duong": [
+          "Đường bê tông",
+          "Đường nhựa",
+          "Đường đất"
+        ],
+        "Mat_do_dan_cu": [
+          "Cao",
+          "Thấp",
+          "Trung bình"
+        ],
+        "An_ninh": [
+          "Bình thường",
+          "Kém (Hay mất trộm)",
+          "Rất tốt (VIP)",
+          "Tốt"
+        ],
+        "Tinh_trang_ngap": [
+          "Không ngập",
+          "Ngập nhẹ",
+          "Ngập sâu"
+        ],
+        "Noi_that": [
+          "Cơ bản",
+          "Full cao cấp",
+          "Nhà trống",
+          "Đồ gỗ xịn"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "Hay hỏng",
+          "Tốt"
+        ]
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          0,
+          1
+        ],
+        "Gan_Metro_Bus": [
+          0,
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ]
+      }
+    },
+    "Hai Bà Trưng": {
+      "n_rows": 1482,
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 0.0,
+          "max": 0.0,
+          "q05": 0.0,
+          "q95": 0.0,
+          "median": 0.0
+        },
+        "Dien_tich_m2": {
+          "min": 25.0,
+          "max": 111.0,
+          "q05": 25.0,
+          "q95": 100.0,
+          "median": 61.0
+        },
+        "Mat_tien_m": {
+          "min": 3.4,
+          "max": 9.6,
+          "q05": 3.7,
+          "q95": 9.3,
+          "median": 6.4
+        },
+        "So_tang": {
+          "min": 1.0,
+          "max": 8.0,
+          "q05": 1.0,
+          "q95": 8.0,
+          "median": 4.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 12.0,
+          "q05": 1.0,
+          "q95": 10.0,
+          "median": 4.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 9.0,
+          "q05": 1.0,
+          "q95": 7.0,
+          "median": 2.0
+        },
+        "Do_rong_duong_m": {
+          "min": 2.1,
+          "max": 11.4,
+          "q05": 2.5,
+          "q95": 11.1,
+          "median": 7.1
+        },
+        "Tuoi_nha_nam": {
+          "min": 1.0,
+          "max": 29.0,
+          "q05": 2.0,
+          "q95": 28.0,
+          "median": 15.0
+        }
+      },
+      "categorical": {
+        "Quan": [
+          "Hai Bà Trưng"
+        ],
+        "Loai_duong": [
+          "Đường bê tông",
+          "Đường nhựa",
+          "Đường đất"
+        ],
+        "Mat_do_dan_cu": [
+          "Cao",
+          "Thấp",
+          "Trung bình"
+        ],
+        "An_ninh": [
+          "Bình thường",
+          "Kém (Hay mất trộm)",
+          "Rất tốt (VIP)",
+          "Tốt"
+        ],
+        "Tinh_trang_ngap": [
+          "Không ngập",
+          "Ngập nhẹ",
+          "Ngập sâu"
+        ],
+        "Noi_that": [
+          "Cơ bản",
+          "Full cao cấp",
+          "Nhà trống",
+          "Đồ gỗ xịn"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "Hay hỏng",
+          "Tốt"
+        ]
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          0,
+          1
+        ],
+        "Gan_Metro_Bus": [
+          0,
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ]
+      },
+      "force": {
+        "Khoang_cach_TT_km": 0.0
+      }
+    },
+    "Hoàn Kiếm": {
+      "n_rows": 909,
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 0.1,
+          "max": 2.0,
+          "q05": 0.19,
+          "q95": 1.915999999999999,
+          "median": 1.15
+        },
+        "Dien_tich_m2": {
+          "min": 25.0,
+          "max": 108.0,
+          "q05": 25.0,
+          "q95": 79.59999999999991,
+          "median": 47.0
+        },
+        "Mat_tien_m": {
+          "min": 3.4,
+          "max": 9.6,
+          "q05": 3.7,
+          "q95": 9.3,
+          "median": 6.6
+        },
+        "So_tang": {
+          "min": 1.0,
+          "max": 8.0,
+          "q05": 1.0,
+          "q95": 8.0,
+          "median": 4.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 12.0,
+          "q05": 1.0,
+          "q95": 10.0,
+          "median": 4.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 9.0,
+          "q05": 1.0,
+          "q95": 7.0,
+          "median": 3.0
+        },
+        "Do_rong_duong_m": {
+          "min": 2.1,
+          "max": 11.4,
+          "q05": 2.5,
+          "q95": 11.0,
+          "median": 6.3
+        },
+        "Tuoi_nha_nam": {
+          "min": 1.0,
+          "max": 29.0,
+          "q05": 2.0,
+          "q95": 28.0,
+          "median": 15.0
+        }
+      },
+      "categorical": {
+        "Quan": [
+          "Hoàn Kiếm"
+        ],
+        "Loai_duong": [
+          "Đường bê tông",
+          "Đường nhựa",
+          "Đường đất"
+        ],
+        "Mat_do_dan_cu": [
+          "Cao",
+          "Thấp",
+          "Trung bình"
+        ],
+        "An_ninh": [
+          "Bình thường",
+          "Kém (Hay mất trộm)",
+          "Rất tốt (VIP)",
+          "Tốt"
+        ],
+        "Tinh_trang_ngap": [
+          "Không ngập",
+          "Ngập nhẹ",
+          "Ngập sâu"
+        ],
+        "Noi_that": [
+          "Cơ bản",
+          "Full cao cấp",
+          "Nhà trống",
+          "Đồ gỗ xịn"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "Hay hỏng",
+          "Tốt"
+        ]
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          0,
+          1
+        ],
+        "Gan_Metro_Bus": [
+          0,
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ]
+      }
+    },
+    "Hoàng Mai": {
+      "n_rows": 1350,
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 5.0,
+          "max": 11.99,
+          "q05": 5.3645000000000005,
+          "q95": 11.501,
+          "median": 8.315000000000001
+        },
+        "Dien_tich_m2": {
+          "min": 25.0,
+          "max": 111.0,
+          "q05": 30.0,
+          "q95": 102.0,
+          "median": 65.5
+        },
+        "Mat_tien_m": {
+          "min": 3.4,
+          "max": 9.6,
+          "q05": 3.7,
+          "q95": 9.4,
+          "median": 6.6
+        },
+        "So_tang": {
+          "min": 1.0,
+          "max": 8.0,
+          "q05": 1.0,
+          "q95": 8.0,
+          "median": 4.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 12.0,
+          "q05": 1.0,
+          "q95": 10.0,
+          "median": 4.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 9.0,
+          "q05": 1.0,
+          "q95": 8.0,
+          "median": 2.0
+        },
+        "Do_rong_duong_m": {
+          "min": 2.1,
+          "max": 11.4,
+          "q05": 2.4,
+          "q95": 11.0,
+          "median": 6.9
+        },
+        "Tuoi_nha_nam": {
+          "min": 1.0,
+          "max": 29.0,
+          "q05": 2.0,
+          "q95": 28.0,
+          "median": 15.0
+        }
+      },
+      "categorical": {
+        "Quan": [
+          "Hoàng Mai"
+        ],
+        "Loai_duong": [
+          "Đường bê tông",
+          "Đường nhựa",
+          "Đường đất"
+        ],
+        "Mat_do_dan_cu": [
+          "Cao",
+          "Thấp",
+          "Trung bình"
+        ],
+        "An_ninh": [
+          "Bình thường",
+          "Kém (Hay mất trộm)",
+          "Rất tốt (VIP)",
+          "Tốt"
+        ],
+        "Tinh_trang_ngap": [
+          "Không ngập",
+          "Ngập nhẹ",
+          "Ngập sâu"
+        ],
+        "Noi_that": [
+          "Cơ bản",
+          "Full cao cấp",
+          "Nhà trống",
+          "Đồ gỗ xịn"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "Hay hỏng",
+          "Tốt"
+        ]
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          0,
+          1
+        ],
+        "Gan_Metro_Bus": [
+          0,
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ]
+      }
+    },
+    "Long Biên": {
+      "n_rows": 1384,
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 4.0,
+          "max": 15.0,
+          "q05": 4.4045000000000005,
+          "q95": 14.43,
+          "median": 9.265
+        },
+        "Dien_tich_m2": {
+          "min": 25.0,
+          "max": 111.0,
+          "q05": 25.0,
+          "q95": 103.0,
+          "median": 65.0
+        },
+        "Mat_tien_m": {
+          "min": 3.4,
+          "max": 9.6,
+          "q05": 3.7,
+          "q95": 9.3,
+          "median": 6.5
+        },
+        "So_tang": {
+          "min": 1.0,
+          "max": 8.0,
+          "q05": 1.0,
+          "q95": 8.0,
+          "median": 4.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 12.0,
+          "q05": 1.0,
+          "q95": 10.0,
+          "median": 4.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 9.0,
+          "q05": 1.0,
+          "q95": 8.0,
+          "median": 2.0
+        },
+        "Do_rong_duong_m": {
+          "min": 2.1,
+          "max": 11.4,
+          "q05": 2.5,
+          "q95": 11.0,
+          "median": 6.8
+        },
+        "Tuoi_nha_nam": {
+          "min": 1.0,
+          "max": 29.0,
+          "q05": 2.0,
+          "q95": 28.0,
+          "median": 15.0
+        }
+      },
+      "categorical": {
+        "Quan": [
+          "Long Biên"
+        ],
+        "Loai_duong": [
+          "Đường bê tông",
+          "Đường nhựa",
+          "Đường đất"
+        ],
+        "Mat_do_dan_cu": [
+          "Cao",
+          "Thấp",
+          "Trung bình"
+        ],
+        "An_ninh": [
+          "Bình thường",
+          "Kém (Hay mất trộm)",
+          "Rất tốt (VIP)",
+          "Tốt"
+        ],
+        "Tinh_trang_ngap": [
+          "Không ngập",
+          "Ngập nhẹ",
+          "Ngập sâu"
+        ],
+        "Noi_that": [
+          "Cơ bản",
+          "Full cao cấp",
+          "Nhà trống",
+          "Đồ gỗ xịn"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "Hay hỏng",
+          "Tốt"
+        ]
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          0,
+          1
+        ],
+        "Gan_Metro_Bus": [
+          0,
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ]
+      }
+    },
+    "Nam Từ Liêm": {
+      "n_rows": 1254,
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 10.0,
+          "max": 15.86,
+          "q05": 10.2265,
+          "q95": 15.5735,
+          "median": 12.98
+        },
+        "Dien_tich_m2": {
+          "min": 25.0,
+          "max": 111.0,
+          "q05": 31.0,
+          "q95": 103.0,
+          "median": 65.0
+        },
+        "Mat_tien_m": {
+          "min": 3.4,
+          "max": 9.6,
+          "q05": 3.7,
+          "q95": 9.4,
+          "median": 6.5
+        },
+        "So_tang": {
+          "min": 1.0,
+          "max": 8.0,
+          "q05": 1.0,
+          "q95": 8.0,
+          "median": 4.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 12.0,
+          "q05": 1.0,
+          "q95": 11.0,
+          "median": 4.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 9.0,
+          "q05": 1.0,
+          "q95": 7.0,
+          "median": 3.0
+        },
+        "Do_rong_duong_m": {
+          "min": 2.1,
+          "max": 11.4,
+          "q05": 2.565000000000001,
+          "q95": 11.1,
+          "median": 7.0
+        },
+        "Tuoi_nha_nam": {
+          "min": 1.0,
+          "max": 29.0,
+          "q05": 2.0,
+          "q95": 28.0,
+          "median": 15.0
+        }
+      },
+      "categorical": {
+        "Quan": [
+          "Nam Từ Liêm"
+        ],
+        "Loai_duong": [
+          "Đường bê tông",
+          "Đường nhựa",
+          "Đường đất"
+        ],
+        "Mat_do_dan_cu": [
+          "Cao",
+          "Thấp",
+          "Trung bình"
+        ],
+        "An_ninh": [
+          "Bình thường",
+          "Kém (Hay mất trộm)",
+          "Rất tốt (VIP)",
+          "Tốt"
+        ],
+        "Tinh_trang_ngap": [
+          "Không ngập",
+          "Ngập nhẹ",
+          "Ngập sâu"
+        ],
+        "Noi_that": [
+          "Cơ bản",
+          "Full cao cấp",
+          "Nhà trống",
+          "Đồ gỗ xịn"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "Hay hỏng",
+          "Tốt"
+        ]
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          0,
+          1
+        ],
+        "Gan_Metro_Bus": [
+          0,
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ]
+      }
+    },
+    "Thanh Xuân": {
+      "n_rows": 1420,
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 6.0,
+          "max": 9.99,
+          "q05": 6.17,
+          "q95": 9.81,
+          "median": 8.05
+        },
+        "Dien_tich_m2": {
+          "min": 25.0,
+          "max": 111.0,
+          "q05": 25.0,
+          "q95": 102.0,
+          "median": 63.0
+        },
+        "Mat_tien_m": {
+          "min": 3.4,
+          "max": 9.6,
+          "q05": 3.7,
+          "q95": 9.4,
+          "median": 6.4
+        },
+        "So_tang": {
+          "min": 1.0,
+          "max": 8.0,
+          "q05": 1.0,
+          "q95": 8.0,
+          "median": 4.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 12.0,
+          "q05": 1.0,
+          "q95": 10.0,
+          "median": 4.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 9.0,
+          "q05": 1.0,
+          "q95": 7.0,
+          "median": 2.0
+        },
+        "Do_rong_duong_m": {
+          "min": 2.1,
+          "max": 11.4,
+          "q05": 2.5,
+          "q95": 11.0,
+          "median": 6.9
+        },
+        "Tuoi_nha_nam": {
+          "min": 1.0,
+          "max": 29.0,
+          "q05": 2.0,
+          "q95": 28.0,
+          "median": 15.0
+        }
+      },
+      "categorical": {
+        "Quan": [
+          "Thanh Xuân"
+        ],
+        "Loai_duong": [
+          "Đường bê tông",
+          "Đường nhựa",
+          "Đường đất"
+        ],
+        "Mat_do_dan_cu": [
+          "Cao",
+          "Thấp",
+          "Trung bình"
+        ],
+        "An_ninh": [
+          "Bình thường",
+          "Kém (Hay mất trộm)",
+          "Rất tốt (VIP)",
+          "Tốt"
+        ],
+        "Tinh_trang_ngap": [
+          "Không ngập",
+          "Ngập nhẹ",
+          "Ngập sâu"
+        ],
+        "Noi_that": [
+          "Cơ bản",
+          "Full cao cấp",
+          "Nhà trống",
+          "Đồ gỗ xịn"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "Hay hỏng",
+          "Tốt"
+        ]
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          0,
+          1
+        ],
+        "Gan_Metro_Bus": [
+          0,
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ]
+      }
+    },
+    "Tây Hồ": {
+      "n_rows": 1304,
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 4.0,
+          "max": 8.0,
+          "q05": 4.23,
+          "q95": 7.8,
+          "median": 6.025
+        },
+        "Dien_tich_m2": {
+          "min": 25.0,
+          "max": 111.0,
+          "q05": 25.0,
+          "q95": 96.0,
+          "median": 58.0
+        },
+        "Mat_tien_m": {
+          "min": 3.4,
+          "max": 9.6,
+          "q05": 3.7,
+          "q95": 9.3,
+          "median": 6.3
+        },
+        "So_tang": {
+          "min": 1.0,
+          "max": 8.0,
+          "q05": 1.0,
+          "q95": 8.0,
+          "median": 4.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 12.0,
+          "q05": 1.0,
+          "q95": 10.0,
+          "median": 4.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 9.0,
+          "q05": 1.0,
+          "q95": 7.0,
+          "median": 2.0
+        },
+        "Do_rong_duong_m": {
+          "min": 2.1,
+          "max": 11.4,
+          "q05": 2.4150000000000005,
+          "q95": 11.0,
+          "median": 6.5
+        },
+        "Tuoi_nha_nam": {
+          "min": 1.0,
+          "max": 29.0,
+          "q05": 2.0,
+          "q95": 28.0,
+          "median": 15.0
+        }
+      },
+      "categorical": {
+        "Quan": [
+          "Tây Hồ"
+        ],
+        "Loai_duong": [
+          "Đường bê tông",
+          "Đường nhựa",
+          "Đường đất"
+        ],
+        "Mat_do_dan_cu": [
+          "Cao",
+          "Thấp",
+          "Trung bình"
+        ],
+        "An_ninh": [
+          "Bình thường",
+          "Kém (Hay mất trộm)",
+          "Rất tốt (VIP)",
+          "Tốt"
+        ],
+        "Tinh_trang_ngap": [
+          "Không ngập",
+          "Ngập nhẹ",
+          "Ngập sâu"
+        ],
+        "Noi_that": [
+          "Cơ bản",
+          "Full cao cấp",
+          "Nhà trống",
+          "Đồ gỗ xịn"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "Hay hỏng",
+          "Tốt"
+        ]
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          0,
+          1
+        ],
+        "Gan_Metro_Bus": [
+          0,
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ]
+      }
+    },
+    "Sơn Tây": {
+      "n_rows": 0,
+      "numeric": {
+        "Khoang_cach_TT_km": null,
+        "Dien_tich_m2": null,
+        "Mat_tien_m": null,
+        "So_tang": null,
+        "So_phong_ngu": null,
+        "So_phong_tam": null,
+        "Do_rong_duong_m": null,
+        "Tuoi_nha_nam": null
+      },
+      "categorical": {
+        "Quan": [],
+        "Loai_duong": [],
+        "Mat_do_dan_cu": [],
+        "An_ninh": [],
+        "Tinh_trang_ngap": [],
+        "Noi_that": [],
+        "Tinh_trang_Dien_Nuoc": []
+      },
+      "binary": {
+        "O_to_vao": [],
+        "Co_Gara": [],
+        "Co_San_thuong": [],
+        "Gan_Metro_Bus": [],
+        "Gan_nghia_trang_bai_rac": []
+      }
+    },
+    "Ba Vì": {
+      "n_rows": 0,
+      "numeric": {
+        "Khoang_cach_TT_km": null,
+        "Dien_tich_m2": null,
+        "Mat_tien_m": null,
+        "So_tang": null,
+        "So_phong_ngu": null,
+        "So_phong_tam": null,
+        "Do_rong_duong_m": null,
+        "Tuoi_nha_nam": null
+      },
+      "categorical": {
+        "Quan": [],
+        "Loai_duong": [],
+        "Mat_do_dan_cu": [],
+        "An_ninh": [],
+        "Tinh_trang_ngap": [],
+        "Noi_that": [],
+        "Tinh_trang_Dien_Nuoc": []
+      },
+      "binary": {
+        "O_to_vao": [],
+        "Co_Gara": [],
+        "Co_San_thuong": [],
+        "Gan_Metro_Bus": [],
+        "Gan_nghia_trang_bai_rac": []
+      }
+    },
+    "Chương Mỹ": {
+      "n_rows": 0,
+      "numeric": {
+        "Khoang_cach_TT_km": null,
+        "Dien_tich_m2": null,
+        "Mat_tien_m": null,
+        "So_tang": null,
+        "So_phong_ngu": null,
+        "So_phong_tam": null,
+        "Do_rong_duong_m": null,
+        "Tuoi_nha_nam": null
+      },
+      "categorical": {
+        "Quan": [],
+        "Loai_duong": [],
+        "Mat_do_dan_cu": [],
+        "An_ninh": [],
+        "Tinh_trang_ngap": [],
+        "Noi_that": [],
+        "Tinh_trang_Dien_Nuoc": []
+      },
+      "binary": {
+        "O_to_vao": [],
+        "Co_Gara": [],
+        "Co_San_thuong": [],
+        "Gan_Metro_Bus": [],
+        "Gan_nghia_trang_bai_rac": []
+      }
+    },
+    "Đan Phượng": {
+      "n_rows": 0,
+      "numeric": {
+        "Khoang_cach_TT_km": null,
+        "Dien_tich_m2": null,
+        "Mat_tien_m": null,
+        "So_tang": null,
+        "So_phong_ngu": null,
+        "So_phong_tam": null,
+        "Do_rong_duong_m": null,
+        "Tuoi_nha_nam": null
+      },
+      "categorical": {
+        "Quan": [],
+        "Loai_duong": [],
+        "Mat_do_dan_cu": [],
+        "An_ninh": [],
+        "Tinh_trang_ngap": [],
+        "Noi_that": [],
+        "Tinh_trang_Dien_Nuoc": []
+      },
+      "binary": {
+        "O_to_vao": [],
+        "Co_Gara": [],
+        "Co_San_thuong": [],
+        "Gan_Metro_Bus": [],
+        "Gan_nghia_trang_bai_rac": []
+      }
+    },
+    "Đông Anh": {
+      "n_rows": 0,
+      "numeric": {
+        "Khoang_cach_TT_km": null,
+        "Dien_tich_m2": null,
+        "Mat_tien_m": null,
+        "So_tang": null,
+        "So_phong_ngu": null,
+        "So_phong_tam": null,
+        "Do_rong_duong_m": null,
+        "Tuoi_nha_nam": null
+      },
+      "categorical": {
+        "Quan": [],
+        "Loai_duong": [],
+        "Mat_do_dan_cu": [],
+        "An_ninh": [],
+        "Tinh_trang_ngap": [],
+        "Noi_that": [],
+        "Tinh_trang_Dien_Nuoc": []
+      },
+      "binary": {
+        "O_to_vao": [],
+        "Co_Gara": [],
+        "Co_San_thuong": [],
+        "Gan_Metro_Bus": [],
+        "Gan_nghia_trang_bai_rac": []
+      }
+    },
+    "Gia Lâm": {
+      "n_rows": 0,
+      "numeric": {
+        "Khoang_cach_TT_km": null,
+        "Dien_tich_m2": null,
+        "Mat_tien_m": null,
+        "So_tang": null,
+        "So_phong_ngu": null,
+        "So_phong_tam": null,
+        "Do_rong_duong_m": null,
+        "Tuoi_nha_nam": null
+      },
+      "categorical": {
+        "Quan": [],
+        "Loai_duong": [],
+        "Mat_do_dan_cu": [],
+        "An_ninh": [],
+        "Tinh_trang_ngap": [],
+        "Noi_that": [],
+        "Tinh_trang_Dien_Nuoc": []
+      },
+      "binary": {
+        "O_to_vao": [],
+        "Co_Gara": [],
+        "Co_San_thuong": [],
+        "Gan_Metro_Bus": [],
+        "Gan_nghia_trang_bai_rac": []
+      }
+    },
+    "Hoài Đức": {
+      "n_rows": 0,
+      "numeric": {
+        "Khoang_cach_TT_km": null,
+        "Dien_tich_m2": null,
+        "Mat_tien_m": null,
+        "So_tang": null,
+        "So_phong_ngu": null,
+        "So_phong_tam": null,
+        "Do_rong_duong_m": null,
+        "Tuoi_nha_nam": null
+      },
+      "categorical": {
+        "Quan": [],
+        "Loai_duong": [],
+        "Mat_do_dan_cu": [],
+        "An_ninh": [],
+        "Tinh_trang_ngap": [],
+        "Noi_that": [],
+        "Tinh_trang_Dien_Nuoc": []
+      },
+      "binary": {
+        "O_to_vao": [],
+        "Co_Gara": [],
+        "Co_San_thuong": [],
+        "Gan_Metro_Bus": [],
+        "Gan_nghia_trang_bai_rac": []
+      }
+    },
+    "Mê Linh": {
+      "n_rows": 0,
+      "numeric": {
+        "Khoang_cach_TT_km": null,
+        "Dien_tich_m2": null,
+        "Mat_tien_m": null,
+        "So_tang": null,
+        "So_phong_ngu": null,
+        "So_phong_tam": null,
+        "Do_rong_duong_m": null,
+        "Tuoi_nha_nam": null
+      },
+      "categorical": {
+        "Quan": [],
+        "Loai_duong": [],
+        "Mat_do_dan_cu": [],
+        "An_ninh": [],
+        "Tinh_trang_ngap": [],
+        "Noi_that": [],
+        "Tinh_trang_Dien_Nuoc": []
+      },
+      "binary": {
+        "O_to_vao": [],
+        "Co_Gara": [],
+        "Co_San_thuong": [],
+        "Gan_Metro_Bus": [],
+        "Gan_nghia_trang_bai_rac": []
+      }
+    },
+    "Mỹ Đức": {
+      "n_rows": 0,
+      "numeric": {
+        "Khoang_cach_TT_km": null,
+        "Dien_tich_m2": null,
+        "Mat_tien_m": null,
+        "So_tang": null,
+        "So_phong_ngu": null,
+        "So_phong_tam": null,
+        "Do_rong_duong_m": null,
+        "Tuoi_nha_nam": null
+      },
+      "categorical": {
+        "Quan": [],
+        "Loai_duong": [],
+        "Mat_do_dan_cu": [],
+        "An_ninh": [],
+        "Tinh_trang_ngap": [],
+        "Noi_that": [],
+        "Tinh_trang_Dien_Nuoc": []
+      },
+      "binary": {
+        "O_to_vao": [],
+        "Co_Gara": [],
+        "Co_San_thuong": [],
+        "Gan_Metro_Bus": [],
+        "Gan_nghia_trang_bai_rac": []
+      }
+    },
+    "Phú Xuyên": {
+      "n_rows": 0,
+      "numeric": {
+        "Khoang_cach_TT_km": null,
+        "Dien_tich_m2": null,
+        "Mat_tien_m": null,
+        "So_tang": null,
+        "So_phong_ngu": null,
+        "So_phong_tam": null,
+        "Do_rong_duong_m": null,
+        "Tuoi_nha_nam": null
+      },
+      "categorical": {
+        "Quan": [],
+        "Loai_duong": [],
+        "Mat_do_dan_cu": [],
+        "An_ninh": [],
+        "Tinh_trang_ngap": [],
+        "Noi_that": [],
+        "Tinh_trang_Dien_Nuoc": []
+      },
+      "binary": {
+        "O_to_vao": [],
+        "Co_Gara": [],
+        "Co_San_thuong": [],
+        "Gan_Metro_Bus": [],
+        "Gan_nghia_trang_bai_rac": []
+      }
+    },
+    "Phúc Thọ": {
+      "n_rows": 0,
+      "numeric": {
+        "Khoang_cach_TT_km": null,
+        "Dien_tich_m2": null,
+        "Mat_tien_m": null,
+        "So_tang": null,
+        "So_phong_ngu": null,
+        "So_phong_tam": null,
+        "Do_rong_duong_m": null,
+        "Tuoi_nha_nam": null
+      },
+      "categorical": {
+        "Quan": [],
+        "Loai_duong": [],
+        "Mat_do_dan_cu": [],
+        "An_ninh": [],
+        "Tinh_trang_ngap": [],
+        "Noi_that": [],
+        "Tinh_trang_Dien_Nuoc": []
+      },
+      "binary": {
+        "O_to_vao": [],
+        "Co_Gara": [],
+        "Co_San_thuong": [],
+        "Gan_Metro_Bus": [],
+        "Gan_nghia_trang_bai_rac": []
+      }
+    },
+    "Quốc Oai": {
+      "n_rows": 0,
+      "numeric": {
+        "Khoang_cach_TT_km": null,
+        "Dien_tich_m2": null,
+        "Mat_tien_m": null,
+        "So_tang": null,
+        "So_phong_ngu": null,
+        "So_phong_tam": null,
+        "Do_rong_duong_m": null,
+        "Tuoi_nha_nam": null
+      },
+      "categorical": {
+        "Quan": [],
+        "Loai_duong": [],
+        "Mat_do_dan_cu": [],
+        "An_ninh": [],
+        "Tinh_trang_ngap": [],
+        "Noi_that": [],
+        "Tinh_trang_Dien_Nuoc": []
+      },
+      "binary": {
+        "O_to_vao": [],
+        "Co_Gara": [],
+        "Co_San_thuong": [],
+        "Gan_Metro_Bus": [],
+        "Gan_nghia_trang_bai_rac": []
+      }
+    },
+    "Sóc Sơn": {
+      "n_rows": 0,
+      "numeric": {
+        "Khoang_cach_TT_km": null,
+        "Dien_tich_m2": null,
+        "Mat_tien_m": null,
+        "So_tang": null,
+        "So_phong_ngu": null,
+        "So_phong_tam": null,
+        "Do_rong_duong_m": null,
+        "Tuoi_nha_nam": null
+      },
+      "categorical": {
+        "Quan": [],
+        "Loai_duong": [],
+        "Mat_do_dan_cu": [],
+        "An_ninh": [],
+        "Tinh_trang_ngap": [],
+        "Noi_that": [],
+        "Tinh_trang_Dien_Nuoc": []
+      },
+      "binary": {
+        "O_to_vao": [],
+        "Co_Gara": [],
+        "Co_San_thuong": [],
+        "Gan_Metro_Bus": [],
+        "Gan_nghia_trang_bai_rac": []
+      }
+    },
+    "Thạch Thất": {
+      "n_rows": 0,
+      "numeric": {
+        "Khoang_cach_TT_km": null,
+        "Dien_tich_m2": null,
+        "Mat_tien_m": null,
+        "So_tang": null,
+        "So_phong_ngu": null,
+        "So_phong_tam": null,
+        "Do_rong_duong_m": null,
+        "Tuoi_nha_nam": null
+      },
+      "categorical": {
+        "Quan": [],
+        "Loai_duong": [],
+        "Mat_do_dan_cu": [],
+        "An_ninh": [],
+        "Tinh_trang_ngap": [],
+        "Noi_that": [],
+        "Tinh_trang_Dien_Nuoc": []
+      },
+      "binary": {
+        "O_to_vao": [],
+        "Co_Gara": [],
+        "Co_San_thuong": [],
+        "Gan_Metro_Bus": [],
+        "Gan_nghia_trang_bai_rac": []
+      }
+    },
+    "Thanh Oai": {
+      "n_rows": 0,
+      "numeric": {
+        "Khoang_cach_TT_km": null,
+        "Dien_tich_m2": null,
+        "Mat_tien_m": null,
+        "So_tang": null,
+        "So_phong_ngu": null,
+        "So_phong_tam": null,
+        "Do_rong_duong_m": null,
+        "Tuoi_nha_nam": null
+      },
+      "categorical": {
+        "Quan": [],
+        "Loai_duong": [],
+        "Mat_do_dan_cu": [],
+        "An_ninh": [],
+        "Tinh_trang_ngap": [],
+        "Noi_that": [],
+        "Tinh_trang_Dien_Nuoc": []
+      },
+      "binary": {
+        "O_to_vao": [],
+        "Co_Gara": [],
+        "Co_San_thuong": [],
+        "Gan_Metro_Bus": [],
+        "Gan_nghia_trang_bai_rac": []
+      }
+    },
+    "Thanh Trì": {
+      "n_rows": 0,
+      "numeric": {
+        "Khoang_cach_TT_km": null,
+        "Dien_tich_m2": null,
+        "Mat_tien_m": null,
+        "So_tang": null,
+        "So_phong_ngu": null,
+        "So_phong_tam": null,
+        "Do_rong_duong_m": null,
+        "Tuoi_nha_nam": null
+      },
+      "categorical": {
+        "Quan": [],
+        "Loai_duong": [],
+        "Mat_do_dan_cu": [],
+        "An_ninh": [],
+        "Tinh_trang_ngap": [],
+        "Noi_that": [],
+        "Tinh_trang_Dien_Nuoc": []
+      },
+      "binary": {
+        "O_to_vao": [],
+        "Co_Gara": [],
+        "Co_San_thuong": [],
+        "Gan_Metro_Bus": [],
+        "Gan_nghia_trang_bai_rac": []
+      }
+    },
+    "Thường Tín": {
+      "n_rows": 0,
+      "numeric": {
+        "Khoang_cach_TT_km": null,
+        "Dien_tich_m2": null,
+        "Mat_tien_m": null,
+        "So_tang": null,
+        "So_phong_ngu": null,
+        "So_phong_tam": null,
+        "Do_rong_duong_m": null,
+        "Tuoi_nha_nam": null
+      },
+      "categorical": {
+        "Quan": [],
+        "Loai_duong": [],
+        "Mat_do_dan_cu": [],
+        "An_ninh": [],
+        "Tinh_trang_ngap": [],
+        "Noi_that": [],
+        "Tinh_trang_Dien_Nuoc": []
+      },
+      "binary": {
+        "O_to_vao": [],
+        "Co_Gara": [],
+        "Co_San_thuong": [],
+        "Gan_Metro_Bus": [],
+        "Gan_nghia_trang_bai_rac": []
+      }
+    },
+    "Ứng Hòa": {
+      "n_rows": 0,
+      "numeric": {
+        "Khoang_cach_TT_km": null,
+        "Dien_tich_m2": null,
+        "Mat_tien_m": null,
+        "So_tang": null,
+        "So_phong_ngu": null,
+        "So_phong_tam": null,
+        "Do_rong_duong_m": null,
+        "Tuoi_nha_nam": null
+      },
+      "categorical": {
+        "Quan": [],
+        "Loai_duong": [],
+        "Mat_do_dan_cu": [],
+        "An_ninh": [],
+        "Tinh_trang_ngap": [],
+        "Noi_that": [],
+        "Tinh_trang_Dien_Nuoc": []
+      },
+      "binary": {
+        "O_to_vao": [],
+        "Co_Gara": [],
+        "Co_San_thuong": [],
+        "Gan_Metro_Bus": [],
+        "Gan_nghia_trang_bai_rac": []
+      }
+    }
+  },
+  "cleaning_report": {
+    "raw_rows": 50000,
+    "rows_after_valid_quan": 50000,
+    "rows_after_dropna": 50000,
+    "rows_after_range_filter": 50000,
+    "rows_before_outlier": 50000,
+    "rows_after_outlier": 27643,
+    "outlier_q": 0.06,
+    "rows_after_sampling": 15000,
+    "max_rows": 15000,
+    "districts_in_data": [
+      "Ba Đình",
+      "Bắc Từ Liêm",
+      "Cầu Giấy",
+      "Hai Bà Trưng",
+      "Hoàn Kiếm",
+      "Hoàng Mai",
+      "Hà Đông",
+      "Long Biên",
+      "Nam Từ Liêm",
+      "Thanh Xuân",
+      "Tây Hồ",
+      "Đống Đa"
+    ],
+    "n_districts_in_data": 12,
+    "missing_units": [
+      "Ba Vì",
+      "Chương Mỹ",
+      "Gia Lâm",
+      "Hoài Đức",
+      "Mê Linh",
+      "Mỹ Đức",
+      "Phú Xuyên",
+      "Phúc Thọ",
+      "Quốc Oai",
+      "Sóc Sơn",
+      "Sơn Tây",
+      "Thanh Oai",
+      "Thanh Trì",
+      "Thường Tín",
+      "Thạch Thất",
+      "Đan Phượng",
+      "Đông Anh",
+      "Ứng Hòa"
+    ]
+  }
+}

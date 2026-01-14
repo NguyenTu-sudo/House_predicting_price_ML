@@ -1,260 +1,321 @@
-import pandas as pd
+"""model_training.py
+
+Huấn luyện mô hình dự đoán giá nhà Hà Nội dựa trên dataset đã PROCESSED.
+
+Theo pipeline mới, dữ liệu sau khi làm sạch mặc định còn khoảng ~15k dòng,
+vì vậy ta có thể thử thêm nhiều thuật toán để giảm sai số.
+
+Đầu vào mặc định:
+    - HN_Houseprice_Processed.csv  (tạo bởi preprocessing.py)
+
+Đầu ra:
+    - best_model.pkl          : model tốt nhất (train trên log(1+price))
+    - model_features.pkl      : danh sách cột feature dùng để train
+    - model_comparison.csv    : bảng so sánh các mô hình
+
+Chạy:
+    python model_training.py
+
+"""
+
+from __future__ import annotations
+
+import argparse
+import os
+from pathlib import Path
+
+import joblib
 import numpy as np
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression, Ridge
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.neighbors import KNeighborsRegressor
+import pandas as pd
+
+# Giới hạn số luồng mặc định để tránh tình trạng quá tải trên máy yếu / môi trường bị giới hạn.
+os.environ.setdefault("OMP_NUM_THREADS", "1")
+os.environ.setdefault("OPENBLAS_NUM_THREADS", "1")
+os.environ.setdefault("MKL_NUM_THREADS", "1")
+os.environ.setdefault("VECLIB_MAXIMUM_THREADS", "1")
+os.environ.setdefault("NUMEXPR_NUM_THREADS", "1")
+
+from sklearn.model_selection import train_test_split, RandomizedSearchCV
+from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
-import xgboost as xgb
+
+from sklearn.linear_model import LinearRegression, Ridge
+from sklearn.neighbors import KNeighborsRegressor
+from sklearn.ensemble import (
+    RandomForestRegressor,
+    ExtraTreesRegressor,
+    GradientBoostingRegressor,
+    HistGradientBoostingRegressor,
+)
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
-import matplotlib.pyplot as plt
 
-# Cấu hình font tiếng Việt cho matplotlib
-plt.rcParams['font.family'] = 'DejaVu Sans'
 
-def evaluate_model(y_true_log, y_pred_log, model_name):
-    # Nghịch đảo log (y_log = log(1+y) -> y = exp(y_log) - 1)
+try:
+    from xgboost import XGBRegressor
+
+    HAS_XGB = True
+except Exception:
+    XGBRegressor = None  # type: ignore
+    HAS_XGB = False
+
+
+TARGET_COL = "Gia_ban_ty"
+TARGET_LOG_COL = "Gia_ban_ty_log"
+
+
+def evaluate(y_true_log: np.ndarray, y_pred_log: np.ndarray) -> dict:
+    """Đánh giá trên thang giá gốc (tỷ) và R2 trên log."""
     y_true = np.expm1(y_true_log)
     y_pred = np.expm1(y_pred_log)
-    
-    mae = mean_absolute_error(y_true, y_pred)
-    rmse = np.sqrt(mean_squared_error(y_true, y_pred))
-    r2 = r2_score(y_true_log, y_pred_log) # R2 thường tính trên quy mô log nếu train trên log
-    
-    return {
-        "Model": model_name,
-        "MAE (Tỷ VNĐ)": mae,
-        "RMSE (Tỷ VNĐ)": rmse,
-        "R2 Score": r2
-    }
 
-def main():
-    print("--- 🤖 KHỞI ĐỘNG GIAI ĐOẠN HUẤN LUYỆN MÔ HÌNH (SỬA LỖI LEAKAGE) ---")
-    
-    # Load data
-    df = pd.read_csv('HN_Houseprice_Encoded.csv')
-    
-    # Xác định các cột cần loại bỏ (Metadata, Target, và Leakage features)
-    # Giữ lại: Area_m2, Bedrooms, Bathrooms, Floors, Width, Entrance_width
-    drop_cols = [
-        'Title', 'Address', 'PostingDate', 'PostType', 'Area', 'Direction', 
-        'Width_meters', 'Legal', 'Interior', 'Entrancewidth', 'Price', 'Price_per_m2'
-    ]
-    
-    # Chỉ giữ lại các cột số thực sự là features
-    X = df.drop(columns=[col for col in drop_cols if col in df.columns])
-    y = df['Price']
-    
-    # Fill NaNs for baseline models (Linear Regression)
-    X = X.fillna(X.median())
-    
-    print(f"Số lượng Features sử dụng: {X.shape[1]}")
-    print(f"Các features quan trọng: {X.columns[:10].tolist()}...")
-    
-    # 1. Chia tập Train/Test (80/20)
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-    
-    # 2. Xử lý biến mục tiêu: Log Transformation
-    print("[1/7] Đang áp dụng Log Transformation...")
-    y_train_log = np.log1p(y_train)
-    y_test_log = np.log1p(y_test)
-    
-    # Chuẩn hóa dữ liệu cho KNN (KNN yêu cầu dữ liệu được scale)
-    scaler = StandardScaler()
-    X_train_scaled = scaler.fit_transform(X_train)
-    X_test_scaled = scaler.transform(X_test)
-    
-    results = []
-    
-    # ============== MODEL 1: LINEAR REGRESSION ==============
-    # Người phụ trách: Thành viên 1
-    # Mô tả: Thuật toán hồi quy tuyến tính cơ bản (Baseline)
-    print("[2/7] Đang huấn luyện Model 1: Linear Regression...")
+    mae = mean_absolute_error(y_true, y_pred)
+    rmse = float(np.sqrt(mean_squared_error(y_true, y_pred)))
+    r2_log = r2_score(y_true_log, y_pred_log)
+    return {"MAE (Tỷ VNĐ)": float(mae), "RMSE (Tỷ VNĐ)": rmse, "R2 (log-scale)": float(r2_log)}
+
+
+def train_and_compare(
+    X_train: pd.DataFrame,
+    X_test: pd.DataFrame,
+    y_train_log: pd.Series,
+    y_test_log: pd.Series,
+    random_state: int = 42,
+    tune: bool = False,
+    n_jobs: int = 1,
+) -> tuple[pd.DataFrame, object, str]:
+    results: list[dict] = []
+
+    # 1) Linear Regression
     lr = LinearRegression()
     lr.fit(X_train, y_train_log)
-    y_pred_lr = lr.predict(X_test)
-    results.append(evaluate_model(y_test_log, y_pred_lr, "Linear Regression"))
-    
-    # ============== MODEL 2: RIDGE REGRESSION ==============
-    # Người phụ trách: Thành viên 2
-    # Mô tả: Hồi quy tuyến tính với regularization L2, giảm overfitting
-    # Tham số alpha: độ mạnh của regularization (alpha càng lớn, model càng đơn giản)
-    print("[3/7] Đang huấn luyện Model 2: Ridge Regression...")
-    ridge = Ridge(alpha=1.0, random_state=42)
+    pred_lr = lr.predict(X_test)
+    results.append({"Model": "Linear Regression", **evaluate(y_test_log.values, pred_lr)})
+
+    # 2) Ridge Regression
+    ridge = Ridge(alpha=1.0, random_state=random_state)
     ridge.fit(X_train, y_train_log)
-    y_pred_ridge = ridge.predict(X_test)
-    results.append(evaluate_model(y_test_log, y_pred_ridge, "Ridge Regression"))
-    
-    # ============== MODEL 3: K-NEAREST NEIGHBORS (KNN) ==============
-    # Người phụ trách: Thành viên 3
-    # Mô tả: Dự đoán dựa trên K điểm dữ liệu gần nhất
-    # Lưu ý: KNN cần dữ liệu được chuẩn hóa (scaled) để tính khoảng cách chính xác
-    print("[4/7] Đang huấn luyện Model 3: K-Nearest Neighbors (KNN)...")
-    knn = KNeighborsRegressor(n_neighbors=5, weights='distance', n_jobs=-1)
-    knn.fit(X_train_scaled, y_train_log)
-    y_pred_knn = knn.predict(X_test_scaled)
-    results.append(evaluate_model(y_test_log, y_pred_knn, "KNN (K=5)"))
-    
-    # ============== MODEL 4: RANDOM FOREST ==============
-    # Người phụ trách: Thành viên 4
-    # Mô tả: Thuật toán ensemble sử dụng nhiều cây quyết định
-    print("[5/7] Đang huấn luyện Model 4: Random Forest Regressor...")
-    rf = RandomForestRegressor(n_estimators=100, random_state=42, n_jobs=-1)
+    pred_ridge = ridge.predict(X_test)
+    results.append({"Model": "Ridge Regression", **evaluate(y_test_log.values, pred_ridge)})
+
+    # 3) Random Forest (mặc định tốt với dữ liệu nhiều dạng)
+    # Random Forest là mô hình dễ dùng và khá ổn định.
+    # Giảm số cây + giới hạn độ sâu để train nhanh (phù hợp chạy demo/app).
+    rf = RandomForestRegressor(
+        n_estimators=40,
+        random_state=random_state,
+        n_jobs=n_jobs,
+        max_depth=14,
+        min_samples_leaf=2,
+        max_features="sqrt",
+    )
     rf.fit(X_train, y_train_log)
-    y_pred_rf = rf.predict(X_test)
-    results.append(evaluate_model(y_test_log, y_pred_rf, "Random Forest"))
-    
-    # ============== MODEL 5: XGBOOST ==============
-    # Người phụ trách: Thành viên 5
-    # Mô tả: Thuật toán Gradient Boosting tối ưu hóa hiệu suất cao
-    print("[6/7] Đang huấn luyện Model 5: XGBoost...")
-    xgb_model = xgb.XGBRegressor(n_estimators=100, learning_rate=0.1, max_depth=6, random_state=42, n_jobs=-1)
-    xgb_model.fit(X_train, y_train_log)
-    y_pred_xgb = xgb_model.predict(X_test)
-    results.append(evaluate_model(y_test_log, y_pred_xgb, "XGBoost"))
-    
-    # 6. So sánh kết quả
-    print("\n" + "="*70)
-    print("📊 BẢNG SO SÁNH KẾT QUẢ 5 MÔ HÌNH MACHINE LEARNING")
-    print("="*70)
+    pred_rf = rf.predict(X_test)
+    results.append({"Model": "Random Forest", **evaluate(y_test_log.values, pred_rf)})
+
+    # 4) Extra Trees (thường mạnh với tabular, train nhanh)
+    et = ExtraTreesRegressor(
+        n_estimators=250,
+        random_state=random_state,
+        n_jobs=n_jobs,
+        max_depth=None,
+        min_samples_leaf=1,
+        max_features="sqrt",
+    )
+    et.fit(X_train, y_train_log)
+    pred_et = et.predict(X_test)
+    results.append({"Model": "Extra Trees", **evaluate(y_test_log.values, pred_et)})
+
+    # 5) Gradient Boosting (baseline boosting)
+    gbr = GradientBoostingRegressor(random_state=random_state)
+    gbr.fit(X_train, y_train_log)
+    pred_gbr = gbr.predict(X_test)
+    results.append({"Model": "Gradient Boosting", **evaluate(y_test_log.values, pred_gbr)})
+
+    # 6) HistGradientBoosting (mạnh và nhanh)
+    hgb = HistGradientBoostingRegressor(random_state=random_state)
+    hgb.fit(X_train, y_train_log)
+    pred_hgb = hgb.predict(X_test)
+    results.append({"Model": "HistGradientBoosting", **evaluate(y_test_log.values, pred_hgb)})
+
+    # 7) KNN Regression (cần scale)
+    knn = Pipeline(
+        steps=[
+            ("scaler", StandardScaler(with_mean=False)),
+            ("knn", KNeighborsRegressor(n_neighbors=15, weights="distance")),
+        ]
+    )
+    knn.fit(X_train, y_train_log)
+    pred_knn = knn.predict(X_test)
+    results.append({"Model": "KNN Regression", **evaluate(y_test_log.values, pred_knn)})
+
+    # 8) XGBoost (nếu đã cài xgboost)
+    xgb = None
+    if HAS_XGB:
+        xgb = XGBRegressor(
+            n_estimators=800,
+            learning_rate=0.05,
+            max_depth=7,
+            subsample=0.8,
+            colsample_bytree=0.8,
+            reg_lambda=1.0,
+            objective="reg:squarederror",
+            random_state=random_state,
+            n_jobs=n_jobs,
+            tree_method="hist",
+        )
+        xgb.fit(X_train, y_train_log)
+        pred_xgb = xgb.predict(X_test)
+        results.append({"Model": "XGBoost Regressor", **evaluate(y_test_log.values, pred_xgb)})
+
+    tuned_models: dict[str, object] = {}
+
+    # 9) Tuning nhanh (tuỳ chọn)
+    if tune:
+        print("[tune] Đang chạy hyperparameter tuning (có thể mất vài phút)...")
+
+        # 9.1) Tune Extra Trees (thường ổn định)
+        et_search = RandomizedSearchCV(
+            estimator=ExtraTreesRegressor(random_state=random_state, n_jobs=n_jobs),
+            param_distributions={
+                "n_estimators": [200, 400, 700],
+                "max_depth": [None, 20, 30],
+                "min_samples_leaf": [1, 2, 4],
+                "max_features": ["sqrt", 0.5, 0.8],
+            },
+            n_iter=12,
+            scoring="neg_mean_absolute_error",
+            cv=3,
+            random_state=random_state,
+            n_jobs=n_jobs,
+            verbose=0,
+        )
+        et_search.fit(X_train, y_train_log)
+        et_tuned = et_search.best_estimator_
+        pred_et_tuned = et_tuned.predict(X_test)
+        results.append({"Model": "Extra Trees (Tuned)", **evaluate(y_test_log.values, pred_et_tuned)})
+        tuned_models["Extra Trees (Tuned)"] = et_tuned
+
+        # 9.2) Tune XGBoost nếu có
+        if HAS_XGB:
+            xgb_search = RandomizedSearchCV(
+                estimator=XGBRegressor(
+                    objective="reg:squarederror",
+                    random_state=random_state,
+                    n_jobs=n_jobs,
+                    tree_method="hist",
+                ),
+                param_distributions={
+                    "n_estimators": [400, 700, 1000],
+                    "learning_rate": [0.03, 0.05, 0.08, 0.1],
+                    "max_depth": [4, 5, 6, 7],
+                    "subsample": [0.7, 0.8, 0.9, 1.0],
+                    "colsample_bytree": [0.7, 0.8, 0.9, 1.0],
+                    "reg_lambda": [1.0, 2.0, 4.0],
+                },
+                n_iter=15,
+                scoring="neg_mean_absolute_error",
+                cv=3,
+                random_state=random_state,
+                n_jobs=n_jobs,
+                verbose=0,
+            )
+            xgb_search.fit(X_train, y_train_log)
+            xgb_tuned = xgb_search.best_estimator_
+            pred_xgb_tuned = xgb_tuned.predict(X_test)
+            results.append({"Model": "XGBoost (Tuned)", **evaluate(y_test_log.values, pred_xgb_tuned)})
+            tuned_models["XGBoost (Tuned)"] = xgb_tuned
+
     results_df = pd.DataFrame(results)
+
+    # Best theo MAE nhỏ nhất
+    best_row = results_df.sort_values("MAE (Tỷ VNĐ)").iloc[0]
+    best_name = str(best_row["Model"])
+    model_map = {
+        "Linear Regression": lr,
+        "Ridge Regression": ridge,
+        "Random Forest": rf,
+        "Extra Trees": et,
+        "Gradient Boosting": gbr,
+        "HistGradientBoosting": hgb,
+        "KNN Regression": knn,
+    }
+    if xgb is not None:
+        model_map["XGBoost Regressor"] = xgb
+
+    # Thêm các model đã tune (nếu có)
+    model_map.update(tuned_models)
+
+    best_model = model_map[best_name]
+
+    return results_df, best_model, best_name
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--input", default="HN_Houseprice_Processed.csv")
+    parser.add_argument(
+        "--sample",
+        type=int,
+        default=0,
+        help="Nếu >0: lấy mẫu ngẫu nhiên N dòng để train nhanh (0 = dùng toàn bộ).",
+    )
+    parser.add_argument("--out_model", default="best_model.pkl")
+    parser.add_argument("--out_features", default="model_features.pkl")
+    parser.add_argument("--out_report", default="model_comparison.csv")
+    parser.add_argument(
+        "--tune",
+        action="store_true",
+        help="Bật hyperparameter tuning nhanh (RandomizedSearchCV) cho một số mô hình.",
+    )
+    parser.add_argument(
+        "--n_jobs",
+        type=int,
+        default=1,
+        help="Số luồng cho mô hình tree/boosting. Mặc định 1 để ổn định trên máy yếu.",
+    )
+    args = parser.parse_args()
+
+    in_path = Path(args.input)
+    if not in_path.exists():
+        raise FileNotFoundError(f"Không tìm thấy '{args.input}'. Hãy chạy: python preprocessing.py trước.")
+
+    print("--- 🤖 HUẤN LUYỆN MÔ HÌNH (TRAIN ON LOG TARGET) ---")
+
+    df = pd.read_csv(in_path)
+
+    if args.sample and args.sample > 0 and args.sample < len(df):
+        df = df.sample(n=args.sample, random_state=42).reset_index(drop=True)
+        print(f"[i] Dùng sample {len(df)} dòng để train nhanh")
+    if TARGET_LOG_COL not in df.columns:
+        df[TARGET_LOG_COL] = np.log1p(df[TARGET_COL].astype(float))
+
+    feature_cols = [c for c in df.columns if c not in [TARGET_COL, TARGET_LOG_COL]]
+    X = df[feature_cols]
+    y_log = df[TARGET_LOG_COL].astype(float)
+
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y_log, test_size=0.2, random_state=42
+    )
+
+    print(f"Số lượng feature: {len(feature_cols)}")
+    print(f"Số dòng train/test: {X_train.shape[0]} / {X_test.shape[0]}")
+
+    results_df, best_model, best_name = train_and_compare(
+        X_train, X_test, y_train, y_test, tune=bool(args.tune), n_jobs=int(args.n_jobs)
+    )
+
+    print("\n=== 📊 KẾT QUẢ SO SÁNH ===")
     print(results_df.to_string(index=False))
-    
-    # Xếp hạng theo MAE
-    print("\n" + "-"*70)
-    print("📈 XẾP HẠNG THEO MAE (Mean Absolute Error - Thấp hơn = Tốt hơn):")
-    print("-"*70)
-    results_sorted_mae = results_df.sort_values('MAE (Tỷ VNĐ)')
-    for i, row in enumerate(results_sorted_mae.itertuples(), 1):
-        medal = "🥇" if i == 1 else "🥈" if i == 2 else "🥉" if i == 3 else "  "
-        print(f"   {medal} {i}. {row.Model}: MAE = {row._2:.2f} tỷ VNĐ")
-    
-    # Xếp hạng theo RMSE
-    print("\n" + "-"*70)
-    print("📈 XẾP HẠNG THEO RMSE (Root Mean Squared Error - Thấp hơn = Tốt hơn):")
-    print("-"*70)
-    results_sorted_rmse = results_df.sort_values('RMSE (Tỷ VNĐ)')
-    for i, row in enumerate(results_sorted_rmse.itertuples(), 1):
-        medal = "🥇" if i == 1 else "🥈" if i == 2 else "🥉" if i == 3 else "  "
-        print(f"   {medal} {i}. {row.Model}: RMSE = {row._3:.2f} tỷ VNĐ")
-    
-    # Xếp hạng theo R²
-    print("\n" + "-"*70)
-    print("📈 XẾP HẠNG THEO R² Score (Cao hơn = Tốt hơn):")
-    print("-"*70)
-    results_sorted_r2 = results_df.sort_values('R2 Score', ascending=False)
-    for i, row in enumerate(results_sorted_r2.itertuples(), 1):
-        medal = "🥇" if i == 1 else "🥈" if i == 2 else "🥉" if i == 3 else "  "
-        print(f"   {medal} {i}. {row.Model}: R² = {row._4:.4f}")
-    
-    best_model = results_df.loc[results_df['MAE (Tỷ VNĐ)'].idxmin(), 'Model']
-    print("\n" + "="*70)
-    print(f"🏆 MÔ HÌNH HIỆU QUẢ NHẤT: {best_model}")
-    print("="*70)
-    
-    results_df.to_csv('model_comparison.csv', index=False)
-    print("\n✅ Đã lưu kết quả so sánh vào file 'model_comparison.csv'")
-    
-    # ============== VẼ BIỂU ĐỒ SO SÁNH ==============
-    print("\n[7/7] Đang vẽ biểu đồ so sánh các mô hình...")
-    
-    # Sắp xếp theo MAE để biểu đồ đẹp hơn
-    results_sorted = results_df.sort_values('MAE (Tỷ VNĐ)')
-    
-    # Màu sắc cho các model
-    colors = ['#2ecc71', '#3498db', '#9b59b6', '#e74c3c', '#e67e22']
-    
-    # --- Biểu đồ 1: So sánh MAE ---
-    fig1, ax1 = plt.subplots(figsize=(10, 6))
-    bars1 = ax1.barh(results_sorted['Model'], results_sorted['MAE (Tỷ VNĐ)'], color=colors)
-    ax1.set_xlabel('MAE (Ty VND)', fontsize=12)
-    ax1.set_title('So sanh MAE cua 5 Mo hinh Machine Learning\n(Thap hon = Tot hon)', fontsize=14, fontweight='bold')
-    ax1.invert_yaxis()
-    
-    # Thêm giá trị lên bar
-    for bar, value in zip(bars1, results_sorted['MAE (Tỷ VNĐ)']):
-        ax1.text(value + 0.2, bar.get_y() + bar.get_height()/2, f'{value:.2f}', 
-                va='center', fontsize=11, fontweight='bold')
-    
-    plt.tight_layout()
-    plt.savefig('model_comparison_mae.png', dpi=150, bbox_inches='tight')
-    plt.close()
-    
-    # --- Biểu đồ 2: So sánh R² Score ---
-    results_sorted_r2 = results_df.sort_values('R2 Score', ascending=False)
-    
-    fig2, ax2 = plt.subplots(figsize=(10, 6))
-    bars2 = ax2.barh(results_sorted_r2['Model'], results_sorted_r2['R2 Score'], color=colors)
-    ax2.set_xlabel('R² Score', fontsize=12)
-    ax2.set_title('So sanh R² Score cua 5 Mo hinh Machine Learning\n(Cao hon = Tot hon)', fontsize=14, fontweight='bold')
-    ax2.set_xlim(0, 1)
-    ax2.invert_yaxis()
-    
-    # Thêm giá trị lên bar
-    for bar, value in zip(bars2, results_sorted_r2['R2 Score']):
-        ax2.text(value + 0.02, bar.get_y() + bar.get_height()/2, f'{value:.3f}', 
-                va='center', fontsize=11, fontweight='bold')
-    
-    plt.tight_layout()
-    plt.savefig('model_comparison_r2.png', dpi=150, bbox_inches='tight')
-    plt.close()
-    
-    # --- Biểu đồ 3: So sánh RMSE ---
-    results_sorted_rmse = results_df.sort_values('RMSE (Tỷ VNĐ)')
-    
-    fig3, ax3 = plt.subplots(figsize=(10, 6))
-    bars3 = ax3.barh(results_sorted_rmse['Model'], results_sorted_rmse['RMSE (Tỷ VNĐ)'], color=colors)
-    ax3.set_xlabel('RMSE (Ty VND)', fontsize=12)
-    ax3.set_title('So sanh RMSE cua 5 Mo hinh Machine Learning\n(Thap hon = Tot hon)', fontsize=14, fontweight='bold')
-    ax3.invert_yaxis()
-    
-    # Thêm giá trị lên bar
-    for bar, value in zip(bars3, results_sorted_rmse['RMSE (Tỷ VNĐ)']):
-        ax3.text(value + 0.5, bar.get_y() + bar.get_height()/2, f'{value:.2f}', 
-                va='center', fontsize=11, fontweight='bold')
-    
-    plt.tight_layout()
-    plt.savefig('model_comparison_rmse.png', dpi=150, bbox_inches='tight')
-    plt.close()
-    
-    # --- Biểu đồ 4: So sánh tổng hợp (cả 3 metrics: MAE, RMSE, R²) ---
-    fig4, axes = plt.subplots(1, 3, figsize=(18, 5))
-    
-    # MAE subplot
-    axes[0].barh(results_sorted['Model'], results_sorted['MAE (Tỷ VNĐ)'], color=colors)
-    axes[0].set_xlabel('MAE (Ty VND)')
-    axes[0].set_title('MAE (Thap hon = Tot hon)')
-    axes[0].invert_yaxis()
-    for i, v in enumerate(results_sorted['MAE (Tỷ VNĐ)']):
-        axes[0].text(v + 0.2, i, f'{v:.2f}', va='center', fontweight='bold')
-    
-    # RMSE subplot
-    axes[1].barh(results_sorted_rmse['Model'], results_sorted_rmse['RMSE (Tỷ VNĐ)'], color=colors)
-    axes[1].set_xlabel('RMSE (Ty VND)')
-    axes[1].set_title('RMSE (Thap hon = Tot hon)')
-    axes[1].invert_yaxis()
-    for i, v in enumerate(results_sorted_rmse['RMSE (Tỷ VNĐ)']):
-        axes[1].text(v + 0.5, i, f'{v:.2f}', va='center', fontweight='bold')
-    
-    # R² subplot
-    axes[2].barh(results_sorted_r2['Model'], results_sorted_r2['R2 Score'], color=colors)
-    axes[2].set_xlabel('R² Score')
-    axes[2].set_title('R² Score (Cao hon = Tot hon)')
-    axes[2].set_xlim(0, 1)
-    axes[2].invert_yaxis()
-    for i, v in enumerate(results_sorted_r2['R2 Score']):
-        axes[2].text(v + 0.02, i, f'{v:.3f}', va='center', fontweight='bold')
-    
-    fig4.suptitle('TONG HOP SO SANH 5 MO HINH MACHINE LEARNING (3 METRICS)', fontsize=14, fontweight='bold')
-    plt.tight_layout()
-    plt.savefig('model_comparison_combined.png', dpi=150, bbox_inches='tight')
-    plt.close()
-    
-    print("✅ Đã lưu biểu đồ:")
-    print("   - model_comparison_mae.png (MAE)")
-    print("   - model_comparison_rmse.png (RMSE)")
-    print("   - model_comparison_r2.png (R² Score)")
-    print("   - model_comparison_combined.png (Tổng hợp 3 metrics)")
+
+    results_df.to_csv(args.out_report, index=False)
+    joblib.dump(best_model, args.out_model)
+    joblib.dump(feature_cols, args.out_features)
+
+    print(f"\n✅ Best model: {best_name}")
+    print(f"✅ Đã lưu model: {args.out_model}")
+    print(f"✅ Đã lưu feature list: {args.out_features}")
+    print(f"✅ Đã lưu report: {args.out_report}")
+
 
 if __name__ == "__main__":
     main()
