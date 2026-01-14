@@ -1,46 +1,15 @@
 {
   "raw_rows": 50000,
-  "rows_after_valid_quan": 50000,
-  "rows_after_dropna": 50000,
-  "rows_after_range_filter": 50000,
-  "rows_before_outlier": 50000,
-  "rows_after_outlier": 27643,
-  "outlier_q": 0.06,
-  "rows_after_sampling": 15000,
-  "max_rows": 15000,
-  "districts_in_data": [
-    "Ba Đình",
-    "Bắc Từ Liêm",
-    "Cầu Giấy",
-    "Hai Bà Trưng",
-    "Hoàn Kiếm",
-    "Hoàng Mai",
-    "Hà Đông",
-    "Long Biên",
-    "Nam Từ Liêm",
-    "Thanh Xuân",
-    "Tây Hồ",
-    "Đống Đa"
+  "raw_cols": 27,
+  "dropped_na_target": 0,
+  "dropped_nonpositive_target": 0,
+  "deduped": 0,
+  "notes": [
+    "Force Khoang_cach_TT_km=0.0 for Hai Bà Trưng"
   ],
-  "n_districts_in_data": 12,
-  "missing_units": [
-    "Ba Vì",
-    "Chương Mỹ",
-    "Gia Lâm",
-    "Hoài Đức",
-    "Mê Linh",
-    "Mỹ Đức",
-    "Phú Xuyên",
-    "Phúc Thọ",
-    "Quốc Oai",
-    "Sóc Sơn",
-    "Sơn Tây",
-    "Thanh Oai",
-    "Thanh Trì",
-    "Thường Tín",
-    "Thạch Thất",
-    "Đan Phượng",
-    "Đông Anh",
-    "Ứng Hòa"
-  ]
+  "clean_full_rows": 50000,
+  "clean_cols": 27,
+  "districts": 30,
+  "max_rows": 20000,
+  "clean_rows_sampled": 20000
 }
