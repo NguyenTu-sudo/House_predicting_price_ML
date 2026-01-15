@@ -1,0 +1,5848 @@
+{
+  "version": "30area_with_district_constraints_no_Nhom_Khu_vuc",
+  "target": "Gia_ban_ty",
+  "center_district": "Hoàn Kiếm",
+  "center_distance_value": 0.0,
+  "ui_note": "Ràng buộc (range & lựa chọn) được tính theo dữ liệu thô sau làm sạch, theo từng quận/huyện.",
+  "categorical": {
+    "Quan_Huyen": [
+      "Sơn Tây",
+      "Phúc Thọ",
+      "Đống Đa",
+      "Phú Xuyên",
+      "Bắc Từ Liêm",
+      "Hai Bà Trưng",
+      "Thanh Xuân",
+      "Ứng Hòa",
+      "Thạch Thất",
+      "Sóc Sơn",
+      "Hoàng Mai",
+      "Chương Mỹ",
+      "Hoàn Kiếm",
+      "Đan Phượng",
+      "Ba Vì",
+      "Quốc Oai",
+      "Tây Hồ",
+      "Hoài Đức",
+      "Thanh Oai",
+      "Mỹ Đức",
+      "Ba Đình",
+      "Long Biên",
+      "Mê Linh",
+      "Thanh Trì",
+      "Hà Đông",
+      "Thường Tín",
+      "Nam Từ Liêm",
+      "Đông Anh",
+      "Cầu Giấy",
+      "Gia Lâm"
+    ],
+    "Dac_diem_khu_vuc": [
+      "Khu dan cu dong duc",
+      "Trong lang xom",
+      "Khu dan cu",
+      "Mat duong Quoc lo",
+      "Gan lang nghe",
+      "Gan KCN",
+      "Khu dau gia"
+    ],
+    "Loai_dat": [
+      "Full tho cu",
+      "Tho cu + Dat vuon"
+    ],
+    "Loai_duong": [
+      "Duong nhua",
+      "Duong be tong",
+      "Duong dat"
+    ],
+    "Huong_nha": [
+      "Tây",
+      "Đông",
+      "Đông Nam",
+      "Đông Bắc",
+      "Tây Bắc",
+      "Tây Nam",
+      "Bắc",
+      "Nam"
+    ],
+    "Phap_ly": [
+      "Sổ đỏ/Sổ hồng",
+      "Hợp đồng mua bán",
+      "Chờ sổ",
+      "Vi bằng"
+    ],
+    "Mat_do_dan_cu": [
+      "Thap",
+      "Trung binh",
+      "Cao"
+    ],
+    "An_ninh": [
+      "Rất tốt (Khu VIP)",
+      "Kém (Hay trộm cắp)",
+      "Bình thường",
+      "Tốt"
+    ],
+    "Gan_Tien_ich": [
+      "Gần Bệnh viện",
+      "Gần trường học/Chợ",
+      "Gần Công viên/Hồ",
+      "Không gần gì"
+    ],
+    "Gan_Giao_thong": [
+      "Gần Bến xe Bus",
+      "Xa phương tiện CC",
+      "Gần Metro (Tàu điện)"
+    ],
+    "Noi_that": [
+      "Full nội thất cao cấp",
+      "Nội thất cũ nát",
+      "Nhà trống",
+      "Cơ bản"
+    ],
+    "Tinh_trang_Dien_Nuoc": [
+      "On dinh",
+      "Hay hong",
+      "Can sua chua"
+    ],
+    "Muc_do_xuong_cap": [
+      "Tot/Moi",
+      "Binh thuong",
+      "Xuong cap nhe",
+      "Nat/Can dap di"
+    ]
+  },
+  "numeric": {
+    "Khoang_cach_TT_km": {
+      "min": 0.0,
+      "max": 70.0,
+      "p01": 0.0,
+      "p05": 2.71,
+      "median": 19.24,
+      "p95": 49.1,
+      "p99": 62.63010000000002,
+      "is_int": false,
+      "step": 0.1
+    },
+    "Dien_tich_m2": {
+      "min": 20.0,
+      "max": 237.0,
+      "p01": 20.0,
+      "p05": 30.0,
+      "median": 80.0,
+      "p95": 177.0,
+      "p99": 217.0,
+      "is_int": false,
+      "step": 1.0
+    },
+    "Mat_tien_m": {
+      "min": 3.0,
+      "max": 14.0,
+      "p01": 3.1,
+      "p05": 3.7,
+      "median": 8.3,
+      "p95": 12.9,
+      "p99": 13.8,
+      "is_int": false,
+      "step": 0.1
+    },
+    "So_tang": {
+      "min": 1.0,
+      "max": 8.0,
+      "p01": 1.0,
+      "p05": 1.0,
+      "median": 3.0,
+      "p95": 7.0,
+      "p99": 8.0,
+      "is_int": true,
+      "step": 1.0
+    },
+    "So_phong_ngu": {
+      "min": 1.0,
+      "max": 11.0,
+      "p01": 1.0,
+      "p05": 1.0,
+      "median": 3.0,
+      "p95": 10.0,
+      "p99": 11.0,
+      "is_int": true,
+      "step": 1.0
+    },
+    "So_phong_tam": {
+      "min": 1.0,
+      "max": 10.0,
+      "p01": 1.0,
+      "p05": 1.0,
+      "median": 2.0,
+      "p95": 7.0,
+      "p99": 10.0,
+      "is_int": true,
+      "step": 1.0
+    },
+    "Do_rong_duong_m": {
+      "min": 1.5,
+      "max": 15.0,
+      "p01": 1.6,
+      "p05": 2.2,
+      "median": 8.2,
+      "p95": 14.3,
+      "p99": 14.9,
+      "is_int": false,
+      "step": 0.5
+    },
+    "Tuoi_nha_nam": {
+      "min": 0.0,
+      "max": 30.0,
+      "p01": 0.0,
+      "p05": 1.0,
+      "median": 15.0,
+      "p95": 29.0,
+      "p99": 30.0,
+      "is_int": true,
+      "step": 1.0
+    }
+  },
+  "binary": {
+    "O_to_vao": [
+      0,
+      1
+    ],
+    "Co_Gara": [
+      0,
+      1
+    ],
+    "Co_San_thuong": [
+      0,
+      1
+    ],
+    "Gan_nghia_trang_bai_rac": [
+      0,
+      1
+    ],
+    "Co_bi_ngap": [
+      0,
+      1
+    ]
+  },
+  "per_district": {
+    "Ba Vì": {
+      "n": 1673,
+      "categorical": {
+        "Quan_Huyen": [
+          "Ba Vì"
+        ],
+        "Dac_diem_khu_vuc": [
+          "Trong lang xom",
+          "Mat duong Quoc lo",
+          "Gan lang nghe"
+        ],
+        "Loai_dat": [
+          "Full tho cu",
+          "Tho cu + Dat vuon"
+        ],
+        "Loai_duong": [
+          "Duong nhua",
+          "Duong be tong",
+          "Duong dat"
+        ],
+        "Huong_nha": [
+          "Tây Bắc",
+          "Tây Nam",
+          "Đông",
+          "Nam",
+          "Đông Nam",
+          "Tây",
+          "Bắc",
+          "Đông Bắc"
+        ],
+        "Phap_ly": [
+          "Sổ đỏ/Sổ hồng",
+          "Hợp đồng mua bán",
+          "Vi bằng",
+          "Chờ sổ"
+        ],
+        "Mat_do_dan_cu": [
+          "Cao",
+          "Thap",
+          "Trung binh"
+        ],
+        "An_ninh": [
+          "Tốt",
+          "Kém (Hay trộm cắp)",
+          "Rất tốt (Khu VIP)",
+          "Bình thường"
+        ],
+        "Gan_Tien_ich": [
+          "Gần Bệnh viện",
+          "Gần trường học/Chợ",
+          "Gần Công viên/Hồ",
+          "Không gần gì"
+        ],
+        "Gan_Giao_thong": [
+          "Gần Bến xe Bus",
+          "Xa phương tiện CC",
+          "Gần Metro (Tàu điện)"
+        ],
+        "Noi_that": [
+          "Cơ bản",
+          "Full nội thất cao cấp",
+          "Nhà trống",
+          "Nội thất cũ nát"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "On dinh",
+          "Hay hong",
+          "Can sua chua"
+        ],
+        "Muc_do_xuong_cap": [
+          "Tot/Moi",
+          "Xuong cap nhe",
+          "Binh thuong",
+          "Nat/Can dap di"
+        ]
+      },
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 45.0,
+          "max": 70.0,
+          "p01": 45.2644,
+          "p05": 46.406,
+          "median": 57.63,
+          "p95": 68.91399999999999,
+          "p99": 69.8056,
+          "is_int": false,
+          "step": 0.1
+        },
+        "Dien_tich_m2": {
+          "min": 40.0,
+          "max": 237.0,
+          "p01": 40.0,
+          "p05": 40.60000000000001,
+          "median": 120.0,
+          "p95": 204.0,
+          "p99": 237.0,
+          "is_int": false,
+          "step": 1.0
+        },
+        "Mat_tien_m": {
+          "min": 5.0,
+          "max": 14.0,
+          "p01": 5.1,
+          "p05": 5.5,
+          "median": 9.6,
+          "p95": 13.6,
+          "p99": 13.9,
+          "is_int": false,
+          "step": 0.1
+        },
+        "So_tang": {
+          "min": 1.0,
+          "max": 3.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 3.0,
+          "p99": 3.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 6.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 6.0,
+          "p99": 6.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 7.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 5.0,
+          "p99": 6.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "Do_rong_duong_m": {
+          "min": 1.5,
+          "max": 15.0,
+          "p01": 1.6,
+          "p05": 2.2,
+          "median": 8.0,
+          "p95": 14.4,
+          "p99": 14.9,
+          "is_int": false,
+          "step": 0.5
+        },
+        "Tuoi_nha_nam": {
+          "min": 0.0,
+          "max": 30.0,
+          "p01": 0.0,
+          "p05": 1.0,
+          "median": 15.0,
+          "p95": 29.0,
+          "p99": 30.0,
+          "is_int": true,
+          "step": 1.0
+        }
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          0,
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ],
+        "Co_bi_ngap": [
+          0,
+          1
+        ]
+      }
+    },
+    "Ba Đình": {
+      "n": 1651,
+      "categorical": {
+        "Quan_Huyen": [
+          "Ba Đình"
+        ],
+        "Dac_diem_khu_vuc": [
+          "Khu dan cu dong duc"
+        ],
+        "Loai_dat": [
+          "Full tho cu"
+        ],
+        "Loai_duong": [
+          "Duong nhua",
+          "Duong be tong"
+        ],
+        "Huong_nha": [
+          "Tây",
+          "Đông Bắc",
+          "Nam",
+          "Tây Nam",
+          "Đông",
+          "Tây Bắc",
+          "Bắc",
+          "Đông Nam"
+        ],
+        "Phap_ly": [
+          "Sổ đỏ/Sổ hồng",
+          "Hợp đồng mua bán",
+          "Vi bằng",
+          "Chờ sổ"
+        ],
+        "Mat_do_dan_cu": [
+          "Cao",
+          "Thap",
+          "Trung binh"
+        ],
+        "An_ninh": [
+          "Bình thường",
+          "Rất tốt (Khu VIP)",
+          "Kém (Hay trộm cắp)",
+          "Tốt"
+        ],
+        "Gan_Tien_ich": [
+          "Gần Công viên/Hồ",
+          "Gần trường học/Chợ",
+          "Gần Bệnh viện",
+          "Không gần gì"
+        ],
+        "Gan_Giao_thong": [
+          "Gần Metro (Tàu điện)",
+          "Gần Bến xe Bus",
+          "Xa phương tiện CC"
+        ],
+        "Noi_that": [
+          "Cơ bản",
+          "Nội thất cũ nát",
+          "Full nội thất cao cấp",
+          "Nhà trống"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "On dinh",
+          "Hay hong",
+          "Can sua chua"
+        ],
+        "Muc_do_xuong_cap": [
+          "Tot/Moi",
+          "Binh thuong",
+          "Xuong cap nhe",
+          "Nat/Can dap di"
+        ]
+      },
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 2.0,
+          "max": 5.0,
+          "p01": 2.03,
+          "p05": 2.13,
+          "median": 3.48,
+          "p95": 4.86,
+          "p99": 4.97,
+          "is_int": false,
+          "step": 0.1
+        },
+        "Dien_tich_m2": {
+          "min": 20.0,
+          "max": 130.0,
+          "p01": 20.0,
+          "p05": 20.0,
+          "median": 54.0,
+          "p95": 95.5,
+          "p99": 110.0,
+          "is_int": false,
+          "step": 1.0
+        },
+        "Mat_tien_m": {
+          "min": 3.0,
+          "max": 12.0,
+          "p01": 3.1,
+          "p05": 3.4,
+          "median": 7.5,
+          "p95": 11.55,
+          "p99": 11.9,
+          "is_int": false,
+          "step": 0.1
+        },
+        "So_tang": {
+          "min": 2.0,
+          "max": 8.0,
+          "p01": 2.0,
+          "p05": 2.0,
+          "median": 5.0,
+          "p95": 8.0,
+          "p99": 8.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 11.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 5.0,
+          "p95": 11.0,
+          "p99": 11.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 10.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 3.0,
+          "p95": 10.0,
+          "p99": 10.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "Do_rong_duong_m": {
+          "min": 1.5,
+          "max": 15.0,
+          "p01": 1.6,
+          "p05": 2.2,
+          "median": 8.6,
+          "p95": 14.4,
+          "p99": 14.9,
+          "is_int": false,
+          "step": 0.5
+        },
+        "Tuoi_nha_nam": {
+          "min": 0.0,
+          "max": 30.0,
+          "p01": 0.0,
+          "p05": 1.0,
+          "median": 15.0,
+          "p95": 29.0,
+          "p99": 30.0,
+          "is_int": true,
+          "step": 1.0
+        }
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ],
+        "Co_bi_ngap": [
+          0,
+          1
+        ]
+      }
+    },
+    "Bắc Từ Liêm": {
+      "n": 1713,
+      "categorical": {
+        "Quan_Huyen": [
+          "Bắc Từ Liêm"
+        ],
+        "Dac_diem_khu_vuc": [
+          "Khu dan cu",
+          "Khu dau gia",
+          "Gan KCN"
+        ],
+        "Loai_dat": [
+          "Full tho cu",
+          "Tho cu + Dat vuon"
+        ],
+        "Loai_duong": [
+          "Duong nhua",
+          "Duong be tong"
+        ],
+        "Huong_nha": [
+          "Đông",
+          "Nam",
+          "Bắc",
+          "Đông Nam",
+          "Tây Bắc",
+          "Đông Bắc",
+          "Tây Nam",
+          "Tây"
+        ],
+        "Phap_ly": [
+          "Sổ đỏ/Sổ hồng",
+          "Chờ sổ",
+          "Hợp đồng mua bán",
+          "Vi bằng"
+        ],
+        "Mat_do_dan_cu": [
+          "Cao",
+          "Trung binh",
+          "Thap"
+        ],
+        "An_ninh": [
+          "Bình thường",
+          "Rất tốt (Khu VIP)",
+          "Tốt",
+          "Kém (Hay trộm cắp)"
+        ],
+        "Gan_Tien_ich": [
+          "Gần Bệnh viện",
+          "Gần trường học/Chợ",
+          "Không gần gì",
+          "Gần Công viên/Hồ"
+        ],
+        "Gan_Giao_thong": [
+          "Xa phương tiện CC",
+          "Gần Metro (Tàu điện)",
+          "Gần Bến xe Bus"
+        ],
+        "Noi_that": [
+          "Nội thất cũ nát",
+          "Cơ bản",
+          "Full nội thất cao cấp",
+          "Nhà trống"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "On dinh",
+          "Hay hong",
+          "Can sua chua"
+        ],
+        "Muc_do_xuong_cap": [
+          "Tot/Moi",
+          "Binh thuong",
+          "Xuong cap nhe",
+          "Nat/Can dap di"
+        ]
+      },
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 10.0,
+          "max": 16.0,
+          "p01": 10.07,
+          "p05": 10.25,
+          "median": 12.95,
+          "p95": 15.75,
+          "p99": 15.96,
+          "is_int": false,
+          "step": 0.1
+        },
+        "Dien_tich_m2": {
+          "min": 30.0,
+          "max": 167.0,
+          "p01": 30.0,
+          "p05": 30.0,
+          "median": 77.0,
+          "p95": 124.39999999999986,
+          "p99": 147.87999999999988,
+          "is_int": false,
+          "step": 1.0
+        },
+        "Mat_tien_m": {
+          "min": 3.0,
+          "max": 12.0,
+          "p01": 3.1,
+          "p05": 3.460000000000001,
+          "median": 7.4,
+          "p95": 11.5,
+          "p99": 11.9,
+          "is_int": false,
+          "step": 0.1
+        },
+        "So_tang": {
+          "min": 1.0,
+          "max": 5.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 3.0,
+          "p95": 5.0,
+          "p99": 5.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 10.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 3.0,
+          "p95": 8.0,
+          "p99": 10.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 10.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 7.0,
+          "p99": 8.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "Do_rong_duong_m": {
+          "min": 1.5,
+          "max": 15.0,
+          "p01": 1.6,
+          "p05": 2.1,
+          "median": 8.1,
+          "p95": 14.4,
+          "p99": 14.8,
+          "is_int": false,
+          "step": 0.5
+        },
+        "Tuoi_nha_nam": {
+          "min": 0.0,
+          "max": 30.0,
+          "p01": 0.0,
+          "p05": 1.0,
+          "median": 15.0,
+          "p95": 29.0,
+          "p99": 30.0,
+          "is_int": true,
+          "step": 1.0
+        }
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          0,
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ],
+        "Co_bi_ngap": [
+          0,
+          1
+        ]
+      }
+    },
+    "Chương Mỹ": {
+      "n": 1679,
+      "categorical": {
+        "Quan_Huyen": [
+          "Chương Mỹ"
+        ],
+        "Dac_diem_khu_vuc": [
+          "Trong lang xom",
+          "Gan lang nghe",
+          "Mat duong Quoc lo"
+        ],
+        "Loai_dat": [
+          "Full tho cu",
+          "Tho cu + Dat vuon"
+        ],
+        "Loai_duong": [
+          "Duong nhua",
+          "Duong be tong",
+          "Duong dat"
+        ],
+        "Huong_nha": [
+          "Đông Bắc",
+          "Tây Bắc",
+          "Nam",
+          "Tây",
+          "Đông",
+          "Tây Nam",
+          "Đông Nam",
+          "Bắc"
+        ],
+        "Phap_ly": [
+          "Sổ đỏ/Sổ hồng",
+          "Hợp đồng mua bán",
+          "Chờ sổ",
+          "Vi bằng"
+        ],
+        "Mat_do_dan_cu": [
+          "Trung binh",
+          "Thap",
+          "Cao"
+        ],
+        "An_ninh": [
+          "Kém (Hay trộm cắp)",
+          "Bình thường",
+          "Rất tốt (Khu VIP)",
+          "Tốt"
+        ],
+        "Gan_Tien_ich": [
+          "Gần trường học/Chợ",
+          "Gần Công viên/Hồ",
+          "Gần Bệnh viện",
+          "Không gần gì"
+        ],
+        "Gan_Giao_thong": [
+          "Xa phương tiện CC",
+          "Gần Bến xe Bus",
+          "Gần Metro (Tàu điện)"
+        ],
+        "Noi_that": [
+          "Nội thất cũ nát",
+          "Full nội thất cao cấp",
+          "Cơ bản",
+          "Nhà trống"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "On dinh",
+          "Hay hong",
+          "Can sua chua"
+        ],
+        "Muc_do_xuong_cap": [
+          "Tot/Moi",
+          "Binh thuong",
+          "Xuong cap nhe",
+          "Nat/Can dap di"
+        ]
+      },
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 25.0,
+          "max": 40.0,
+          "p01": 25.1478,
+          "p05": 25.677,
+          "median": 32.46,
+          "p95": 39.33,
+          "p99": 39.89,
+          "is_int": false,
+          "step": 0.1
+        },
+        "Dien_tich_m2": {
+          "min": 40.0,
+          "max": 237.0,
+          "p01": 40.0,
+          "p05": 40.0,
+          "median": 120.0,
+          "p95": 201.0,
+          "p99": 233.22000000000003,
+          "is_int": false,
+          "step": 1.0
+        },
+        "Mat_tien_m": {
+          "min": 5.0,
+          "max": 14.0,
+          "p01": 5.1,
+          "p05": 5.4,
+          "median": 9.3,
+          "p95": 13.6,
+          "p99": 13.9,
+          "is_int": false,
+          "step": 0.1
+        },
+        "So_tang": {
+          "min": 1.0,
+          "max": 3.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 3.0,
+          "p99": 3.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 6.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 5.0,
+          "p99": 6.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 7.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 5.0,
+          "p99": 6.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "Do_rong_duong_m": {
+          "min": 1.5,
+          "max": 15.0,
+          "p01": 1.6,
+          "p05": 2.190000000000001,
+          "median": 8.5,
+          "p95": 14.2,
+          "p99": 14.9,
+          "is_int": false,
+          "step": 0.5
+        },
+        "Tuoi_nha_nam": {
+          "min": 0.0,
+          "max": 30.0,
+          "p01": 0.0,
+          "p05": 1.0,
+          "median": 16.0,
+          "p95": 29.0,
+          "p99": 30.0,
+          "is_int": true,
+          "step": 1.0
+        }
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          0,
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ],
+        "Co_bi_ngap": [
+          0,
+          1
+        ]
+      }
+    },
+    "Cầu Giấy": {
+      "n": 1595,
+      "categorical": {
+        "Quan_Huyen": [
+          "Cầu Giấy"
+        ],
+        "Dac_diem_khu_vuc": [
+          "Khu dan cu dong duc"
+        ],
+        "Loai_dat": [
+          "Full tho cu"
+        ],
+        "Loai_duong": [
+          "Duong nhua",
+          "Duong be tong"
+        ],
+        "Huong_nha": [
+          "Đông",
+          "Bắc",
+          "Tây",
+          "Đông Bắc",
+          "Đông Nam",
+          "Nam",
+          "Tây Nam",
+          "Tây Bắc"
+        ],
+        "Phap_ly": [
+          "Sổ đỏ/Sổ hồng",
+          "Chờ sổ",
+          "Vi bằng",
+          "Hợp đồng mua bán"
+        ],
+        "Mat_do_dan_cu": [
+          "Trung binh",
+          "Thap",
+          "Cao"
+        ],
+        "An_ninh": [
+          "Kém (Hay trộm cắp)",
+          "Rất tốt (Khu VIP)",
+          "Tốt",
+          "Bình thường"
+        ],
+        "Gan_Tien_ich": [
+          "Không gần gì",
+          "Gần Bệnh viện",
+          "Gần trường học/Chợ",
+          "Gần Công viên/Hồ"
+        ],
+        "Gan_Giao_thong": [
+          "Gần Bến xe Bus",
+          "Xa phương tiện CC",
+          "Gần Metro (Tàu điện)"
+        ],
+        "Noi_that": [
+          "Cơ bản",
+          "Nội thất cũ nát",
+          "Nhà trống",
+          "Full nội thất cao cấp"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "On dinh",
+          "Hay hong",
+          "Can sua chua"
+        ],
+        "Muc_do_xuong_cap": [
+          "Tot/Moi",
+          "Binh thuong",
+          "Xuong cap nhe",
+          "Nat/Can dap di"
+        ]
+      },
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 6.01,
+          "max": 9.0,
+          "p01": 6.03,
+          "p05": 6.14,
+          "median": 7.52,
+          "p95": 8.85,
+          "p99": 8.97,
+          "is_int": false,
+          "step": 0.1
+        },
+        "Dien_tich_m2": {
+          "min": 20.0,
+          "max": 155.0,
+          "p01": 20.0,
+          "p05": 20.0,
+          "median": 56.0,
+          "p95": 97.0,
+          "p99": 115.05999999999995,
+          "is_int": false,
+          "step": 1.0
+        },
+        "Mat_tien_m": {
+          "min": 3.0,
+          "max": 12.0,
+          "p01": 3.1,
+          "p05": 3.4,
+          "median": 7.6,
+          "p95": 11.5,
+          "p99": 11.9,
+          "is_int": false,
+          "step": 0.1
+        },
+        "So_tang": {
+          "min": 2.0,
+          "max": 8.0,
+          "p01": 2.0,
+          "p05": 2.0,
+          "median": 5.0,
+          "p95": 8.0,
+          "p99": 8.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 11.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 4.0,
+          "p95": 11.0,
+          "p99": 11.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 10.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 3.0,
+          "p95": 10.0,
+          "p99": 10.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "Do_rong_duong_m": {
+          "min": 1.5,
+          "max": 15.0,
+          "p01": 1.6,
+          "p05": 2.27,
+          "median": 7.9,
+          "p95": 14.229999999999995,
+          "p99": 14.8,
+          "is_int": false,
+          "step": 0.5
+        },
+        "Tuoi_nha_nam": {
+          "min": 0.0,
+          "max": 30.0,
+          "p01": 0.0,
+          "p05": 1.0,
+          "median": 15.0,
+          "p95": 29.0,
+          "p99": 30.0,
+          "is_int": true,
+          "step": 1.0
+        }
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ],
+        "Co_bi_ngap": [
+          0,
+          1
+        ]
+      }
+    },
+    "Gia Lâm": {
+      "n": 1553,
+      "categorical": {
+        "Quan_Huyen": [
+          "Gia Lâm"
+        ],
+        "Dac_diem_khu_vuc": [
+          "Khu dan cu",
+          "Khu dau gia",
+          "Gan KCN"
+        ],
+        "Loai_dat": [
+          "Full tho cu",
+          "Tho cu + Dat vuon"
+        ],
+        "Loai_duong": [
+          "Duong nhua",
+          "Duong be tong"
+        ],
+        "Huong_nha": [
+          "Tây Bắc",
+          "Tây Nam",
+          "Đông Bắc",
+          "Đông Nam",
+          "Nam",
+          "Đông",
+          "Tây",
+          "Bắc"
+        ],
+        "Phap_ly": [
+          "Sổ đỏ/Sổ hồng",
+          "Chờ sổ",
+          "Hợp đồng mua bán",
+          "Vi bằng"
+        ],
+        "Mat_do_dan_cu": [
+          "Trung binh",
+          "Cao",
+          "Thap"
+        ],
+        "An_ninh": [
+          "Kém (Hay trộm cắp)",
+          "Bình thường",
+          "Tốt",
+          "Rất tốt (Khu VIP)"
+        ],
+        "Gan_Tien_ich": [
+          "Gần Bệnh viện",
+          "Gần trường học/Chợ",
+          "Không gần gì",
+          "Gần Công viên/Hồ"
+        ],
+        "Gan_Giao_thong": [
+          "Gần Bến xe Bus",
+          "Xa phương tiện CC",
+          "Gần Metro (Tàu điện)"
+        ],
+        "Noi_that": [
+          "Nội thất cũ nát",
+          "Full nội thất cao cấp",
+          "Nhà trống",
+          "Cơ bản"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "On dinh",
+          "Hay hong",
+          "Can sua chua"
+        ],
+        "Muc_do_xuong_cap": [
+          "Tot/Moi",
+          "Binh thuong",
+          "Xuong cap nhe",
+          "Nat/Can dap di"
+        ]
+      },
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 10.0,
+          "max": 19.99,
+          "p01": 10.0652,
+          "p05": 10.502,
+          "median": 15.33,
+          "p95": 19.537999999999997,
+          "p99": 19.89,
+          "is_int": false,
+          "step": 0.1
+        },
+        "Dien_tich_m2": {
+          "min": 30.0,
+          "max": 186.0,
+          "p01": 30.0,
+          "p05": 30.0,
+          "median": 75.0,
+          "p95": 126.39999999999986,
+          "p99": 146.96000000000004,
+          "is_int": false,
+          "step": 1.0
+        },
+        "Mat_tien_m": {
+          "min": 3.0,
+          "max": 12.0,
+          "p01": 3.1,
+          "p05": 3.6,
+          "median": 7.6,
+          "p95": 11.6,
+          "p99": 11.9,
+          "is_int": false,
+          "step": 0.1
+        },
+        "So_tang": {
+          "min": 1.0,
+          "max": 5.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 3.0,
+          "p95": 5.0,
+          "p99": 5.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 10.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 3.0,
+          "p95": 8.0,
+          "p99": 10.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 10.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 7.0,
+          "p99": 9.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "Do_rong_duong_m": {
+          "min": 1.5,
+          "max": 15.0,
+          "p01": 1.6,
+          "p05": 2.1,
+          "median": 8.6,
+          "p95": 14.4,
+          "p99": 14.848000000000003,
+          "is_int": false,
+          "step": 0.5
+        },
+        "Tuoi_nha_nam": {
+          "min": 0.0,
+          "max": 30.0,
+          "p01": 0.0,
+          "p05": 2.0,
+          "median": 16.0,
+          "p95": 29.0,
+          "p99": 30.0,
+          "is_int": true,
+          "step": 1.0
+        }
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          0,
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ],
+        "Co_bi_ngap": [
+          0,
+          1
+        ]
+      }
+    },
+    "Hai Bà Trưng": {
+      "n": 1693,
+      "categorical": {
+        "Quan_Huyen": [
+          "Hai Bà Trưng"
+        ],
+        "Dac_diem_khu_vuc": [
+          "Khu dan cu dong duc"
+        ],
+        "Loai_dat": [
+          "Full tho cu"
+        ],
+        "Loai_duong": [
+          "Duong nhua",
+          "Duong be tong"
+        ],
+        "Huong_nha": [
+          "Bắc",
+          "Tây",
+          "Đông Nam",
+          "Đông",
+          "Tây Nam",
+          "Đông Bắc",
+          "Tây Bắc",
+          "Nam"
+        ],
+        "Phap_ly": [
+          "Sổ đỏ/Sổ hồng",
+          "Chờ sổ",
+          "Hợp đồng mua bán",
+          "Vi bằng"
+        ],
+        "Mat_do_dan_cu": [
+          "Cao",
+          "Thap",
+          "Trung binh"
+        ],
+        "An_ninh": [
+          "Bình thường",
+          "Rất tốt (Khu VIP)",
+          "Kém (Hay trộm cắp)",
+          "Tốt"
+        ],
+        "Gan_Tien_ich": [
+          "Gần trường học/Chợ",
+          "Gần Bệnh viện",
+          "Gần Công viên/Hồ",
+          "Không gần gì"
+        ],
+        "Gan_Giao_thong": [
+          "Gần Bến xe Bus",
+          "Xa phương tiện CC",
+          "Gần Metro (Tàu điện)"
+        ],
+        "Noi_that": [
+          "Cơ bản",
+          "Nội thất cũ nát",
+          "Full nội thất cao cấp",
+          "Nhà trống"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "On dinh",
+          "Hay hong",
+          "Can sua chua"
+        ],
+        "Muc_do_xuong_cap": [
+          "Tot/Moi",
+          "Binh thuong",
+          "Xuong cap nhe",
+          "Nat/Can dap di"
+        ]
+      },
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 2.0,
+          "max": 5.0,
+          "p01": 2.03,
+          "p05": 2.14,
+          "median": 3.49,
+          "p95": 4.88,
+          "p99": 4.97,
+          "is_int": false,
+          "step": 0.1
+        },
+        "Dien_tich_m2": {
+          "min": 20.0,
+          "max": 149.0,
+          "p01": 20.0,
+          "p05": 20.0,
+          "median": 54.0,
+          "p95": 95.39999999999986,
+          "p99": 115.0,
+          "is_int": false,
+          "step": 1.0
+        },
+        "Mat_tien_m": {
+          "min": 3.0,
+          "max": 12.0,
+          "p01": 3.1,
+          "p05": 3.5,
+          "median": 7.4,
+          "p95": 11.539999999999987,
+          "p99": 11.9,
+          "is_int": false,
+          "step": 0.1
+        },
+        "So_tang": {
+          "min": 2.0,
+          "max": 8.0,
+          "p01": 2.0,
+          "p05": 2.0,
+          "median": 5.0,
+          "p95": 8.0,
+          "p99": 8.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 11.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 5.0,
+          "p95": 11.0,
+          "p99": 11.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 10.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 3.0,
+          "p95": 9.0,
+          "p99": 10.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "Do_rong_duong_m": {
+          "min": 1.5,
+          "max": 15.0,
+          "p01": 1.6,
+          "p05": 2.2,
+          "median": 8.4,
+          "p95": 14.4,
+          "p99": 14.9,
+          "is_int": false,
+          "step": 0.5
+        },
+        "Tuoi_nha_nam": {
+          "min": 0.0,
+          "max": 30.0,
+          "p01": 0.0,
+          "p05": 1.0,
+          "median": 15.0,
+          "p95": 29.0,
+          "p99": 30.0,
+          "is_int": true,
+          "step": 1.0
+        }
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ],
+        "Co_bi_ngap": [
+          0,
+          1
+        ]
+      }
+    },
+    "Hoài Đức": {
+      "n": 1659,
+      "categorical": {
+        "Quan_Huyen": [
+          "Hoài Đức"
+        ],
+        "Dac_diem_khu_vuc": [
+          "Khu dan cu",
+          "Gan KCN",
+          "Khu dau gia"
+        ],
+        "Loai_dat": [
+          "Full tho cu",
+          "Tho cu + Dat vuon"
+        ],
+        "Loai_duong": [
+          "Duong nhua",
+          "Duong be tong"
+        ],
+        "Huong_nha": [
+          "Tây Nam",
+          "Nam",
+          "Đông Bắc",
+          "Bắc",
+          "Tây",
+          "Đông Nam",
+          "Đông",
+          "Tây Bắc"
+        ],
+        "Phap_ly": [
+          "Sổ đỏ/Sổ hồng",
+          "Hợp đồng mua bán",
+          "Vi bằng",
+          "Chờ sổ"
+        ],
+        "Mat_do_dan_cu": [
+          "Thap",
+          "Trung binh",
+          "Cao"
+        ],
+        "An_ninh": [
+          "Rất tốt (Khu VIP)",
+          "Bình thường",
+          "Kém (Hay trộm cắp)",
+          "Tốt"
+        ],
+        "Gan_Tien_ich": [
+          "Gần Bệnh viện",
+          "Gần Công viên/Hồ",
+          "Không gần gì",
+          "Gần trường học/Chợ"
+        ],
+        "Gan_Giao_thong": [
+          "Gần Bến xe Bus",
+          "Gần Metro (Tàu điện)",
+          "Xa phương tiện CC"
+        ],
+        "Noi_that": [
+          "Full nội thất cao cấp",
+          "Nội thất cũ nát",
+          "Cơ bản",
+          "Nhà trống"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "On dinh",
+          "Hay hong",
+          "Can sua chua"
+        ],
+        "Muc_do_xuong_cap": [
+          "Tot/Moi",
+          "Binh thuong",
+          "Xuong cap nhe",
+          "Nat/Can dap di"
+        ]
+      },
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 15.04,
+          "max": 24.99,
+          "p01": 15.11,
+          "p05": 15.489,
+          "median": 19.93,
+          "p95": 24.461,
+          "p99": 24.9,
+          "is_int": false,
+          "step": 0.1
+        },
+        "Dien_tich_m2": {
+          "min": 30.0,
+          "max": 182.0,
+          "p01": 30.0,
+          "p05": 30.0,
+          "median": 75.0,
+          "p95": 125.0,
+          "p99": 148.42000000000007,
+          "is_int": false,
+          "step": 1.0
+        },
+        "Mat_tien_m": {
+          "min": 3.0,
+          "max": 12.0,
+          "p01": 3.1,
+          "p05": 3.4,
+          "median": 7.6,
+          "p95": 11.6,
+          "p99": 11.9,
+          "is_int": false,
+          "step": 0.1
+        },
+        "So_tang": {
+          "min": 1.0,
+          "max": 5.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 3.0,
+          "p95": 5.0,
+          "p99": 5.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 10.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 3.0,
+          "p95": 8.0,
+          "p99": 10.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 10.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 7.0,
+          "p99": 9.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "Do_rong_duong_m": {
+          "min": 1.5,
+          "max": 15.0,
+          "p01": 1.6,
+          "p05": 2.1,
+          "median": 8.0,
+          "p95": 14.3,
+          "p99": 14.9,
+          "is_int": false,
+          "step": 0.5
+        },
+        "Tuoi_nha_nam": {
+          "min": 0.0,
+          "max": 30.0,
+          "p01": 0.0,
+          "p05": 1.0,
+          "median": 15.0,
+          "p95": 29.0,
+          "p99": 30.0,
+          "is_int": true,
+          "step": 1.0
+        }
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          0,
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ],
+        "Co_bi_ngap": [
+          0,
+          1
+        ]
+      }
+    },
+    "Hoàn Kiếm": {
+      "n": 1677,
+      "categorical": {
+        "Quan_Huyen": [
+          "Hoàn Kiếm"
+        ],
+        "Dac_diem_khu_vuc": [
+          "Khu dan cu dong duc"
+        ],
+        "Loai_dat": [
+          "Full tho cu"
+        ],
+        "Loai_duong": [
+          "Duong nhua",
+          "Duong be tong"
+        ],
+        "Huong_nha": [
+          "Đông Bắc",
+          "Tây Bắc",
+          "Nam",
+          "Đông",
+          "Tây",
+          "Đông Nam",
+          "Tây Nam",
+          "Bắc"
+        ],
+        "Phap_ly": [
+          "Sổ đỏ/Sổ hồng",
+          "Hợp đồng mua bán",
+          "Vi bằng",
+          "Chờ sổ"
+        ],
+        "Mat_do_dan_cu": [
+          "Thap",
+          "Cao",
+          "Trung binh"
+        ],
+        "An_ninh": [
+          "Rất tốt (Khu VIP)",
+          "Bình thường",
+          "Kém (Hay trộm cắp)",
+          "Tốt"
+        ],
+        "Gan_Tien_ich": [
+          "Gần Công viên/Hồ",
+          "Không gần gì",
+          "Gần trường học/Chợ",
+          "Gần Bệnh viện"
+        ],
+        "Gan_Giao_thong": [
+          "Gần Metro (Tàu điện)",
+          "Xa phương tiện CC",
+          "Gần Bến xe Bus"
+        ],
+        "Noi_that": [
+          "Full nội thất cao cấp",
+          "Nhà trống",
+          "Cơ bản",
+          "Nội thất cũ nát"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "On dinh",
+          "Hay hong",
+          "Can sua chua"
+        ],
+        "Muc_do_xuong_cap": [
+          "Tot/Moi",
+          "Binh thuong",
+          "Xuong cap nhe",
+          "Nat/Can dap di"
+        ]
+      },
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 0.0,
+          "max": 0.0,
+          "p01": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "is_int": false,
+          "step": 0.1
+        },
+        "Dien_tich_m2": {
+          "min": 20.0,
+          "max": 156.0,
+          "p01": 20.0,
+          "p05": 20.0,
+          "median": 55.0,
+          "p95": 96.0,
+          "p99": 113.0,
+          "is_int": false,
+          "step": 1.0
+        },
+        "Mat_tien_m": {
+          "min": 3.0,
+          "max": 12.0,
+          "p01": 3.1,
+          "p05": 3.5,
+          "median": 7.5,
+          "p95": 11.5,
+          "p99": 11.9,
+          "is_int": false,
+          "step": 0.1
+        },
+        "So_tang": {
+          "min": 2.0,
+          "max": 8.0,
+          "p01": 2.0,
+          "p05": 2.0,
+          "median": 5.0,
+          "p95": 8.0,
+          "p99": 8.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 11.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 5.0,
+          "p95": 11.0,
+          "p99": 11.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 10.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 3.0,
+          "p95": 9.0,
+          "p99": 10.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "Do_rong_duong_m": {
+          "min": 1.5,
+          "max": 15.0,
+          "p01": 1.6,
+          "p05": 2.1,
+          "median": 8.2,
+          "p95": 14.3,
+          "p99": 14.9,
+          "is_int": false,
+          "step": 0.5
+        },
+        "Tuoi_nha_nam": {
+          "min": 0.0,
+          "max": 30.0,
+          "p01": 0.0,
+          "p05": 1.0,
+          "median": 15.0,
+          "p95": 29.0,
+          "p99": 30.0,
+          "is_int": true,
+          "step": 1.0
+        }
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ],
+        "Co_bi_ngap": [
+          0,
+          1
+        ]
+      }
+    },
+    "Hoàng Mai": {
+      "n": 1679,
+      "categorical": {
+        "Quan_Huyen": [
+          "Hoàng Mai"
+        ],
+        "Dac_diem_khu_vuc": [
+          "Khu dan cu dong duc"
+        ],
+        "Loai_dat": [
+          "Full tho cu"
+        ],
+        "Loai_duong": [
+          "Duong nhua",
+          "Duong be tong"
+        ],
+        "Huong_nha": [
+          "Tây Bắc",
+          "Tây Nam",
+          "Đông Nam",
+          "Đông Bắc",
+          "Tây",
+          "Bắc",
+          "Đông",
+          "Nam"
+        ],
+        "Phap_ly": [
+          "Sổ đỏ/Sổ hồng",
+          "Chờ sổ",
+          "Vi bằng",
+          "Hợp đồng mua bán"
+        ],
+        "Mat_do_dan_cu": [
+          "Trung binh",
+          "Cao",
+          "Thap"
+        ],
+        "An_ninh": [
+          "Rất tốt (Khu VIP)",
+          "Tốt",
+          "Kém (Hay trộm cắp)",
+          "Bình thường"
+        ],
+        "Gan_Tien_ich": [
+          "Gần Công viên/Hồ",
+          "Gần trường học/Chợ",
+          "Gần Bệnh viện",
+          "Không gần gì"
+        ],
+        "Gan_Giao_thong": [
+          "Gần Metro (Tàu điện)",
+          "Gần Bến xe Bus",
+          "Xa phương tiện CC"
+        ],
+        "Noi_that": [
+          "Nội thất cũ nát",
+          "Nhà trống",
+          "Full nội thất cao cấp",
+          "Cơ bản"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "On dinh",
+          "Hay hong",
+          "Can sua chua"
+        ],
+        "Muc_do_xuong_cap": [
+          "Tot/Moi",
+          "Xuong cap nhe",
+          "Binh thuong",
+          "Nat/Can dap di"
+        ]
+      },
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 5.0,
+          "max": 11.99,
+          "p01": 5.07,
+          "p05": 5.398000000000001,
+          "median": 8.61,
+          "p95": 11.691999999999998,
+          "p99": 11.94,
+          "is_int": false,
+          "step": 0.1
+        },
+        "Dien_tich_m2": {
+          "min": 20.0,
+          "max": 140.0,
+          "p01": 20.0,
+          "p05": 20.0,
+          "median": 55.0,
+          "p95": 96.0,
+          "p99": 116.22000000000003,
+          "is_int": false,
+          "step": 1.0
+        },
+        "Mat_tien_m": {
+          "min": 3.0,
+          "max": 12.0,
+          "p01": 3.1,
+          "p05": 3.4,
+          "median": 7.5,
+          "p95": 11.5,
+          "p99": 11.9,
+          "is_int": false,
+          "step": 0.1
+        },
+        "So_tang": {
+          "min": 2.0,
+          "max": 8.0,
+          "p01": 2.0,
+          "p05": 2.0,
+          "median": 5.0,
+          "p95": 8.0,
+          "p99": 8.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 11.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 5.0,
+          "p95": 11.0,
+          "p99": 11.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 10.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 3.0,
+          "p95": 10.0,
+          "p99": 10.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "Do_rong_duong_m": {
+          "min": 1.5,
+          "max": 15.0,
+          "p01": 1.7,
+          "p05": 2.2,
+          "median": 8.1,
+          "p95": 14.4,
+          "p99": 14.9,
+          "is_int": false,
+          "step": 0.5
+        },
+        "Tuoi_nha_nam": {
+          "min": 0.0,
+          "max": 30.0,
+          "p01": 0.0,
+          "p05": 1.0,
+          "median": 15.0,
+          "p95": 29.0,
+          "p99": 30.0,
+          "is_int": true,
+          "step": 1.0
+        }
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ],
+        "Co_bi_ngap": [
+          0,
+          1
+        ]
+      }
+    },
+    "Hà Đông": {
+      "n": 1637,
+      "categorical": {
+        "Quan_Huyen": [
+          "Hà Đông"
+        ],
+        "Dac_diem_khu_vuc": [
+          "Khu dan cu",
+          "Khu dau gia",
+          "Gan KCN"
+        ],
+        "Loai_dat": [
+          "Full tho cu",
+          "Tho cu + Dat vuon"
+        ],
+        "Loai_duong": [
+          "Duong nhua",
+          "Duong be tong"
+        ],
+        "Huong_nha": [
+          "Tây",
+          "Tây Nam",
+          "Bắc",
+          "Đông Nam",
+          "Nam",
+          "Đông Bắc",
+          "Đông",
+          "Tây Bắc"
+        ],
+        "Phap_ly": [
+          "Sổ đỏ/Sổ hồng",
+          "Chờ sổ",
+          "Vi bằng",
+          "Hợp đồng mua bán"
+        ],
+        "Mat_do_dan_cu": [
+          "Trung binh",
+          "Thap",
+          "Cao"
+        ],
+        "An_ninh": [
+          "Rất tốt (Khu VIP)",
+          "Tốt",
+          "Bình thường",
+          "Kém (Hay trộm cắp)"
+        ],
+        "Gan_Tien_ich": [
+          "Gần Bệnh viện",
+          "Gần Công viên/Hồ",
+          "Gần trường học/Chợ",
+          "Không gần gì"
+        ],
+        "Gan_Giao_thong": [
+          "Xa phương tiện CC",
+          "Gần Metro (Tàu điện)",
+          "Gần Bến xe Bus"
+        ],
+        "Noi_that": [
+          "Full nội thất cao cấp",
+          "Nội thất cũ nát",
+          "Nhà trống",
+          "Cơ bản"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "On dinh",
+          "Hay hong",
+          "Can sua chua"
+        ],
+        "Muc_do_xuong_cap": [
+          "Tot/Moi",
+          "Xuong cap nhe",
+          "Binh thuong",
+          "Nat/Can dap di"
+        ]
+      },
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 12.01,
+          "max": 18.0,
+          "p01": 12.0736,
+          "p05": 12.31,
+          "median": 14.98,
+          "p95": 17.67,
+          "p99": 17.94,
+          "is_int": false,
+          "step": 0.1
+        },
+        "Dien_tich_m2": {
+          "min": 30.0,
+          "max": 177.0,
+          "p01": 30.0,
+          "p05": 30.0,
+          "median": 74.0,
+          "p95": 122.0,
+          "p99": 141.0,
+          "is_int": false,
+          "step": 1.0
+        },
+        "Mat_tien_m": {
+          "min": 3.0,
+          "max": 12.0,
+          "p01": 3.1,
+          "p05": 3.5,
+          "median": 7.5,
+          "p95": 11.7,
+          "p99": 11.9,
+          "is_int": false,
+          "step": 0.1
+        },
+        "So_tang": {
+          "min": 1.0,
+          "max": 5.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 3.0,
+          "p95": 5.0,
+          "p99": 5.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 10.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 3.0,
+          "p95": 8.0,
+          "p99": 10.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 10.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 6.0,
+          "p99": 9.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "Do_rong_duong_m": {
+          "min": 1.5,
+          "max": 15.0,
+          "p01": 1.6,
+          "p05": 2.1,
+          "median": 8.3,
+          "p95": 14.3,
+          "p99": 14.863999999999988,
+          "is_int": false,
+          "step": 0.5
+        },
+        "Tuoi_nha_nam": {
+          "min": 0.0,
+          "max": 30.0,
+          "p01": 0.0,
+          "p05": 1.0,
+          "median": 15.0,
+          "p95": 29.0,
+          "p99": 30.0,
+          "is_int": true,
+          "step": 1.0
+        }
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          0,
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ],
+        "Co_bi_ngap": [
+          0,
+          1
+        ]
+      }
+    },
+    "Long Biên": {
+      "n": 1651,
+      "categorical": {
+        "Quan_Huyen": [
+          "Long Biên"
+        ],
+        "Dac_diem_khu_vuc": [
+          "Khu dan cu",
+          "Khu dau gia",
+          "Gan KCN"
+        ],
+        "Loai_dat": [
+          "Full tho cu",
+          "Tho cu + Dat vuon"
+        ],
+        "Loai_duong": [
+          "Duong nhua",
+          "Duong be tong"
+        ],
+        "Huong_nha": [
+          "Bắc",
+          "Đông Nam",
+          "Tây Bắc",
+          "Tây Nam",
+          "Nam",
+          "Đông",
+          "Tây",
+          "Đông Bắc"
+        ],
+        "Phap_ly": [
+          "Sổ đỏ/Sổ hồng",
+          "Chờ sổ",
+          "Hợp đồng mua bán",
+          "Vi bằng"
+        ],
+        "Mat_do_dan_cu": [
+          "Thap",
+          "Cao",
+          "Trung binh"
+        ],
+        "An_ninh": [
+          "Kém (Hay trộm cắp)",
+          "Tốt",
+          "Rất tốt (Khu VIP)",
+          "Bình thường"
+        ],
+        "Gan_Tien_ich": [
+          "Gần Công viên/Hồ",
+          "Gần Bệnh viện",
+          "Gần trường học/Chợ",
+          "Không gần gì"
+        ],
+        "Gan_Giao_thong": [
+          "Xa phương tiện CC",
+          "Gần Bến xe Bus",
+          "Gần Metro (Tàu điện)"
+        ],
+        "Noi_that": [
+          "Nhà trống",
+          "Nội thất cũ nát",
+          "Full nội thất cao cấp",
+          "Cơ bản"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "On dinh",
+          "Hay hong",
+          "Can sua chua"
+        ],
+        "Muc_do_xuong_cap": [
+          "Tot/Moi",
+          "Binh thuong",
+          "Xuong cap nhe",
+          "Nat/Can dap di"
+        ]
+      },
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 5.01,
+          "max": 15.0,
+          "p01": 5.12,
+          "p05": 5.6,
+          "median": 10.04,
+          "p95": 14.5,
+          "p99": 14.905000000000001,
+          "is_int": false,
+          "step": 0.1
+        },
+        "Dien_tich_m2": {
+          "min": 30.0,
+          "max": 170.0,
+          "p01": 30.0,
+          "p05": 30.0,
+          "median": 73.0,
+          "p95": 121.0,
+          "p99": 141.5,
+          "is_int": false,
+          "step": 1.0
+        },
+        "Mat_tien_m": {
+          "min": 3.0,
+          "max": 12.0,
+          "p01": 3.1,
+          "p05": 3.4,
+          "median": 7.5,
+          "p95": 11.5,
+          "p99": 11.9,
+          "is_int": false,
+          "step": 0.1
+        },
+        "So_tang": {
+          "min": 1.0,
+          "max": 5.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 3.0,
+          "p95": 5.0,
+          "p99": 5.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 10.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 3.0,
+          "p95": 8.0,
+          "p99": 10.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 10.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 7.0,
+          "p99": 9.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "Do_rong_duong_m": {
+          "min": 1.5,
+          "max": 15.0,
+          "p01": 1.7,
+          "p05": 2.3,
+          "median": 8.4,
+          "p95": 14.3,
+          "p99": 14.9,
+          "is_int": false,
+          "step": 0.5
+        },
+        "Tuoi_nha_nam": {
+          "min": 0.0,
+          "max": 30.0,
+          "p01": 0.0,
+          "p05": 1.0,
+          "median": 15.0,
+          "p95": 29.0,
+          "p99": 30.0,
+          "is_int": true,
+          "step": 1.0
+        }
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          0,
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ],
+        "Co_bi_ngap": [
+          0,
+          1
+        ]
+      }
+    },
+    "Mê Linh": {
+      "n": 1638,
+      "categorical": {
+        "Quan_Huyen": [
+          "Mê Linh"
+        ],
+        "Dac_diem_khu_vuc": [
+          "Trong lang xom",
+          "Gan lang nghe",
+          "Mat duong Quoc lo"
+        ],
+        "Loai_dat": [
+          "Full tho cu",
+          "Tho cu + Dat vuon"
+        ],
+        "Loai_duong": [
+          "Duong nhua",
+          "Duong be tong",
+          "Duong dat"
+        ],
+        "Huong_nha": [
+          "Đông Bắc",
+          "Đông",
+          "Đông Nam",
+          "Tây Nam",
+          "Tây",
+          "Bắc",
+          "Tây Bắc",
+          "Nam"
+        ],
+        "Phap_ly": [
+          "Sổ đỏ/Sổ hồng",
+          "Vi bằng",
+          "Hợp đồng mua bán",
+          "Chờ sổ"
+        ],
+        "Mat_do_dan_cu": [
+          "Thap",
+          "Cao",
+          "Trung binh"
+        ],
+        "An_ninh": [
+          "Bình thường",
+          "Rất tốt (Khu VIP)",
+          "Kém (Hay trộm cắp)",
+          "Tốt"
+        ],
+        "Gan_Tien_ich": [
+          "Gần Công viên/Hồ",
+          "Không gần gì",
+          "Gần trường học/Chợ",
+          "Gần Bệnh viện"
+        ],
+        "Gan_Giao_thong": [
+          "Gần Bến xe Bus",
+          "Gần Metro (Tàu điện)",
+          "Xa phương tiện CC"
+        ],
+        "Noi_that": [
+          "Cơ bản",
+          "Nhà trống",
+          "Nội thất cũ nát",
+          "Full nội thất cao cấp"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "On dinh",
+          "Hay hong",
+          "Can sua chua"
+        ],
+        "Muc_do_xuong_cap": [
+          "Tot/Moi",
+          "Xuong cap nhe",
+          "Binh thuong",
+          "Nat/Can dap di"
+        ]
+      },
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 20.01,
+          "max": 35.0,
+          "p01": 20.1137,
+          "p05": 20.76,
+          "median": 27.57,
+          "p95": 34.3415,
+          "p99": 34.86,
+          "is_int": false,
+          "step": 0.1
+        },
+        "Dien_tich_m2": {
+          "min": 40.0,
+          "max": 237.0,
+          "p01": 40.0,
+          "p05": 40.0,
+          "median": 118.5,
+          "p95": 199.0,
+          "p99": 236.62999999999988,
+          "is_int": false,
+          "step": 1.0
+        },
+        "Mat_tien_m": {
+          "min": 5.0,
+          "max": 14.0,
+          "p01": 5.1,
+          "p05": 5.4,
+          "median": 9.5,
+          "p95": 13.6,
+          "p99": 13.9,
+          "is_int": false,
+          "step": 0.1
+        },
+        "So_tang": {
+          "min": 1.0,
+          "max": 3.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 3.0,
+          "p99": 3.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 6.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 6.0,
+          "p99": 6.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 7.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 5.0,
+          "p99": 6.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "Do_rong_duong_m": {
+          "min": 1.5,
+          "max": 15.0,
+          "p01": 1.6,
+          "p05": 2.1,
+          "median": 8.1,
+          "p95": 14.2,
+          "p99": 14.8,
+          "is_int": false,
+          "step": 0.5
+        },
+        "Tuoi_nha_nam": {
+          "min": 0.0,
+          "max": 30.0,
+          "p01": 0.0,
+          "p05": 1.0,
+          "median": 14.5,
+          "p95": 29.0,
+          "p99": 30.0,
+          "is_int": true,
+          "step": 1.0
+        }
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          0,
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ],
+        "Co_bi_ngap": [
+          0,
+          1
+        ]
+      }
+    },
+    "Mỹ Đức": {
+      "n": 1657,
+      "categorical": {
+        "Quan_Huyen": [
+          "Mỹ Đức"
+        ],
+        "Dac_diem_khu_vuc": [
+          "Trong lang xom",
+          "Mat duong Quoc lo",
+          "Gan lang nghe"
+        ],
+        "Loai_dat": [
+          "Tho cu + Dat vuon",
+          "Full tho cu"
+        ],
+        "Loai_duong": [
+          "Duong nhua",
+          "Duong be tong",
+          "Duong dat"
+        ],
+        "Huong_nha": [
+          "Đông",
+          "Nam",
+          "Tây Bắc",
+          "Bắc",
+          "Tây",
+          "Đông Nam",
+          "Tây Nam",
+          "Đông Bắc"
+        ],
+        "Phap_ly": [
+          "Sổ đỏ/Sổ hồng",
+          "Hợp đồng mua bán",
+          "Chờ sổ",
+          "Vi bằng"
+        ],
+        "Mat_do_dan_cu": [
+          "Thap",
+          "Cao",
+          "Trung binh"
+        ],
+        "An_ninh": [
+          "Tốt",
+          "Bình thường",
+          "Kém (Hay trộm cắp)",
+          "Rất tốt (Khu VIP)"
+        ],
+        "Gan_Tien_ich": [
+          "Gần Công viên/Hồ",
+          "Không gần gì",
+          "Gần Bệnh viện",
+          "Gần trường học/Chợ"
+        ],
+        "Gan_Giao_thong": [
+          "Xa phương tiện CC",
+          "Gần Metro (Tàu điện)",
+          "Gần Bến xe Bus"
+        ],
+        "Noi_that": [
+          "Nhà trống",
+          "Nội thất cũ nát",
+          "Cơ bản",
+          "Full nội thất cao cấp"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "On dinh",
+          "Hay hong",
+          "Can sua chua"
+        ],
+        "Muc_do_xuong_cap": [
+          "Tot/Moi",
+          "Xuong cap nhe",
+          "Binh thuong",
+          "Nat/Can dap di"
+        ]
+      },
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 40.02,
+          "max": 60.0,
+          "p01": 40.221199999999996,
+          "p05": 40.91,
+          "median": 49.84,
+          "p95": 58.934,
+          "p99": 59.8144,
+          "is_int": false,
+          "step": 0.1
+        },
+        "Dien_tich_m2": {
+          "min": 40.0,
+          "max": 237.0,
+          "p01": 40.0,
+          "p05": 40.0,
+          "median": 120.0,
+          "p95": 198.0,
+          "p99": 229.0,
+          "is_int": false,
+          "step": 1.0
+        },
+        "Mat_tien_m": {
+          "min": 5.0,
+          "max": 14.0,
+          "p01": 5.1,
+          "p05": 5.4,
+          "median": 9.7,
+          "p95": 13.6,
+          "p99": 13.9,
+          "is_int": false,
+          "step": 0.1
+        },
+        "So_tang": {
+          "min": 1.0,
+          "max": 3.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 3.0,
+          "p99": 3.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 6.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 6.0,
+          "p99": 6.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 7.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 5.0,
+          "p99": 6.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "Do_rong_duong_m": {
+          "min": 1.5,
+          "max": 15.0,
+          "p01": 1.6,
+          "p05": 2.1800000000000015,
+          "median": 8.1,
+          "p95": 14.4,
+          "p99": 14.844000000000007,
+          "is_int": false,
+          "step": 0.5
+        },
+        "Tuoi_nha_nam": {
+          "min": 0.0,
+          "max": 30.0,
+          "p01": 0.0,
+          "p05": 1.0,
+          "median": 15.0,
+          "p95": 29.0,
+          "p99": 30.0,
+          "is_int": true,
+          "step": 1.0
+        }
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          0,
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ],
+        "Co_bi_ngap": [
+          0,
+          1
+        ]
+      }
+    },
+    "Nam Từ Liêm": {
+      "n": 1630,
+      "categorical": {
+        "Quan_Huyen": [
+          "Nam Từ Liêm"
+        ],
+        "Dac_diem_khu_vuc": [
+          "Khu dan cu",
+          "Gan KCN",
+          "Khu dau gia"
+        ],
+        "Loai_dat": [
+          "Full tho cu",
+          "Tho cu + Dat vuon"
+        ],
+        "Loai_duong": [
+          "Duong nhua",
+          "Duong be tong"
+        ],
+        "Huong_nha": [
+          "Đông Bắc",
+          "Đông Nam",
+          "Tây Bắc",
+          "Nam",
+          "Tây",
+          "Tây Nam",
+          "Đông",
+          "Bắc"
+        ],
+        "Phap_ly": [
+          "Sổ đỏ/Sổ hồng",
+          "Vi bằng",
+          "Chờ sổ",
+          "Hợp đồng mua bán"
+        ],
+        "Mat_do_dan_cu": [
+          "Cao",
+          "Trung binh",
+          "Thap"
+        ],
+        "An_ninh": [
+          "Rất tốt (Khu VIP)",
+          "Bình thường",
+          "Kém (Hay trộm cắp)",
+          "Tốt"
+        ],
+        "Gan_Tien_ich": [
+          "Gần Bệnh viện",
+          "Gần Công viên/Hồ",
+          "Gần trường học/Chợ",
+          "Không gần gì"
+        ],
+        "Gan_Giao_thong": [
+          "Gần Bến xe Bus",
+          "Gần Metro (Tàu điện)",
+          "Xa phương tiện CC"
+        ],
+        "Noi_that": [
+          "Nhà trống",
+          "Nội thất cũ nát",
+          "Full nội thất cao cấp",
+          "Cơ bản"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "On dinh",
+          "Hay hong",
+          "Can sua chua"
+        ],
+        "Muc_do_xuong_cap": [
+          "Tot/Moi",
+          "Binh thuong",
+          "Xuong cap nhe",
+          "Nat/Can dap di"
+        ]
+      },
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 10.0,
+          "max": 15.0,
+          "p01": 10.08,
+          "p05": 10.29,
+          "median": 12.53,
+          "p95": 14.7555,
+          "p99": 14.97,
+          "is_int": false,
+          "step": 0.1
+        },
+        "Dien_tich_m2": {
+          "min": 30.0,
+          "max": 179.0,
+          "p01": 30.0,
+          "p05": 30.0,
+          "median": 75.0,
+          "p95": 125.0,
+          "p99": 150.42000000000007,
+          "is_int": false,
+          "step": 1.0
+        },
+        "Mat_tien_m": {
+          "min": 3.0,
+          "max": 12.0,
+          "p01": 3.1,
+          "p05": 3.5,
+          "median": 7.6,
+          "p95": 11.6,
+          "p99": 11.9,
+          "is_int": false,
+          "step": 0.1
+        },
+        "So_tang": {
+          "min": 1.0,
+          "max": 5.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 3.0,
+          "p95": 5.0,
+          "p99": 5.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 10.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 3.0,
+          "p95": 8.0,
+          "p99": 10.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 10.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 7.0,
+          "p99": 9.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "Do_rong_duong_m": {
+          "min": 1.5,
+          "max": 15.0,
+          "p01": 1.6,
+          "p05": 2.1,
+          "median": 8.4,
+          "p95": 14.3,
+          "p99": 14.9,
+          "is_int": false,
+          "step": 0.5
+        },
+        "Tuoi_nha_nam": {
+          "min": 0.0,
+          "max": 30.0,
+          "p01": 0.0,
+          "p05": 1.0,
+          "median": 15.0,
+          "p95": 29.0,
+          "p99": 30.0,
+          "is_int": true,
+          "step": 1.0
+        }
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          0,
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ],
+        "Co_bi_ngap": [
+          0,
+          1
+        ]
+      }
+    },
+    "Phú Xuyên": {
+      "n": 1716,
+      "categorical": {
+        "Quan_Huyen": [
+          "Phú Xuyên"
+        ],
+        "Dac_diem_khu_vuc": [
+          "Trong lang xom",
+          "Gan lang nghe",
+          "Mat duong Quoc lo"
+        ],
+        "Loai_dat": [
+          "Tho cu + Dat vuon",
+          "Full tho cu"
+        ],
+        "Loai_duong": [
+          "Duong nhua",
+          "Duong be tong",
+          "Duong dat"
+        ],
+        "Huong_nha": [
+          "Đông",
+          "Bắc",
+          "Tây",
+          "Tây Bắc",
+          "Đông Bắc",
+          "Tây Nam",
+          "Đông Nam",
+          "Nam"
+        ],
+        "Phap_ly": [
+          "Sổ đỏ/Sổ hồng",
+          "Chờ sổ",
+          "Hợp đồng mua bán",
+          "Vi bằng"
+        ],
+        "Mat_do_dan_cu": [
+          "Trung binh",
+          "Thap",
+          "Cao"
+        ],
+        "An_ninh": [
+          "Bình thường",
+          "Rất tốt (Khu VIP)",
+          "Kém (Hay trộm cắp)",
+          "Tốt"
+        ],
+        "Gan_Tien_ich": [
+          "Không gần gì",
+          "Gần Công viên/Hồ",
+          "Gần Bệnh viện",
+          "Gần trường học/Chợ"
+        ],
+        "Gan_Giao_thong": [
+          "Xa phương tiện CC",
+          "Gần Bến xe Bus",
+          "Gần Metro (Tàu điện)"
+        ],
+        "Noi_that": [
+          "Nhà trống",
+          "Full nội thất cao cấp",
+          "Cơ bản",
+          "Nội thất cũ nát"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "On dinh",
+          "Hay hong",
+          "Can sua chua"
+        ],
+        "Muc_do_xuong_cap": [
+          "Tot/Moi",
+          "Binh thuong",
+          "Xuong cap nhe",
+          "Nat/Can dap di"
+        ]
+      },
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 30.0,
+          "max": 44.98,
+          "p01": 30.1415,
+          "p05": 30.8675,
+          "median": 37.47,
+          "p95": 44.1,
+          "p99": 44.84,
+          "is_int": false,
+          "step": 0.1
+        },
+        "Dien_tich_m2": {
+          "min": 40.0,
+          "max": 237.0,
+          "p01": 40.0,
+          "p05": 40.0,
+          "median": 119.0,
+          "p95": 202.25,
+          "p99": 237.0,
+          "is_int": false,
+          "step": 1.0
+        },
+        "Mat_tien_m": {
+          "min": 5.0,
+          "max": 14.0,
+          "p01": 5.1,
+          "p05": 5.4,
+          "median": 9.4,
+          "p95": 13.5,
+          "p99": 13.9,
+          "is_int": false,
+          "step": 0.1
+        },
+        "So_tang": {
+          "min": 1.0,
+          "max": 3.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 3.0,
+          "p99": 3.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 6.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 6.0,
+          "p99": 6.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 7.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 5.0,
+          "p99": 6.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "Do_rong_duong_m": {
+          "min": 1.5,
+          "max": 15.0,
+          "p01": 1.7,
+          "p05": 2.2,
+          "median": 8.3,
+          "p95": 14.4,
+          "p99": 14.8,
+          "is_int": false,
+          "step": 0.5
+        },
+        "Tuoi_nha_nam": {
+          "min": 0.0,
+          "max": 30.0,
+          "p01": 0.0,
+          "p05": 1.0,
+          "median": 15.0,
+          "p95": 29.0,
+          "p99": 30.0,
+          "is_int": true,
+          "step": 1.0
+        }
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          0,
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ],
+        "Co_bi_ngap": [
+          0,
+          1
+        ]
+      }
+    },
+    "Phúc Thọ": {
+      "n": 1728,
+      "categorical": {
+        "Quan_Huyen": [
+          "Phúc Thọ"
+        ],
+        "Dac_diem_khu_vuc": [
+          "Trong lang xom",
+          "Mat duong Quoc lo",
+          "Gan lang nghe"
+        ],
+        "Loai_dat": [
+          "Tho cu + Dat vuon",
+          "Full tho cu"
+        ],
+        "Loai_duong": [
+          "Duong nhua",
+          "Duong be tong",
+          "Duong dat"
+        ],
+        "Huong_nha": [
+          "Nam",
+          "Đông Bắc",
+          "Tây Bắc",
+          "Tây Nam",
+          "Bắc",
+          "Đông",
+          "Tây",
+          "Đông Nam"
+        ],
+        "Phap_ly": [
+          "Sổ đỏ/Sổ hồng",
+          "Chờ sổ",
+          "Hợp đồng mua bán",
+          "Vi bằng"
+        ],
+        "Mat_do_dan_cu": [
+          "Trung binh",
+          "Thap",
+          "Cao"
+        ],
+        "An_ninh": [
+          "Rất tốt (Khu VIP)",
+          "Tốt",
+          "Bình thường",
+          "Kém (Hay trộm cắp)"
+        ],
+        "Gan_Tien_ich": [
+          "Gần Công viên/Hồ",
+          "Gần trường học/Chợ",
+          "Không gần gì",
+          "Gần Bệnh viện"
+        ],
+        "Gan_Giao_thong": [
+          "Gần Metro (Tàu điện)",
+          "Xa phương tiện CC",
+          "Gần Bến xe Bus"
+        ],
+        "Noi_that": [
+          "Full nội thất cao cấp",
+          "Nội thất cũ nát",
+          "Cơ bản",
+          "Nhà trống"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "On dinh",
+          "Hay hong",
+          "Can sua chua"
+        ],
+        "Muc_do_xuong_cap": [
+          "Tot/Moi",
+          "Binh thuong",
+          "Xuong cap nhe",
+          "Nat/Can dap di"
+        ]
+      },
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 25.01,
+          "max": 40.0,
+          "p01": 25.19,
+          "p05": 25.793499999999998,
+          "median": 32.57,
+          "p95": 39.11,
+          "p99": 39.82,
+          "is_int": false,
+          "step": 0.1
+        },
+        "Dien_tich_m2": {
+          "min": 40.0,
+          "max": 237.0,
+          "p01": 40.0,
+          "p05": 40.0,
+          "median": 119.0,
+          "p95": 202.0,
+          "p99": 232.73000000000002,
+          "is_int": false,
+          "step": 1.0
+        },
+        "Mat_tien_m": {
+          "min": 5.0,
+          "max": 14.0,
+          "p01": 5.1,
+          "p05": 5.4,
+          "median": 9.6,
+          "p95": 13.6,
+          "p99": 13.9,
+          "is_int": false,
+          "step": 0.1
+        },
+        "So_tang": {
+          "min": 1.0,
+          "max": 3.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 3.0,
+          "p99": 3.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 6.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 6.0,
+          "p99": 6.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 7.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 5.0,
+          "p99": 6.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "Do_rong_duong_m": {
+          "min": 1.5,
+          "max": 15.0,
+          "p01": 1.6,
+          "p05": 2.1,
+          "median": 8.2,
+          "p95": 14.5,
+          "p99": 14.9,
+          "is_int": false,
+          "step": 0.5
+        },
+        "Tuoi_nha_nam": {
+          "min": 0.0,
+          "max": 30.0,
+          "p01": 0.0,
+          "p05": 1.0,
+          "median": 14.0,
+          "p95": 29.0,
+          "p99": 30.0,
+          "is_int": true,
+          "step": 1.0
+        }
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          0,
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ],
+        "Co_bi_ngap": [
+          0,
+          1
+        ]
+      }
+    },
+    "Quốc Oai": {
+      "n": 1668,
+      "categorical": {
+        "Quan_Huyen": [
+          "Quốc Oai"
+        ],
+        "Dac_diem_khu_vuc": [
+          "Trong lang xom",
+          "Gan lang nghe",
+          "Mat duong Quoc lo"
+        ],
+        "Loai_dat": [
+          "Tho cu + Dat vuon",
+          "Full tho cu"
+        ],
+        "Loai_duong": [
+          "Duong nhua",
+          "Duong be tong",
+          "Duong dat"
+        ],
+        "Huong_nha": [
+          "Đông",
+          "Tây Nam",
+          "Tây Bắc",
+          "Bắc",
+          "Tây",
+          "Đông Nam",
+          "Đông Bắc",
+          "Nam"
+        ],
+        "Phap_ly": [
+          "Sổ đỏ/Sổ hồng",
+          "Hợp đồng mua bán",
+          "Vi bằng",
+          "Chờ sổ"
+        ],
+        "Mat_do_dan_cu": [
+          "Thap",
+          "Trung binh",
+          "Cao"
+        ],
+        "An_ninh": [
+          "Tốt",
+          "Rất tốt (Khu VIP)",
+          "Kém (Hay trộm cắp)",
+          "Bình thường"
+        ],
+        "Gan_Tien_ich": [
+          "Gần trường học/Chợ",
+          "Gần Bệnh viện",
+          "Không gần gì",
+          "Gần Công viên/Hồ"
+        ],
+        "Gan_Giao_thong": [
+          "Gần Bến xe Bus",
+          "Gần Metro (Tàu điện)",
+          "Xa phương tiện CC"
+        ],
+        "Noi_that": [
+          "Full nội thất cao cấp",
+          "Nội thất cũ nát",
+          "Cơ bản",
+          "Nhà trống"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "On dinh",
+          "Hay hong",
+          "Can sua chua"
+        ],
+        "Muc_do_xuong_cap": [
+          "Tot/Moi",
+          "Binh thuong",
+          "Xuong cap nhe",
+          "Nat/Can dap di"
+        ]
+      },
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 20.0,
+          "max": 34.99,
+          "p01": 20.1067,
+          "p05": 20.793499999999998,
+          "median": 27.66,
+          "p95": 34.13,
+          "p99": 34.81,
+          "is_int": false,
+          "step": 0.1
+        },
+        "Dien_tich_m2": {
+          "min": 40.0,
+          "max": 237.0,
+          "p01": 40.0,
+          "p05": 40.0,
+          "median": 119.0,
+          "p95": 202.0,
+          "p99": 237.0,
+          "is_int": false,
+          "step": 1.0
+        },
+        "Mat_tien_m": {
+          "min": 5.0,
+          "max": 14.0,
+          "p01": 5.1,
+          "p05": 5.435000000000001,
+          "median": 9.3,
+          "p95": 13.5,
+          "p99": 13.9,
+          "is_int": false,
+          "step": 0.1
+        },
+        "So_tang": {
+          "min": 1.0,
+          "max": 3.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 3.0,
+          "p99": 3.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 6.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 5.0,
+          "p99": 6.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 7.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 5.0,
+          "p99": 6.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "Do_rong_duong_m": {
+          "min": 1.5,
+          "max": 15.0,
+          "p01": 1.7,
+          "p05": 2.2350000000000008,
+          "median": 8.5,
+          "p95": 14.3,
+          "p99": 14.9,
+          "is_int": false,
+          "step": 0.5
+        },
+        "Tuoi_nha_nam": {
+          "min": 0.0,
+          "max": 30.0,
+          "p01": 0.0,
+          "p05": 1.0,
+          "median": 15.0,
+          "p95": 29.0,
+          "p99": 30.0,
+          "is_int": true,
+          "step": 1.0
+        }
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          0,
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ],
+        "Co_bi_ngap": [
+          0,
+          1
+        ]
+      }
+    },
+    "Sóc Sơn": {
+      "n": 1681,
+      "categorical": {
+        "Quan_Huyen": [
+          "Sóc Sơn"
+        ],
+        "Dac_diem_khu_vuc": [
+          "Trong lang xom",
+          "Mat duong Quoc lo",
+          "Gan lang nghe"
+        ],
+        "Loai_dat": [
+          "Full tho cu",
+          "Tho cu + Dat vuon"
+        ],
+        "Loai_duong": [
+          "Duong nhua",
+          "Duong be tong",
+          "Duong dat"
+        ],
+        "Huong_nha": [
+          "Tây Nam",
+          "Tây",
+          "Đông",
+          "Đông Nam",
+          "Tây Bắc",
+          "Nam",
+          "Bắc",
+          "Đông Bắc"
+        ],
+        "Phap_ly": [
+          "Sổ đỏ/Sổ hồng",
+          "Hợp đồng mua bán",
+          "Chờ sổ",
+          "Vi bằng"
+        ],
+        "Mat_do_dan_cu": [
+          "Thap",
+          "Cao",
+          "Trung binh"
+        ],
+        "An_ninh": [
+          "Kém (Hay trộm cắp)",
+          "Bình thường",
+          "Tốt",
+          "Rất tốt (Khu VIP)"
+        ],
+        "Gan_Tien_ich": [
+          "Gần Bệnh viện",
+          "Không gần gì",
+          "Gần Công viên/Hồ",
+          "Gần trường học/Chợ"
+        ],
+        "Gan_Giao_thong": [
+          "Xa phương tiện CC",
+          "Gần Metro (Tàu điện)",
+          "Gần Bến xe Bus"
+        ],
+        "Noi_that": [
+          "Full nội thất cao cấp",
+          "Nội thất cũ nát",
+          "Nhà trống",
+          "Cơ bản"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "On dinh",
+          "Hay hong",
+          "Can sua chua"
+        ],
+        "Muc_do_xuong_cap": [
+          "Tot/Moi",
+          "Xuong cap nhe",
+          "Binh thuong",
+          "Nat/Can dap di"
+        ]
+      },
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 25.01,
+          "max": 39.93,
+          "p01": 25.125999999999998,
+          "p05": 25.65,
+          "median": 32.45,
+          "p95": 39.12,
+          "p99": 39.804,
+          "is_int": false,
+          "step": 0.1
+        },
+        "Dien_tich_m2": {
+          "min": 40.0,
+          "max": 237.0,
+          "p01": 40.0,
+          "p05": 40.0,
+          "median": 122.0,
+          "p95": 205.0,
+          "p99": 236.0,
+          "is_int": false,
+          "step": 1.0
+        },
+        "Mat_tien_m": {
+          "min": 5.0,
+          "max": 14.0,
+          "p01": 5.1,
+          "p05": 5.5,
+          "median": 9.5,
+          "p95": 13.5,
+          "p99": 13.9,
+          "is_int": false,
+          "step": 0.1
+        },
+        "So_tang": {
+          "min": 1.0,
+          "max": 3.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 3.0,
+          "p99": 3.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 6.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 6.0,
+          "p99": 6.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 7.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 5.0,
+          "p99": 6.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "Do_rong_duong_m": {
+          "min": 1.5,
+          "max": 15.0,
+          "p01": 1.6,
+          "p05": 2.1,
+          "median": 8.2,
+          "p95": 14.3,
+          "p99": 14.8,
+          "is_int": false,
+          "step": 0.5
+        },
+        "Tuoi_nha_nam": {
+          "min": 0.0,
+          "max": 30.0,
+          "p01": 0.0,
+          "p05": 1.0,
+          "median": 15.0,
+          "p95": 29.0,
+          "p99": 30.0,
+          "is_int": true,
+          "step": 1.0
+        }
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          0,
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ],
+        "Co_bi_ngap": [
+          0,
+          1
+        ]
+      }
+    },
+    "Sơn Tây": {
+      "n": 1736,
+      "categorical": {
+        "Quan_Huyen": [
+          "Sơn Tây"
+        ],
+        "Dac_diem_khu_vuc": [
+          "Trong lang xom",
+          "Mat duong Quoc lo",
+          "Gan lang nghe"
+        ],
+        "Loai_dat": [
+          "Full tho cu",
+          "Tho cu + Dat vuon"
+        ],
+        "Loai_duong": [
+          "Duong nhua",
+          "Duong be tong",
+          "Duong dat"
+        ],
+        "Huong_nha": [
+          "Tây",
+          "Tây Bắc",
+          "Đông Nam",
+          "Bắc",
+          "Đông",
+          "Đông Bắc",
+          "Nam",
+          "Tây Nam"
+        ],
+        "Phap_ly": [
+          "Sổ đỏ/Sổ hồng",
+          "Vi bằng",
+          "Chờ sổ",
+          "Hợp đồng mua bán"
+        ],
+        "Mat_do_dan_cu": [
+          "Thap",
+          "Cao",
+          "Trung binh"
+        ],
+        "An_ninh": [
+          "Bình thường",
+          "Kém (Hay trộm cắp)",
+          "Rất tốt (Khu VIP)",
+          "Tốt"
+        ],
+        "Gan_Tien_ich": [
+          "Không gần gì",
+          "Gần Bệnh viện",
+          "Gần Công viên/Hồ",
+          "Gần trường học/Chợ"
+        ],
+        "Gan_Giao_thong": [
+          "Gần Metro (Tàu điện)",
+          "Xa phương tiện CC",
+          "Gần Bến xe Bus"
+        ],
+        "Noi_that": [
+          "Nhà trống",
+          "Cơ bản",
+          "Full nội thất cao cấp",
+          "Nội thất cũ nát"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "On dinh",
+          "Hay hong",
+          "Can sua chua"
+        ],
+        "Muc_do_xuong_cap": [
+          "Tot/Moi",
+          "Binh thuong",
+          "Xuong cap nhe",
+          "Nat/Can dap di"
+        ]
+      },
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 35.01,
+          "max": 49.99,
+          "p01": 35.1435,
+          "p05": 35.97,
+          "median": 42.42,
+          "p95": 49.162499999999994,
+          "p99": 49.7665,
+          "is_int": false,
+          "step": 0.1
+        },
+        "Dien_tich_m2": {
+          "min": 40.0,
+          "max": 237.0,
+          "p01": 40.0,
+          "p05": 40.0,
+          "median": 117.0,
+          "p95": 201.0,
+          "p99": 231.0,
+          "is_int": false,
+          "step": 1.0
+        },
+        "Mat_tien_m": {
+          "min": 5.0,
+          "max": 14.0,
+          "p01": 5.1,
+          "p05": 5.4,
+          "median": 9.5,
+          "p95": 13.5,
+          "p99": 13.9,
+          "is_int": false,
+          "step": 0.1
+        },
+        "So_tang": {
+          "min": 1.0,
+          "max": 3.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 3.0,
+          "p99": 3.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 6.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 5.0,
+          "p99": 6.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 7.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 5.0,
+          "p99": 6.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "Do_rong_duong_m": {
+          "min": 1.5,
+          "max": 15.0,
+          "p01": 1.7,
+          "p05": 2.1750000000000003,
+          "median": 8.4,
+          "p95": 14.4,
+          "p99": 14.9,
+          "is_int": false,
+          "step": 0.5
+        },
+        "Tuoi_nha_nam": {
+          "min": 0.0,
+          "max": 30.0,
+          "p01": 0.0,
+          "p05": 1.0,
+          "median": 15.0,
+          "p95": 29.0,
+          "p99": 30.0,
+          "is_int": true,
+          "step": 1.0
+        }
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          0,
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ],
+        "Co_bi_ngap": [
+          0,
+          1
+        ]
+      }
+    },
+    "Thanh Oai": {
+      "n": 1658,
+      "categorical": {
+        "Quan_Huyen": [
+          "Thanh Oai"
+        ],
+        "Dac_diem_khu_vuc": [
+          "Khu dan cu",
+          "Gan KCN",
+          "Khu dau gia"
+        ],
+        "Loai_dat": [
+          "Full tho cu",
+          "Tho cu + Dat vuon"
+        ],
+        "Loai_duong": [
+          "Duong nhua",
+          "Duong be tong"
+        ],
+        "Huong_nha": [
+          "Đông Nam",
+          "Nam",
+          "Tây",
+          "Đông Bắc",
+          "Tây Bắc",
+          "Bắc",
+          "Tây Nam",
+          "Đông"
+        ],
+        "Phap_ly": [
+          "Sổ đỏ/Sổ hồng",
+          "Chờ sổ",
+          "Vi bằng",
+          "Hợp đồng mua bán"
+        ],
+        "Mat_do_dan_cu": [
+          "Trung binh",
+          "Thap",
+          "Cao"
+        ],
+        "An_ninh": [
+          "Kém (Hay trộm cắp)",
+          "Bình thường",
+          "Rất tốt (Khu VIP)",
+          "Tốt"
+        ],
+        "Gan_Tien_ich": [
+          "Gần trường học/Chợ",
+          "Không gần gì",
+          "Gần Bệnh viện",
+          "Gần Công viên/Hồ"
+        ],
+        "Gan_Giao_thong": [
+          "Xa phương tiện CC",
+          "Gần Metro (Tàu điện)",
+          "Gần Bến xe Bus"
+        ],
+        "Noi_that": [
+          "Nội thất cũ nát",
+          "Cơ bản",
+          "Nhà trống",
+          "Full nội thất cao cấp"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "On dinh",
+          "Hay hong",
+          "Can sua chua"
+        ],
+        "Muc_do_xuong_cap": [
+          "Tot/Moi",
+          "Xuong cap nhe",
+          "Binh thuong",
+          "Nat/Can dap di"
+        ]
+      },
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 20.0,
+          "max": 30.0,
+          "p01": 20.1157,
+          "p05": 20.5385,
+          "median": 25.225,
+          "p95": 29.512999999999998,
+          "p99": 29.9143,
+          "is_int": false,
+          "step": 0.1
+        },
+        "Dien_tich_m2": {
+          "min": 30.0,
+          "max": 173.0,
+          "p01": 30.0,
+          "p05": 30.0,
+          "median": 75.0,
+          "p95": 127.0,
+          "p99": 146.0,
+          "is_int": false,
+          "step": 1.0
+        },
+        "Mat_tien_m": {
+          "min": 3.0,
+          "max": 12.0,
+          "p01": 3.1,
+          "p05": 3.4,
+          "median": 7.7,
+          "p95": 11.6,
+          "p99": 11.9,
+          "is_int": false,
+          "step": 0.1
+        },
+        "So_tang": {
+          "min": 1.0,
+          "max": 5.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 3.0,
+          "p95": 5.0,
+          "p99": 5.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 10.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 3.0,
+          "p95": 8.0,
+          "p99": 10.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 10.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 7.0,
+          "p99": 9.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "Do_rong_duong_m": {
+          "min": 1.5,
+          "max": 15.0,
+          "p01": 1.6,
+          "p05": 2.2,
+          "median": 7.9,
+          "p95": 14.2,
+          "p99": 14.8,
+          "is_int": false,
+          "step": 0.5
+        },
+        "Tuoi_nha_nam": {
+          "min": 0.0,
+          "max": 30.0,
+          "p01": 0.0,
+          "p05": 1.0,
+          "median": 15.0,
+          "p95": 29.0,
+          "p99": 30.0,
+          "is_int": true,
+          "step": 1.0
+        }
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          0,
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ],
+        "Co_bi_ngap": [
+          0,
+          1
+        ]
+      }
+    },
+    "Thanh Trì": {
+      "n": 1637,
+      "categorical": {
+        "Quan_Huyen": [
+          "Thanh Trì"
+        ],
+        "Dac_diem_khu_vuc": [
+          "Khu dan cu",
+          "Khu dau gia",
+          "Gan KCN"
+        ],
+        "Loai_dat": [
+          "Full tho cu",
+          "Tho cu + Dat vuon"
+        ],
+        "Loai_duong": [
+          "Duong nhua",
+          "Duong be tong"
+        ],
+        "Huong_nha": [
+          "Đông Bắc",
+          "Tây Bắc",
+          "Nam",
+          "Tây Nam",
+          "Tây",
+          "Bắc",
+          "Đông Nam",
+          "Đông"
+        ],
+        "Phap_ly": [
+          "Sổ đỏ/Sổ hồng",
+          "Chờ sổ",
+          "Vi bằng",
+          "Hợp đồng mua bán"
+        ],
+        "Mat_do_dan_cu": [
+          "Trung binh",
+          "Cao",
+          "Thap"
+        ],
+        "An_ninh": [
+          "Rất tốt (Khu VIP)",
+          "Tốt",
+          "Kém (Hay trộm cắp)",
+          "Bình thường"
+        ],
+        "Gan_Tien_ich": [
+          "Không gần gì",
+          "Gần Bệnh viện",
+          "Gần trường học/Chợ",
+          "Gần Công viên/Hồ"
+        ],
+        "Gan_Giao_thong": [
+          "Gần Metro (Tàu điện)",
+          "Xa phương tiện CC",
+          "Gần Bến xe Bus"
+        ],
+        "Noi_that": [
+          "Full nội thất cao cấp",
+          "Nội thất cũ nát",
+          "Nhà trống",
+          "Cơ bản"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "On dinh",
+          "Hay hong",
+          "Can sua chua"
+        ],
+        "Muc_do_xuong_cap": [
+          "Tot/Moi",
+          "Binh thuong",
+          "Xuong cap nhe",
+          "Nat/Can dap di"
+        ]
+      },
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 10.0,
+          "max": 18.0,
+          "p01": 10.1,
+          "p05": 10.398,
+          "median": 14.02,
+          "p95": 17.63,
+          "p99": 17.926399999999997,
+          "is_int": false,
+          "step": 0.1
+        },
+        "Dien_tich_m2": {
+          "min": 30.0,
+          "max": 174.0,
+          "p01": 30.0,
+          "p05": 30.0,
+          "median": 76.0,
+          "p95": 124.0,
+          "p99": 140.63999999999987,
+          "is_int": false,
+          "step": 1.0
+        },
+        "Mat_tien_m": {
+          "min": 3.0,
+          "max": 12.0,
+          "p01": 3.1,
+          "p05": 3.4,
+          "median": 7.5,
+          "p95": 11.4,
+          "p99": 11.9,
+          "is_int": false,
+          "step": 0.1
+        },
+        "So_tang": {
+          "min": 1.0,
+          "max": 5.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 3.0,
+          "p95": 5.0,
+          "p99": 5.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 10.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 3.0,
+          "p95": 8.0,
+          "p99": 10.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 10.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 6.0,
+          "p99": 9.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "Do_rong_duong_m": {
+          "min": 1.5,
+          "max": 15.0,
+          "p01": 1.6,
+          "p05": 2.1,
+          "median": 8.4,
+          "p95": 14.3,
+          "p99": 14.8,
+          "is_int": false,
+          "step": 0.5
+        },
+        "Tuoi_nha_nam": {
+          "min": 0.0,
+          "max": 30.0,
+          "p01": 0.0,
+          "p05": 1.0,
+          "median": 15.0,
+          "p95": 29.0,
+          "p99": 30.0,
+          "is_int": true,
+          "step": 1.0
+        }
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          0,
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ],
+        "Co_bi_ngap": [
+          0,
+          1
+        ]
+      }
+    },
+    "Thanh Xuân": {
+      "n": 1692,
+      "categorical": {
+        "Quan_Huyen": [
+          "Thanh Xuân"
+        ],
+        "Dac_diem_khu_vuc": [
+          "Khu dan cu dong duc"
+        ],
+        "Loai_dat": [
+          "Full tho cu"
+        ],
+        "Loai_duong": [
+          "Duong nhua",
+          "Duong be tong"
+        ],
+        "Huong_nha": [
+          "Đông Nam",
+          "Bắc",
+          "Đông",
+          "Đông Bắc",
+          "Tây Bắc",
+          "Nam",
+          "Tây",
+          "Tây Nam"
+        ],
+        "Phap_ly": [
+          "Sổ đỏ/Sổ hồng",
+          "Hợp đồng mua bán",
+          "Vi bằng",
+          "Chờ sổ"
+        ],
+        "Mat_do_dan_cu": [
+          "Trung binh",
+          "Thap",
+          "Cao"
+        ],
+        "An_ninh": [
+          "Kém (Hay trộm cắp)",
+          "Rất tốt (Khu VIP)",
+          "Tốt",
+          "Bình thường"
+        ],
+        "Gan_Tien_ich": [
+          "Gần Bệnh viện",
+          "Không gần gì",
+          "Gần Công viên/Hồ",
+          "Gần trường học/Chợ"
+        ],
+        "Gan_Giao_thong": [
+          "Gần Bến xe Bus",
+          "Xa phương tiện CC",
+          "Gần Metro (Tàu điện)"
+        ],
+        "Noi_that": [
+          "Nội thất cũ nát",
+          "Nhà trống",
+          "Cơ bản",
+          "Full nội thất cao cấp"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "On dinh",
+          "Hay hong",
+          "Can sua chua"
+        ],
+        "Muc_do_xuong_cap": [
+          "Tot/Moi",
+          "Binh thuong",
+          "Xuong cap nhe",
+          "Nat/Can dap di"
+        ]
+      },
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 6.0,
+          "max": 10.0,
+          "p01": 6.06,
+          "p05": 6.22,
+          "median": 8.01,
+          "p95": 9.84,
+          "p99": 9.9709,
+          "is_int": false,
+          "step": 0.1
+        },
+        "Dien_tich_m2": {
+          "min": 20.0,
+          "max": 134.0,
+          "p01": 20.0,
+          "p05": 20.0,
+          "median": 56.0,
+          "p95": 96.0,
+          "p99": 112.0,
+          "is_int": false,
+          "step": 1.0
+        },
+        "Mat_tien_m": {
+          "min": 3.0,
+          "max": 12.0,
+          "p01": 3.1,
+          "p05": 3.455000000000001,
+          "median": 7.5,
+          "p95": 11.6,
+          "p99": 11.9,
+          "is_int": false,
+          "step": 0.1
+        },
+        "So_tang": {
+          "min": 2.0,
+          "max": 8.0,
+          "p01": 2.0,
+          "p05": 2.0,
+          "median": 5.0,
+          "p95": 8.0,
+          "p99": 8.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 11.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 5.0,
+          "p95": 11.0,
+          "p99": 11.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 10.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 3.0,
+          "p95": 9.0,
+          "p99": 10.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "Do_rong_duong_m": {
+          "min": 1.5,
+          "max": 15.0,
+          "p01": 1.6,
+          "p05": 2.3,
+          "median": 8.2,
+          "p95": 14.3,
+          "p99": 14.8,
+          "is_int": false,
+          "step": 0.5
+        },
+        "Tuoi_nha_nam": {
+          "min": 0.0,
+          "max": 30.0,
+          "p01": 0.0,
+          "p05": 1.0,
+          "median": 16.0,
+          "p95": 29.0,
+          "p99": 30.0,
+          "is_int": true,
+          "step": 1.0
+        }
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ],
+        "Co_bi_ngap": [
+          0,
+          1
+        ]
+      }
+    },
+    "Thường Tín": {
+      "n": 1635,
+      "categorical": {
+        "Quan_Huyen": [
+          "Thường Tín"
+        ],
+        "Dac_diem_khu_vuc": [
+          "Trong lang xom",
+          "Mat duong Quoc lo",
+          "Gan lang nghe"
+        ],
+        "Loai_dat": [
+          "Full tho cu",
+          "Tho cu + Dat vuon"
+        ],
+        "Loai_duong": [
+          "Duong nhua",
+          "Duong be tong",
+          "Duong dat"
+        ],
+        "Huong_nha": [
+          "Tây",
+          "Đông Nam",
+          "Bắc",
+          "Nam",
+          "Đông",
+          "Tây Nam",
+          "Đông Bắc",
+          "Tây Bắc"
+        ],
+        "Phap_ly": [
+          "Sổ đỏ/Sổ hồng",
+          "Chờ sổ",
+          "Vi bằng",
+          "Hợp đồng mua bán"
+        ],
+        "Mat_do_dan_cu": [
+          "Thap",
+          "Trung binh",
+          "Cao"
+        ],
+        "An_ninh": [
+          "Kém (Hay trộm cắp)",
+          "Tốt",
+          "Bình thường",
+          "Rất tốt (Khu VIP)"
+        ],
+        "Gan_Tien_ich": [
+          "Gần Bệnh viện",
+          "Gần trường học/Chợ",
+          "Gần Công viên/Hồ",
+          "Không gần gì"
+        ],
+        "Gan_Giao_thong": [
+          "Gần Bến xe Bus",
+          "Xa phương tiện CC",
+          "Gần Metro (Tàu điện)"
+        ],
+        "Noi_that": [
+          "Nội thất cũ nát",
+          "Nhà trống",
+          "Full nội thất cao cấp",
+          "Cơ bản"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "On dinh",
+          "Hay hong",
+          "Can sua chua"
+        ],
+        "Muc_do_xuong_cap": [
+          "Tot/Moi",
+          "Binh thuong",
+          "Xuong cap nhe",
+          "Nat/Can dap di"
+        ]
+      },
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 20.01,
+          "max": 34.99,
+          "p01": 20.1234,
+          "p05": 20.77,
+          "median": 27.35,
+          "p95": 34.153,
+          "p99": 34.7966,
+          "is_int": false,
+          "step": 0.1
+        },
+        "Dien_tich_m2": {
+          "min": 40.0,
+          "max": 237.0,
+          "p01": 40.0,
+          "p05": 41.0,
+          "median": 121.0,
+          "p95": 206.0,
+          "p99": 235.32000000000016,
+          "is_int": false,
+          "step": 1.0
+        },
+        "Mat_tien_m": {
+          "min": 5.0,
+          "max": 14.0,
+          "p01": 5.1,
+          "p05": 5.4,
+          "median": 9.6,
+          "p95": 13.6,
+          "p99": 13.9,
+          "is_int": false,
+          "step": 0.1
+        },
+        "So_tang": {
+          "min": 1.0,
+          "max": 3.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 3.0,
+          "p99": 3.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 6.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 6.0,
+          "p99": 6.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 7.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 5.0,
+          "p99": 6.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "Do_rong_duong_m": {
+          "min": 1.5,
+          "max": 15.0,
+          "p01": 1.6,
+          "p05": 2.2,
+          "median": 8.0,
+          "p95": 14.229999999999995,
+          "p99": 14.9,
+          "is_int": false,
+          "step": 0.5
+        },
+        "Tuoi_nha_nam": {
+          "min": 0.0,
+          "max": 30.0,
+          "p01": 0.0,
+          "p05": 1.0,
+          "median": 15.0,
+          "p95": 29.0,
+          "p99": 30.0,
+          "is_int": true,
+          "step": 1.0
+        }
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          0,
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ],
+        "Co_bi_ngap": [
+          0,
+          1
+        ]
+      }
+    },
+    "Thạch Thất": {
+      "n": 1683,
+      "categorical": {
+        "Quan_Huyen": [
+          "Thạch Thất"
+        ],
+        "Dac_diem_khu_vuc": [
+          "Trong lang xom",
+          "Mat duong Quoc lo",
+          "Gan lang nghe"
+        ],
+        "Loai_dat": [
+          "Full tho cu",
+          "Tho cu + Dat vuon"
+        ],
+        "Loai_duong": [
+          "Duong nhua",
+          "Duong be tong",
+          "Duong dat"
+        ],
+        "Huong_nha": [
+          "Tây",
+          "Tây Nam",
+          "Đông Bắc",
+          "Tây Bắc",
+          "Bắc",
+          "Nam",
+          "Đông Nam",
+          "Đông"
+        ],
+        "Phap_ly": [
+          "Sổ đỏ/Sổ hồng",
+          "Hợp đồng mua bán",
+          "Chờ sổ",
+          "Vi bằng"
+        ],
+        "Mat_do_dan_cu": [
+          "Thap",
+          "Trung binh",
+          "Cao"
+        ],
+        "An_ninh": [
+          "Rất tốt (Khu VIP)",
+          "Kém (Hay trộm cắp)",
+          "Bình thường",
+          "Tốt"
+        ],
+        "Gan_Tien_ich": [
+          "Không gần gì",
+          "Gần Công viên/Hồ",
+          "Gần Bệnh viện",
+          "Gần trường học/Chợ"
+        ],
+        "Gan_Giao_thong": [
+          "Gần Bến xe Bus",
+          "Gần Metro (Tàu điện)",
+          "Xa phương tiện CC"
+        ],
+        "Noi_that": [
+          "Cơ bản",
+          "Nhà trống",
+          "Full nội thất cao cấp",
+          "Nội thất cũ nát"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "On dinh",
+          "Hay hong",
+          "Can sua chua"
+        ],
+        "Muc_do_xuong_cap": [
+          "Tot/Moi",
+          "Binh thuong",
+          "Xuong cap nhe",
+          "Nat/Can dap di"
+        ]
+      },
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 25.01,
+          "max": 39.99,
+          "p01": 25.168200000000002,
+          "p05": 25.781000000000002,
+          "median": 32.53,
+          "p95": 39.15,
+          "p99": 39.81,
+          "is_int": false,
+          "step": 0.1
+        },
+        "Dien_tich_m2": {
+          "min": 40.0,
+          "max": 237.0,
+          "p01": 40.0,
+          "p05": 41.0,
+          "median": 120.0,
+          "p95": 196.0,
+          "p99": 237.0,
+          "is_int": false,
+          "step": 1.0
+        },
+        "Mat_tien_m": {
+          "min": 5.0,
+          "max": 14.0,
+          "p01": 5.1,
+          "p05": 5.5,
+          "median": 9.4,
+          "p95": 13.5,
+          "p99": 13.9,
+          "is_int": false,
+          "step": 0.1
+        },
+        "So_tang": {
+          "min": 1.0,
+          "max": 3.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 3.0,
+          "p99": 3.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 6.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 6.0,
+          "p99": 6.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 7.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 5.0,
+          "p99": 6.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "Do_rong_duong_m": {
+          "min": 1.5,
+          "max": 15.0,
+          "p01": 1.6,
+          "p05": 2.2,
+          "median": 8.2,
+          "p95": 14.3,
+          "p99": 14.818000000000007,
+          "is_int": false,
+          "step": 0.5
+        },
+        "Tuoi_nha_nam": {
+          "min": 0.0,
+          "max": 30.0,
+          "p01": 0.0,
+          "p05": 1.0,
+          "median": 15.0,
+          "p95": 29.0,
+          "p99": 30.0,
+          "is_int": true,
+          "step": 1.0
+        }
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          0,
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ],
+        "Co_bi_ngap": [
+          0,
+          1
+        ]
+      }
+    },
+    "Tây Hồ": {
+      "n": 1668,
+      "categorical": {
+        "Quan_Huyen": [
+          "Tây Hồ"
+        ],
+        "Dac_diem_khu_vuc": [
+          "Khu dan cu dong duc"
+        ],
+        "Loai_dat": [
+          "Full tho cu"
+        ],
+        "Loai_duong": [
+          "Duong nhua",
+          "Duong be tong"
+        ],
+        "Huong_nha": [
+          "Đông",
+          "Bắc",
+          "Đông Nam",
+          "Tây Bắc",
+          "Đông Bắc",
+          "Tây",
+          "Tây Nam",
+          "Nam"
+        ],
+        "Phap_ly": [
+          "Sổ đỏ/Sổ hồng",
+          "Hợp đồng mua bán",
+          "Vi bằng",
+          "Chờ sổ"
+        ],
+        "Mat_do_dan_cu": [
+          "Trung binh",
+          "Thap",
+          "Cao"
+        ],
+        "An_ninh": [
+          "Tốt",
+          "Rất tốt (Khu VIP)",
+          "Bình thường",
+          "Kém (Hay trộm cắp)"
+        ],
+        "Gan_Tien_ich": [
+          "Không gần gì",
+          "Gần Bệnh viện",
+          "Gần trường học/Chợ",
+          "Gần Công viên/Hồ"
+        ],
+        "Gan_Giao_thong": [
+          "Gần Bến xe Bus",
+          "Gần Metro (Tàu điện)",
+          "Xa phương tiện CC"
+        ],
+        "Noi_that": [
+          "Nội thất cũ nát",
+          "Nhà trống",
+          "Full nội thất cao cấp",
+          "Cơ bản"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "On dinh",
+          "Hay hong",
+          "Can sua chua"
+        ],
+        "Muc_do_xuong_cap": [
+          "Tot/Moi",
+          "Binh thuong",
+          "Xuong cap nhe",
+          "Nat/Can dap di"
+        ]
+      },
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 4.01,
+          "max": 7.99,
+          "p01": 4.0466999999999995,
+          "p05": 4.18,
+          "median": 6.03,
+          "p95": 7.81,
+          "p99": 7.94,
+          "is_int": false,
+          "step": 0.1
+        },
+        "Dien_tich_m2": {
+          "min": 20.0,
+          "max": 143.0,
+          "p01": 20.0,
+          "p05": 20.0,
+          "median": 54.5,
+          "p95": 98.0,
+          "p99": 112.0,
+          "is_int": false,
+          "step": 1.0
+        },
+        "Mat_tien_m": {
+          "min": 3.0,
+          "max": 12.0,
+          "p01": 3.1,
+          "p05": 3.4,
+          "median": 7.4,
+          "p95": 11.6,
+          "p99": 11.9,
+          "is_int": false,
+          "step": 0.1
+        },
+        "So_tang": {
+          "min": 2.0,
+          "max": 8.0,
+          "p01": 2.0,
+          "p05": 2.0,
+          "median": 5.0,
+          "p95": 8.0,
+          "p99": 8.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 11.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 4.0,
+          "p95": 11.0,
+          "p99": 11.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 10.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 3.0,
+          "p95": 9.0,
+          "p99": 10.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "Do_rong_duong_m": {
+          "min": 1.5,
+          "max": 15.0,
+          "p01": 1.6,
+          "p05": 2.1,
+          "median": 8.0,
+          "p95": 14.2,
+          "p99": 14.8,
+          "is_int": false,
+          "step": 0.5
+        },
+        "Tuoi_nha_nam": {
+          "min": 0.0,
+          "max": 30.0,
+          "p01": 0.0,
+          "p05": 1.0,
+          "median": 15.0,
+          "p95": 29.0,
+          "p99": 30.0,
+          "is_int": true,
+          "step": 1.0
+        }
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ],
+        "Co_bi_ngap": [
+          0,
+          1
+        ]
+      }
+    },
+    "Đan Phượng": {
+      "n": 1677,
+      "categorical": {
+        "Quan_Huyen": [
+          "Đan Phượng"
+        ],
+        "Dac_diem_khu_vuc": [
+          "Khu dan cu",
+          "Gan KCN",
+          "Khu dau gia"
+        ],
+        "Loai_dat": [
+          "Full tho cu",
+          "Tho cu + Dat vuon"
+        ],
+        "Loai_duong": [
+          "Duong nhua",
+          "Duong be tong"
+        ],
+        "Huong_nha": [
+          "Đông Nam",
+          "Đông",
+          "Đông Bắc",
+          "Tây",
+          "Bắc",
+          "Tây Nam",
+          "Nam",
+          "Tây Bắc"
+        ],
+        "Phap_ly": [
+          "Sổ đỏ/Sổ hồng",
+          "Hợp đồng mua bán",
+          "Vi bằng",
+          "Chờ sổ"
+        ],
+        "Mat_do_dan_cu": [
+          "Cao",
+          "Thap",
+          "Trung binh"
+        ],
+        "An_ninh": [
+          "Bình thường",
+          "Kém (Hay trộm cắp)",
+          "Rất tốt (Khu VIP)",
+          "Tốt"
+        ],
+        "Gan_Tien_ich": [
+          "Gần trường học/Chợ",
+          "Gần Công viên/Hồ",
+          "Không gần gì",
+          "Gần Bệnh viện"
+        ],
+        "Gan_Giao_thong": [
+          "Gần Bến xe Bus",
+          "Xa phương tiện CC",
+          "Gần Metro (Tàu điện)"
+        ],
+        "Noi_that": [
+          "Nhà trống",
+          "Cơ bản",
+          "Full nội thất cao cấp",
+          "Nội thất cũ nát"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "On dinh",
+          "Hay hong",
+          "Can sua chua"
+        ],
+        "Muc_do_xuong_cap": [
+          "Tot/Moi",
+          "Xuong cap nhe",
+          "Binh thuong",
+          "Nat/Can dap di"
+        ]
+      },
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 18.01,
+          "max": 24.99,
+          "p01": 18.09,
+          "p05": 18.36,
+          "median": 21.42,
+          "p95": 24.56,
+          "p99": 24.92,
+          "is_int": false,
+          "step": 0.1
+        },
+        "Dien_tich_m2": {
+          "min": 30.0,
+          "max": 182.0,
+          "p01": 30.0,
+          "p05": 30.0,
+          "median": 74.0,
+          "p95": 126.0,
+          "p99": 144.0,
+          "is_int": false,
+          "step": 1.0
+        },
+        "Mat_tien_m": {
+          "min": 3.0,
+          "max": 12.0,
+          "p01": 3.1,
+          "p05": 3.5,
+          "median": 7.4,
+          "p95": 11.6,
+          "p99": 11.9,
+          "is_int": false,
+          "step": 0.1
+        },
+        "So_tang": {
+          "min": 1.0,
+          "max": 5.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 3.0,
+          "p95": 5.0,
+          "p99": 5.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 10.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 3.0,
+          "p95": 8.0,
+          "p99": 10.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 10.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 7.0,
+          "p99": 9.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "Do_rong_duong_m": {
+          "min": 1.5,
+          "max": 15.0,
+          "p01": 1.6,
+          "p05": 2.1,
+          "median": 8.1,
+          "p95": 14.319999999999983,
+          "p99": 14.8,
+          "is_int": false,
+          "step": 0.5
+        },
+        "Tuoi_nha_nam": {
+          "min": 0.0,
+          "max": 30.0,
+          "p01": 0.0,
+          "p05": 1.0,
+          "median": 15.0,
+          "p95": 29.0,
+          "p99": 30.0,
+          "is_int": true,
+          "step": 1.0
+        }
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          0,
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ],
+        "Co_bi_ngap": [
+          0,
+          1
+        ]
+      }
+    },
+    "Đông Anh": {
+      "n": 1629,
+      "categorical": {
+        "Quan_Huyen": [
+          "Đông Anh"
+        ],
+        "Dac_diem_khu_vuc": [
+          "Khu dan cu",
+          "Gan KCN",
+          "Khu dau gia"
+        ],
+        "Loai_dat": [
+          "Full tho cu",
+          "Tho cu + Dat vuon"
+        ],
+        "Loai_duong": [
+          "Duong nhua",
+          "Duong be tong"
+        ],
+        "Huong_nha": [
+          "Đông Bắc",
+          "Tây Bắc",
+          "Bắc",
+          "Nam",
+          "Đông",
+          "Tây",
+          "Tây Nam",
+          "Đông Nam"
+        ],
+        "Phap_ly": [
+          "Sổ đỏ/Sổ hồng",
+          "Vi bằng",
+          "Hợp đồng mua bán",
+          "Chờ sổ"
+        ],
+        "Mat_do_dan_cu": [
+          "Cao",
+          "Thap",
+          "Trung binh"
+        ],
+        "An_ninh": [
+          "Tốt",
+          "Kém (Hay trộm cắp)",
+          "Rất tốt (Khu VIP)",
+          "Bình thường"
+        ],
+        "Gan_Tien_ich": [
+          "Gần Bệnh viện",
+          "Gần trường học/Chợ",
+          "Không gần gì",
+          "Gần Công viên/Hồ"
+        ],
+        "Gan_Giao_thong": [
+          "Xa phương tiện CC",
+          "Gần Bến xe Bus",
+          "Gần Metro (Tàu điện)"
+        ],
+        "Noi_that": [
+          "Nội thất cũ nát",
+          "Full nội thất cao cấp",
+          "Nhà trống",
+          "Cơ bản"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "On dinh",
+          "Hay hong",
+          "Can sua chua"
+        ],
+        "Muc_do_xuong_cap": [
+          "Tot/Moi",
+          "Xuong cap nhe",
+          "Binh thuong",
+          "Nat/Can dap di"
+        ]
+      },
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 12.01,
+          "max": 25.0,
+          "p01": 12.2628,
+          "p05": 12.71,
+          "median": 18.53,
+          "p95": 24.24,
+          "p99": 24.82,
+          "is_int": false,
+          "step": 0.1
+        },
+        "Dien_tich_m2": {
+          "min": 30.0,
+          "max": 165.0,
+          "p01": 30.0,
+          "p05": 30.0,
+          "median": 74.0,
+          "p95": 122.0,
+          "p99": 141.0,
+          "is_int": false,
+          "step": 1.0
+        },
+        "Mat_tien_m": {
+          "min": 3.0,
+          "max": 12.0,
+          "p01": 3.1,
+          "p05": 3.5,
+          "median": 7.9,
+          "p95": 11.6,
+          "p99": 11.9,
+          "is_int": false,
+          "step": 0.1
+        },
+        "So_tang": {
+          "min": 1.0,
+          "max": 5.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 3.0,
+          "p95": 5.0,
+          "p99": 5.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 10.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 3.0,
+          "p95": 8.0,
+          "p99": 10.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 10.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 7.0,
+          "p99": 8.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "Do_rong_duong_m": {
+          "min": 1.5,
+          "max": 15.0,
+          "p01": 1.7,
+          "p05": 2.3,
+          "median": 8.4,
+          "p95": 14.3,
+          "p99": 14.8,
+          "is_int": false,
+          "step": 0.5
+        },
+        "Tuoi_nha_nam": {
+          "min": 0.0,
+          "max": 30.0,
+          "p01": 0.0,
+          "p05": 1.0,
+          "median": 16.0,
+          "p95": 29.0,
+          "p99": 30.0,
+          "is_int": true,
+          "step": 1.0
+        }
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          0,
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ],
+        "Co_bi_ngap": [
+          0,
+          1
+        ]
+      }
+    },
+    "Đống Đa": {
+      "n": 1717,
+      "categorical": {
+        "Quan_Huyen": [
+          "Đống Đa"
+        ],
+        "Dac_diem_khu_vuc": [
+          "Khu dan cu dong duc"
+        ],
+        "Loai_dat": [
+          "Full tho cu"
+        ],
+        "Loai_duong": [
+          "Duong nhua",
+          "Duong be tong"
+        ],
+        "Huong_nha": [
+          "Đông Nam",
+          "Đông",
+          "Tây Nam",
+          "Tây Bắc",
+          "Tây",
+          "Bắc",
+          "Nam",
+          "Đông Bắc"
+        ],
+        "Phap_ly": [
+          "Sổ đỏ/Sổ hồng",
+          "Chờ sổ",
+          "Vi bằng",
+          "Hợp đồng mua bán"
+        ],
+        "Mat_do_dan_cu": [
+          "Trung binh",
+          "Cao",
+          "Thap"
+        ],
+        "An_ninh": [
+          "Tốt",
+          "Kém (Hay trộm cắp)",
+          "Bình thường",
+          "Rất tốt (Khu VIP)"
+        ],
+        "Gan_Tien_ich": [
+          "Gần Bệnh viện",
+          "Không gần gì",
+          "Gần trường học/Chợ",
+          "Gần Công viên/Hồ"
+        ],
+        "Gan_Giao_thong": [
+          "Gần Bến xe Bus",
+          "Gần Metro (Tàu điện)",
+          "Xa phương tiện CC"
+        ],
+        "Noi_that": [
+          "Full nội thất cao cấp",
+          "Nội thất cũ nát",
+          "Cơ bản",
+          "Nhà trống"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "On dinh",
+          "Hay hong",
+          "Can sua chua"
+        ],
+        "Muc_do_xuong_cap": [
+          "Tot/Moi",
+          "Xuong cap nhe",
+          "Binh thuong",
+          "Nat/Can dap di"
+        ]
+      },
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 3.0,
+          "max": 6.0,
+          "p01": 3.04,
+          "p05": 3.16,
+          "median": 4.48,
+          "p95": 5.81,
+          "p99": 5.96,
+          "is_int": false,
+          "step": 0.1
+        },
+        "Dien_tich_m2": {
+          "min": 20.0,
+          "max": 129.0,
+          "p01": 20.0,
+          "p05": 20.0,
+          "median": 55.0,
+          "p95": 95.0,
+          "p99": 108.83999999999992,
+          "is_int": false,
+          "step": 1.0
+        },
+        "Mat_tien_m": {
+          "min": 3.0,
+          "max": 12.0,
+          "p01": 3.1,
+          "p05": 3.4,
+          "median": 7.5,
+          "p95": 11.6,
+          "p99": 11.9,
+          "is_int": false,
+          "step": 0.1
+        },
+        "So_tang": {
+          "min": 2.0,
+          "max": 8.0,
+          "p01": 2.0,
+          "p05": 2.0,
+          "median": 5.0,
+          "p95": 8.0,
+          "p99": 8.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 11.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 4.0,
+          "p95": 11.0,
+          "p99": 11.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 10.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 3.0,
+          "p95": 9.0,
+          "p99": 10.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "Do_rong_duong_m": {
+          "min": 1.5,
+          "max": 15.0,
+          "p01": 1.6,
+          "p05": 2.1,
+          "median": 8.2,
+          "p95": 14.3,
+          "p99": 14.8,
+          "is_int": false,
+          "step": 0.5
+        },
+        "Tuoi_nha_nam": {
+          "min": 0.0,
+          "max": 30.0,
+          "p01": 0.0,
+          "p05": 1.0,
+          "median": 15.0,
+          "p95": 29.0,
+          "p99": 30.0,
+          "is_int": true,
+          "step": 1.0
+        }
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ],
+        "Co_bi_ngap": [
+          0,
+          1
+        ]
+      }
+    },
+    "Ứng Hòa": {
+      "n": 1690,
+      "categorical": {
+        "Quan_Huyen": [
+          "Ứng Hòa"
+        ],
+        "Dac_diem_khu_vuc": [
+          "Trong lang xom",
+          "Mat duong Quoc lo",
+          "Gan lang nghe"
+        ],
+        "Loai_dat": [
+          "Full tho cu",
+          "Tho cu + Dat vuon"
+        ],
+        "Loai_duong": [
+          "Duong nhua",
+          "Duong be tong",
+          "Duong dat"
+        ],
+        "Huong_nha": [
+          "Tây Bắc",
+          "Đông Nam",
+          "Tây Nam",
+          "Nam",
+          "Đông",
+          "Đông Bắc",
+          "Tây",
+          "Bắc"
+        ],
+        "Phap_ly": [
+          "Sổ đỏ/Sổ hồng",
+          "Chờ sổ",
+          "Hợp đồng mua bán",
+          "Vi bằng"
+        ],
+        "Mat_do_dan_cu": [
+          "Cao",
+          "Thap",
+          "Trung binh"
+        ],
+        "An_ninh": [
+          "Bình thường",
+          "Rất tốt (Khu VIP)",
+          "Tốt",
+          "Kém (Hay trộm cắp)"
+        ],
+        "Gan_Tien_ich": [
+          "Gần Bệnh viện",
+          "Gần trường học/Chợ",
+          "Không gần gì",
+          "Gần Công viên/Hồ"
+        ],
+        "Gan_Giao_thong": [
+          "Gần Metro (Tàu điện)",
+          "Xa phương tiện CC",
+          "Gần Bến xe Bus"
+        ],
+        "Noi_that": [
+          "Full nội thất cao cấp",
+          "Nhà trống",
+          "Cơ bản",
+          "Nội thất cũ nát"
+        ],
+        "Tinh_trang_Dien_Nuoc": [
+          "On dinh",
+          "Hay hong",
+          "Can sua chua"
+        ],
+        "Muc_do_xuong_cap": [
+          "Tot/Moi",
+          "Binh thuong",
+          "Xuong cap nhe",
+          "Nat/Can dap di"
+        ]
+      },
+      "numeric": {
+        "Khoang_cach_TT_km": {
+          "min": 35.02,
+          "max": 49.97,
+          "p01": 35.1778,
+          "p05": 35.6745,
+          "median": 42.715,
+          "p95": 49.2755,
+          "p99": 49.7411,
+          "is_int": false,
+          "step": 0.1
+        },
+        "Dien_tich_m2": {
+          "min": 40.0,
+          "max": 237.0,
+          "p01": 40.0,
+          "p05": 40.0,
+          "median": 118.0,
+          "p95": 198.0,
+          "p99": 235.0,
+          "is_int": false,
+          "step": 1.0
+        },
+        "Mat_tien_m": {
+          "min": 5.0,
+          "max": 14.0,
+          "p01": 5.1,
+          "p05": 5.5,
+          "median": 9.5,
+          "p95": 13.6,
+          "p99": 13.9,
+          "is_int": false,
+          "step": 0.1
+        },
+        "So_tang": {
+          "min": 1.0,
+          "max": 3.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 3.0,
+          "p99": 3.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_ngu": {
+          "min": 1.0,
+          "max": 6.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 6.0,
+          "p99": 6.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "So_phong_tam": {
+          "min": 1.0,
+          "max": 7.0,
+          "p01": 1.0,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 5.0,
+          "p99": 6.0,
+          "is_int": true,
+          "step": 1.0
+        },
+        "Do_rong_duong_m": {
+          "min": 1.5,
+          "max": 15.0,
+          "p01": 1.6,
+          "p05": 2.2,
+          "median": 8.3,
+          "p95": 14.3,
+          "p99": 14.9,
+          "is_int": false,
+          "step": 0.5
+        },
+        "Tuoi_nha_nam": {
+          "min": 0.0,
+          "max": 30.0,
+          "p01": 0.0,
+          "p05": 1.0,
+          "median": 15.0,
+          "p95": 29.0,
+          "p99": 30.0,
+          "is_int": true,
+          "step": 1.0
+        }
+      },
+      "binary": {
+        "O_to_vao": [
+          0,
+          1
+        ],
+        "Co_Gara": [
+          0,
+          1
+        ],
+        "Co_San_thuong": [
+          0,
+          1
+        ],
+        "Gan_nghia_trang_bai_rac": [
+          0,
+          1
+        ],
+        "Co_bi_ngap": [
+          0,
+          1
+        ]
+      }
+    }
+  }
+}

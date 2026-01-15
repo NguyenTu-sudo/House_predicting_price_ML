@@ -6,6 +6,8 @@ pd.set_option('display.width', 1000)
 
 file_path = 'HN_Houseprice.csv'
 
+TARGET_COL = 'Gia_ban_ty'
+
 def perform_analysis():
     df = pd.read_csv(file_path)
     
@@ -21,8 +23,11 @@ def perform_analysis():
     missing_df = pd.DataFrame({'Số lượng thiếu': missing_count, 'Tỷ lệ (%)': missing_percentage})
     print(missing_df.to_markdown())
     
-    print("\n### 4. Thống kê cột 'Price'")
-    print(df['Price'].value_counts().head(10).to_markdown())
+    if TARGET_COL in df.columns:
+        print(f"\n### 4. Thống kê cột '{TARGET_COL}'")
+        print(df[TARGET_COL].describe().to_markdown())
+    else:
+        print(f"\n### 4. Không tìm thấy cột target '{TARGET_COL}' trong file.")
 
     print("\n### Các giá trị '0' (Nghi ngờ là missing values)")
     zero_counts = {}

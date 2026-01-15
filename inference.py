@@ -1,94 +1,60 @@
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestRegressor
+"""inference.py
+
+Chạy thử dự đoán bằng mô hình đã train (Pipeline).
+
+Khác với bản cũ:
+- Model trong project hiện tại được train theo Pipeline (preprocess + model),
+  vì vậy inference KHÔNG cần tự one-hot bằng tay.
+
+Chạy:
+    python inference.py
+"""
+
+from __future__ import annotations
+
 import joblib
+import numpy as np
+import pandas as pd
 
-def main():
-    print("--- 📊 KHỞI ĐỘNG PHÂN TÍCH KẾT QUẢ THỰC NGHIỆM ---")
-    
-    # Load data
-    df = pd.read_csv('HN_Houseprice_Encoded.csv')
-    
-    # Chuẩn bị X, y
-    drop_cols = [
-        'Title', 'Address', 'PostingDate', 'PostType', 'Area', 'Direction', 
-        'Width_meters', 'Legal', 'Interior', 'Entrancewidth', 'Price', 'Price_per_m2'
-    ]
-    X = df.drop(columns=[col for col in drop_cols if col in df.columns])
-    y = df['Price']
-    
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-    y_train_log = np.log1p(y_train)
-    y_test_log = np.log1p(y_test)
-    
-    print("[1/4] Đang huấn luyện lại mô hình Random Forest...")
-    rf = RandomForestRegressor(n_estimators=100, random_state=42, n_jobs=-1)
-    rf.fit(X_train, y_train_log)
-    
-    # 1. Feature Importance
-    print("[2/4] Đang phân tích độ quan trọng của biến...")
-    importances = rf.feature_importances_
-    feature_names = X.columns
-    feature_importance_df = pd.DataFrame({'Feature': feature_names, 'Importance': importances})
-    feature_importance_df = feature_importance_df.sort_values(by='Importance', ascending=False).head(10)
-    
-    plt.figure(figsize=(10, 6))
-    sns.barplot(x='Importance', y='Feature', data=feature_importance_df, palette='magma', hue='Feature', legend=False)
-    plt.title('Top 10 Yếu tố ảnh hưởng mạnh nhất đến Giá nhà (Hà Nội 2024)')
-    plt.tight_layout()
-    plt.savefig('feature_importance.png')
-    
-    # 2. Actual vs Predicted
-    print("[3/4] Đang vẽ biểu đồ So sánh Giá thực tế vs Dự đoán...")
-    y_pred_log = rf.predict(X_test)
-    y_test_actual = np.expm1(y_test_log)
-    y_pred_actual = np.expm1(y_pred_log)
-    
-    plt.figure(figsize=(8, 8))
-    plt.scatter(y_test_actual, y_pred_actual, alpha=0.5, color='teal')
-    max_val = max(y_test_actual.max(), y_pred_actual.max())
-    plt.plot([0, max_val], [0, max_val], '--r', linewidth=2)
-    plt.title('So sánh Giá thực tế vs Giá dự đoán (Tỷ VNĐ)')
-    plt.xlabel('Giá thực tế')
-    plt.ylabel('Giá dự đoán')
-    plt.grid(True)
-    plt.tight_layout()
-    plt.savefig('actual_vs_predicted.png')
-
-    joblib.dump(rf, 'best_rf_model.pkl')
-    joblib.dump(X.columns.tolist(), 'model_features.pkl')
-    print("[V] Hoàn tất lưu biểu đồ và mô hình.")
-
-def predict_my_house(district, area, entrance_width, width, floors, bedrooms):
-    try:
-        model = joblib.load('best_rf_model.pkl')
-        model_features = joblib.load('model_features.pkl')
-        
-        input_data = pd.DataFrame(columns=model_features)
-        input_data.loc[0] = 0
-        
-        input_data.at[0, 'Area_m2'] = area
-        input_data.at[0, 'Entrance_width'] = entrance_width
-        input_data.at[0, 'Width'] = width
-        input_data.at[0, 'Floors'] = floors
-        input_data.at[0, 'Bedrooms'] = bedrooms
-        
-        dist_col = f'Dist_{district}'
-        if dist_col in model_features:
-            input_data.at[0, dist_col] = 1
-            
-        pred_log = model.predict(input_data)
-        return float(np.expm1(pred_log)[0])
-    except Exception as e:
-        return str(e)
 
 if __name__ == "__main__":
-    main()
-    res = predict_my_house("Cầu Giấy", 50, 3, 4, 5, 4)
-    if isinstance(res, float):
-        print(f"\n[DỰ BÁO MẪU] ==> GIÁ DỰ KIẾN: {res:.2f} TỶ VNĐ")
-    else:
-        print(f"\n[LỖI DỰ BÁO] {res}")
+    model = joblib.load("best_model.pkl")
+
+    # Ví dụ record (hãy thay bằng dữ liệu thật)
+    record = {
+        "Quan_Huyen": "Hoàn Kiếm",
+        "Khoang_cach_TT_km": 0.0,
+        "Dac_diem_khu_vuc": "Đông đúc",
+        "Loai_dat": "Đất ở",
+        "Loai_duong": "Ngõ",
+        "Huong_nha": "Đông",
+        "Phap_ly": "Sổ đỏ",
+        "Mat_do_dan_cu": "Cao",
+        "An_ninh": "Tốt",
+        "Gan_Tien_ich": "Gần chợ",
+        "Gan_Giao_thong": "Gần đường lớn",
+        "Noi_that": "Đầy đủ",
+        "Tinh_trang_Dien_Nuoc": "Ổn định",
+        "Muc_do_xuong_cap": "Thấp",
+        "Dien_tich_m2": 45,
+        "Mat_tien_m": 4,
+        "So_tang": 4,
+        "So_phong_ngu": 3,
+        "So_phong_tam": 3,
+        "Do_rong_duong_m": 4,
+        "Tuoi_nha_nam": 8,
+        "O_to_vao": 1,
+        "Co_Gara": 0,
+        "Co_San_thuong": 1,
+        "Gan_nghia_trang_bai_rac": 0,
+        "Co_bi_ngap": 0,
+    }
+
+    X_in = pd.DataFrame([record])
+
+    # Model dự đoán trên log1p(price)
+    pred_log = float(model.predict(X_in)[0])
+    pred_ty = float(np.expm1(pred_log))
+    pred_ty = max(pred_ty, 0.0)
+
+    print(f"Predicted price: {pred_ty:.3f} tỷ")
