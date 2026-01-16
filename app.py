@@ -78,6 +78,14 @@ div[data-baseweb="input"]>div{
     border-radius: 12px !important;
 }
 </style>
+<style>
+/* Sửa màu input number trong sidebar ở light mode */
+section[data-testid="stSidebar"] input[type="number"] {
+    color: #222 !important;
+    background: #fff !important;
+    font-weight: 600;
+}
+</style>
 """,
         unsafe_allow_html=True,
     )
@@ -615,8 +623,8 @@ if do_predict:
     with m2:
         st.metric("Quy đổi VND", fmt_vnd(pred_ty))
     with m3:
-        unit = pred_ty / float(dien_tich) if float(dien_tich) > 0 else np.nan
-        st.metric("Giá / m² (ước tính)", f"{unit:,.3f} tỷ/m²" if np.isfinite(unit) else "-")
+        unit_trieu = (pred_ty * 1000) / float(dien_tich) if float(dien_tich) > 0 else np.nan
+        st.metric("Giá / m² (ước tính)", f"{unit_trieu:,.2f} triệu/m²" if np.isfinite(unit_trieu) else "-")
 
     st.markdown("""<div style="height:10px"></div>""", unsafe_allow_html=True)
 
