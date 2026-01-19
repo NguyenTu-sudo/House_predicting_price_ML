@@ -1,0 +1,15 @@
+{
+  "raw_rows": 50000,
+  "raw_cols": 27,
+  "dropped_na_target": 0,
+  "dropped_nonpositive_target": 0,
+  "deduped": 0,
+  "notes": [
+    "Force Khoang_cach_TT_km=0.0 for Hoàn Kiếm"
+  ],
+  "clean_full_rows": 50000,
+  "clean_cols": 27,
+  "districts": 30,
+  "max_rows": 20000,
+  "clean_rows_sampled": 20000
+}
